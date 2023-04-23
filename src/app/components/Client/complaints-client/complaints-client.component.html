@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Complaints</h4>
+                <div class="float-right">
+                    <a href="/client/complaints/add"><button type="button" class="btn btn-rounded btn-success"><span
+                                class="btn-icon-start text-success"><i class="fa fa-plus color-success"></i>
+                            </span>Add</button></a>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+
+                                <th>Complaint Object</th>
+                                <th>Date Of Creation</th>
+                                <th>Status</th>
+                                <th>Reponses</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of complaints">
+
+                                <td>{{c.objet}}</td>
+                                <td>{{c.dateComplaint}}</td>
+
+                                <td>
+                                    <span *ngIf="c.status.toString()=='NEW'"
+                                        class="badge light badge-primary">NEW</span>
+                                    <span *ngIf="c.status.toString()=='IN_PROGRESS'"
+                                        class="badge light badge-warning">IN_PROGRESS</span>
+                                    <span *ngIf="c.status.toString()=='RESOLVED'"
+                                        class="badge light badge-success">RESOLVED</span>
+                                    <span *ngIf="c.status.toString()=='CLOSED'"
+                                        class="badge light badge-dark">CLOSED</span>
+
+                                </td>
+                                <td>{{c.responses.length}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-square btn-outline-success"><a
+                                            style="color: white;"
+                                            href="/client/complaints/c/{{c.idComplaint}}">Check</a></button>
+
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

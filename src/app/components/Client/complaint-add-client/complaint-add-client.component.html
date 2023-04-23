@@ -1,0 +1,39 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Complaints</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+</div>
+
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">New Complaint</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Object</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Object" [(ngModel)]="c.objet" name="objet">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control" rows="20" id="comment" name="description"  [(ngModel)]="c.description" ></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row align-right">
+                        <div class="col-sm-10">
+                            <button (click)="addComplaint();" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
