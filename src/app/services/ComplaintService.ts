@@ -15,6 +15,7 @@ export class ComplaintService {
     constructor(private _http: HttpClient) {
         this.api_url = environment.apiserver;
     }
+    //Admin
     getComplaintsForAdmin(): Observable<Complaint[]> {
         this.url = this.api_url + "/admin/complaints";
         return this._http.get<Complaint[]>(this.url);
@@ -52,5 +53,24 @@ export class ComplaintService {
     deleteComplaint(c:Complaint){
         this.url=this.api_url+"/admin/complaints/delete/"+c.idComplaint;
         return this._http.delete(this.url);
+    }
+
+    //Client
+    getComplaints(): Observable<Complaint[]> {
+        this.url = this.api_url + "/client/complaints";
+        return this._http.get<Complaint[]>(this.url);
+    }
+    getComplaintDetails(id: number): Observable<Complaint> {
+        this.url = this.api_url + "/client/complaints/c/" + id;
+        return this._http.get<Complaint>(this.url);
+    }
+   
+    addResponseClient(cr:ComplaintResponse):Observable<Complaint>{
+        this.url=this.api_url+"/client/complaints/c/"+cr.complaint.idComplaint+"/addResponse";
+        return  this._http.post<Complaint>(this.url, cr);
+    }
+    addComplaintClient(c:Complaint):Observable<Complaint>{
+        this.url=this.api_url+"/client/complaints/add";
+        return  this._http.post<Complaint>(this.url, c);
     }
 }

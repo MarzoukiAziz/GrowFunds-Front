@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Complaint } from 'src/app/models/Complaint';
-import { TypeComplaintStatus } from 'src/app/models/TypeComplaintStatus';
-import { TypePriorityLevel } from 'src/app/models/TypePriorityLevel';
 import { ComplaintService } from 'src/app/services/ComplaintService';
 
 @Component({

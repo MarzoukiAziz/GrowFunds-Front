@@ -44,6 +44,9 @@ import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfou
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
 import { FormsModule } from '@angular/forms';
+import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
+import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
+import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +90,10 @@ import { FormsModule } from '@angular/forms';
     LoginAdminComponent,
     NotfoundAdminComponent,
     ComplaintsAdminComponent,
-    ComplaintDetailsAdminComponent
+    ComplaintDetailsAdminComponent,
+    ComplaintsClientComponent,
+    ComplaintDetailsClientComponent,
+    ComplaintAddClientComponent
     ],
   imports: [
     BrowserModule,
