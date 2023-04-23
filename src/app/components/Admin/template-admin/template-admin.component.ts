@@ -11,7 +11,7 @@ export class TemplateAdminComponent {
   constructor() {
     this.loadAPI = new Promise((resolve) => {
       this.loadScript();
-      
+
       resolve(true);
     });
   }
@@ -19,7 +19,7 @@ export class TemplateAdminComponent {
   public loadScript() {
     var isFound = false;
     var scripts = document.getElementsByTagName("script")
-  
+
     for (var i = 0; i < scripts.length; ++i) {
       if (scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src')!.includes("loader")) {
         isFound = true;
@@ -37,8 +37,12 @@ export class TemplateAdminComponent {
         '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
         '/assets/client/js/dashboard/dashboard-1.js',
         '/assets/client/js/custom.min.js',
-        '/assets/client/js/dlabnav-admin.js'
-
+        '/assets/client/vendor/datatables/js/jquery.dataTables.min.js',
+        '/assets/client/js/plugins-init/datatables.init.js',
+        '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
+        '/assets/client/js/dlabnav-admin.js',
+        "/assets/client/vendor/toastr/js/toastr.min.js",
+        "/assets/client/js/plugins-init/toastr-init.js"
 
       ];
 
@@ -50,11 +54,11 @@ export class TemplateAdminComponent {
         node.charset = 'utf-8';
         document.getElementsByTagName('head')[0].appendChild(node);
       }
-      
+
 
     }
 
-    
+
   }
 
 }

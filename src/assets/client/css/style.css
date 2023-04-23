@@ -19645,6 +19645,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   text-shadow: none; }
 
 [direction="rtl"] .toast-top-right.demo_rtl_class {
+  background: #00FF00;
   left: 0.75rem;
   right: auto; }
 

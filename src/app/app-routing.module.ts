@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
+import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
+import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
@@ -40,6 +43,16 @@ const routes: Routes = [
         path:"dashboard",
         component:DashboardAdminComponent
       },
+      {
+        path:"complaints",
+        component:ComplaintsAdminComponent
+      },
+      {
+        path:"complaints/c/:id",
+        component:ComplaintDetailsAdminComponent
+      },
+  
+  
       {
         path:"**",
         component:NotfoundAdminComponent

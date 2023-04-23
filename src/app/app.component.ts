@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GrowFunds-Front';
+  api_url="http://localhost:1004/";
 }

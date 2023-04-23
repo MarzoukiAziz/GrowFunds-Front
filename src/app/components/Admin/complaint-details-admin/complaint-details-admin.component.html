@@ -1,0 +1,190 @@
+<div class="row">
+    <div class="col-xl-4">
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-interest">
+                            <h4 class="d-inline">User : <span class="text-success">{{complaint.user.username}}</span>
+                            </h4>
+
+                        </div>
+                        <br>
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Status : </h4>
+                            <span *ngIf="complaint.status.toString()=='NEW'" class="badge  badge-primary">NEW</span>
+                            <span *ngIf="complaint.status.toString()=='IN_PROGRESS'"
+                                class="badge  badge-warning">IN_PROGRESS</span>
+                            <span *ngIf="complaint.status.toString()=='RESOLVED'"
+                                class="badge  badge-success">RESOLVED</span>
+                            <span *ngIf="complaint.status.toString()=='CLOSED'" class="badge  badge-dark">CLOSED</span>
+                        </div>
+                        <br>
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Date : <span class="text-success">{{complaint.dateComplaint}}</span>
+                            </h4>
+
+                        </div><br>
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Priority : </h4>
+                            <span *ngIf="complaint.priorityLevel.toString()=='LOW'" class="badge badge-info">LOW</span>
+                            <span *ngIf="complaint.priorityLevel.toString()=='MEDIUM'"
+                                class="badge badge-warning">MEDUIM</span>
+                            <span *ngIf="complaint.priorityLevel.toString()=='HIGH'"
+                                class="badge badge-danger">HIGH</span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Update Status : </h4>
+                            <br><br>
+                            <div style="display: flex;justify-content: space-evenly;">
+                                <button id="toastr-new-status" (click)="updateComplaint(-1,0)"
+                                    class="badge badge-primary">NEW</button>
+                                <button id="toastr-progress-status" (click)="updateComplaint(-1,1)"
+                                    class="badge badge-warning">IN_PROGRESS</button>
+                                <button id="toastr-resolved-status" (click)="updateComplaint(-1,2)"
+                                    class="badge badge-success">RESOLVED</button>
+                                <button id="toastr-closed-status" (click)="updateComplaint(-1,3)"
+                                    class="badge badge-dark">CLOSED</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Update Priority : </h4><br><br>
+                            <div style="display: flex;justify-content: space-evenly;">
+                                <button id="toastr-low-priority" (click)="updateComplaint(0,-1)"
+                                    class="badge badge-info">LOW</button>
+                                <button id="toastr-medium-priority" (click)="updateComplaint(1,-1)"
+                                    class="badge badge-warning">MEDUIM</button>
+                                <button id="toastr-high-priority" (click)="updateComplaint(2,-1)"
+                                    class="badge badge-danger">HIGH</button>
+                            </div>
+                            <div style="display: grid;margin-top: 25px;">
+                                <button (click)="askAIForPriority();" type="button" class="btn btn-outline-primary">Ask
+                                    AI For Help <span class="btn-icon-end"><i class="fa fa-robot"></i></span>
+                                </button>
+                            </div>
+                            <br>
+                            <p class="text-center " style="font-weight: bold;font-size: 18px;color: whitesmoke;"
+                                id="aipriortyresponse"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Delete Complaint : </h4>
+                            <button (click)="deleteComplaint()" type="button" class="btn btn-danger">Remove <span class="btn-icon-end"><i
+                                        class="fas fa-times"></i></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xl-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="post-details">
+                    <h3 class="mb-2 ">{{complaint.objet}}</h3>
+                    <ul class="mb-4 post-meta d-flex flex-wrap">
+
+                        <li class="post-comment"><i class="far fa-comment me-2"></i>{{complaint.responses.length}}</li>
+                    </ul>
+                    <br>
+
+
+                    <p>
+                        {{complaint.description}}
+                    </p>
+                    <br>
+                    <div style="    display: flex;
+                    justify-content: space-around;">
+                        <button type="button" class="btn btn-outline-warning" (click)="summarize()">Summarize <span
+                                class="btn-icon-end"><i class="fa fa-list-alt "></i></span>
+                        </button>
+                        <button type="button" class="btn btn-outline-success" (click)="translate()">Translate <span
+                                class="btn-icon-end"><i class="fa fa-language"></i></span>
+                        </button>
+                    </div>
+                    <br>
+                    <div class="card" id="card-title-1">
+                        <div class="card-header border-0 pb-0 ">
+                            <h5 class="card-title" id="resultTitle"></h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text" id="resultText">
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="profile-skills mt-5 mb-5">
+                        <h4 class="text-primary mb-2">Replies</h4>
+                        <div *ngFor="let r of complaint.responses" class="card " id="card-title-2">
+                            <div class="card-header bg-primary">
+                                <h5 *ngIf="r.user.id==complaint.user.id" ng class="card-title">Client</h5>
+                                <h5 *ngIf="r.user.id!=complaint.user.id " ng class="card-title">Support</h5>
+                                <p class="align-right card-text d-inline">{{r.dateResponse}}</p>
+                                
+                            </div>
+                            <div class="card-body ">
+                                <p class="card-text">{{r.description}}</p>
+                            </div>
+                            <div class="card-footer d-sm-flex justify-content-between align-items-center">
+                                <div class="card-footer-link mb-4 mb-sm-0 ml-auto" style="margin-left: auto!important;">
+                                  <button (click)="deleteResponse(r);" type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                                </div>
+                              </div>
+                              
+                        </div>
+                    </div>
+                    <div *ngIf="complaint.status.toString()=='NEW' || complaint.status.toString()=='IN_PROGRESS'"
+                        class="comment-respond" id="respond">
+                        <h4 class="comment-reply-title text-primary mb-3" id="reply-title">Add New Reply </h4>
+                        <form class="comment-form" id="commentform" method="post">
+                            <div class="row">
+
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <textarea type="text" rows="8" class="form-control" name="comment"
+                                            placeholder="Comment" id="comment" [(ngModel)]="cr.description"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <input (click)="addResponse();" type="submit" value="Post Reply"
+                                            class="submit btn btn-primary btn-sm" id="submit" name="submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
@@ -41,7 +41,10 @@ import { SidebarAdminComponent } from './components/Admin/sidebar-admin/sidebar-
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
-import { NotfoundClientComponent } from './components/client/notfound-client/notfound-client.component';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
+import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
+import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -84,11 +87,15 @@ import { NotfoundClientComponent } from './components/client/notfound-client/not
     DashboardAdminComponent,
     LoginAdminComponent,
     NotfoundAdminComponent,
-    NotfoundClientComponent
+    AccountsAdminComponent,
+    ComplaintsAdminComponent,
+    ComplaintDetailsAdminComponent
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
