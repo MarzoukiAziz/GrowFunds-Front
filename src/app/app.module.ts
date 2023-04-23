@@ -41,7 +41,6 @@ import { SidebarAdminComponent } from './components/Admin/sidebar-admin/sidebar-
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
-import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
 import { FormsModule } from '@angular/forms';
@@ -87,7 +86,6 @@ import { FormsModule } from '@angular/forms';
     DashboardAdminComponent,
     LoginAdminComponent,
     NotfoundAdminComponent,
-    AccountsAdminComponent,
     ComplaintsAdminComponent,
     ComplaintDetailsAdminComponent
     ],
