@@ -28,7 +28,7 @@ export class ComplaintService {
 
         this.url = this.api_url + "/admin/complaints/edit/" + complaint.idComplaint;
         return this._http.put<Complaint>(this.url, complaint);
-        
+
     }
     askAIforPriority(complaint:Complaint){
         this.url=this.api_url+"/admin/complaints/priority/"+complaint.idComplaint+"/";
@@ -64,7 +64,7 @@ export class ComplaintService {
         this.url = this.api_url + "/client/complaints/c/" + id;
         return this._http.get<Complaint>(this.url);
     }
-   
+
     addResponseClient(cr:ComplaintResponse):Observable<Complaint>{
         this.url=this.api_url+"/client/complaints/c/"+cr.complaint.idComplaint+"/addResponse";
         return  this._http.post<Complaint>(this.url, cr);

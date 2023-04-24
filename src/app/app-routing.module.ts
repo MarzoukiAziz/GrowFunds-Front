@@ -1,3 +1,4 @@
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
@@ -53,8 +54,12 @@ const routes: Routes = [
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
-  
-  
+      {
+        path:"accounts",
+        component:AccountsAdminComponent
+      },
+
+
       {
         path:"**",
         component:NotfoundAdminComponent
