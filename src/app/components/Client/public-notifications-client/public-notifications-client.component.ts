@@ -3,11 +3,11 @@ import { PublicNotification } from 'src/app/models/PublicNotification';
 import { PublicNotificationService } from 'src/app/services/public-notification.service';
 
 @Component({
-  selector: 'app-header-client',
-  templateUrl: './header-client.component.html',
-  styleUrls: ['./header-client.component.css']
+  selector: 'app-public-notifications-client',
+  templateUrl: './public-notifications-client.component.html',
+  styleUrls: ['./public-notifications-client.component.css']
 })
-export class HeaderClientComponent {
+export class PublicNotificationsClientComponent {
   notifs!:PublicNotification[]
 
   constructor(private _service:PublicNotificationService){}

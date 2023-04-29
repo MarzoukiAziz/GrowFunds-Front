@@ -15,7 +15,7 @@
                     <ul class="mb-4 post-meta ">
 
                         <li>
-                            <h6 class="d-inline">Date : <span class="text-success">{{complaint.dateComplaint}}  </span>
+                            <h6 class="d-inline">Date : <span class="text-success">{{complaint.dateComplaint| date: 'EEE d MMMM y ' }}  </span>
                             </h6>
                             <h6 class="d-inline">Status : </h6>
                             <span *ngIf="complaint.status.toString()=='NEW'" class="badge  badge-primary">NEW</span>
@@ -43,7 +43,7 @@
                             <div class="card-header bg-primary">
                                 <h5 *ngIf="r.user.id==complaint.user.id" ng class="card-title">Client</h5>
                                 <h5 *ngIf="r.user.id!=complaint.user.id " ng class="card-title">Support</h5>
-                                <p class="align-right card-text d-inline">{{r.dateResponse}}</p>
+                                <p class="align-right card-text d-inline">{{r.dateResponse | date: 'EEE d MMMM y' }}</p>
                                 
                             </div>
                             <div class="card-body ">

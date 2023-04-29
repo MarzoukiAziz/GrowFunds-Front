@@ -5,6 +5,8 @@ import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/co
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
@@ -12,6 +14,7 @@ import { ComplaintsClientComponent } from './components/Client/complaints-client
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
 import { AboutVisitorComponent } from './components/Visitor/about-visitor/about-visitor.component';
@@ -54,7 +57,14 @@ const routes: Routes = [
         component:ComplaintDetailsAdminComponent
       },
   
-  
+      {
+        path:"public-notifications",
+        component:PublicNotificationAdminComponent
+      },
+      {
+        path:"private-notifications",
+        component:NotificationAdminComponent
+      },
       {
         path:"**",
         component:NotfoundAdminComponent
@@ -80,6 +90,10 @@ const routes: Routes = [
       {
         path:"complaints/c/:id",
         component:ComplaintDetailsClientComponent
+      },
+      {
+        path:"public-notif",
+        component:PublicNotificationsClientComponent
       },
       {
         path:"**",
