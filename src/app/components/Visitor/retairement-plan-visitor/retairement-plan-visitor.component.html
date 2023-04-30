@@ -1,0 +1,87 @@
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area">
+    <div class="breadcrumb-area-bg"
+        style="background-image: url(/assets/visitor/images/backgrounds/statistics-style2-area-bg.jpg);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content">
+                    <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                        <h2>Retairement Plan Simulator</h2>
+                    </div>
+                    <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Retairement Plan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start Error Page Area-->
+<section class="error-page-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+
+                <div class="contact-form">
+                    <form id="contact-form" name="contact_form" class="default-form2"
+                    action="/calculate-retirement" method="post">
+
+                        <div class="form-group">
+                            <label for="currentAge">Current Age :</label>
+                            <input type="number" placeholder="27" class="form-control" id="currentAge" name="currentAge" required>
+                      
+                        </div>
+                        <div class="form-group">
+                            <label for="initialNetWorth">Initial Net Worth :</label>
+                            <input type="number" placeholder="5000" class="form-control" id="initialNetWorth" name="initialNetWorth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearlyIncome">Yearly Income :</label>
+                            <input type="number" placeholder="30000" class="form-control" id="yearlyIncome" name="yearlyIncome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearlyIncreaseSalary">Yearly Increase in Salary :</label>
+                            <input type="number" placeholder="0.03 (3%)" class="form-control" id="yearlyIncreaseSalary" name="yearlyIncreaseSalary"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolioYearlyReturn">Portfolio Yearly Return :</label>
+                            <input type="number" placeholder="0.09 (9%)" class="form-control" id="portfolioYearlyReturn"
+                                name="portfolioYearlyReturn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="portfolioFees">Portfolio Fees :</label>
+                            <input type="number" placeholder="0.02 (2%)" class="form-control" id="portfolioFees" name="portfolioFees" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="percentageInvesting">Percentage Investing :</label>
+                            <input type="number" placeholder="0.15 (15%)" class="form-control" id="percentageInvesting" name="percentageInvesting"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="retirementAge">Retirement Age :</label>
+                            <input type="number" placeholder="65" class="form-control" id="retirementAge" name="retirementAge" required>
+                        </div>
+                        <div class="button-box">
+                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                            <button class="btn-one" type="submit" data-loading-text="Please wait...">
+                                <span class="txt">
+                                    Simulate
+                                </span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Error Page Area-->

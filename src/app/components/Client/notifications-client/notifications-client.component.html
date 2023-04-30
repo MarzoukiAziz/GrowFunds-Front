@@ -1,0 +1,44 @@
+
+<div class="row">
+    
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Notifications</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example6" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>Sent Date</th>
+                                <th>Section</th>
+                                <th>Message</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of notifs">
+                                <td>{{c.sentDate| date: 'EEE d MMMM y - HH:mm' }}</td>
+                                <td>
+                                    <span *ngIf="c.section.toString()=='ACCOUNT'"
+                                        class="badge light badge-primary">ACCOUNT</span>
+                                    <span *ngIf="c.section.toString()=='CREDIT'"
+                                        class="badge light badge-secondary">CREDIT</span>
+                                    <span *ngIf="c.section.toString()=='PROJECT'"
+                                        class="badge light badge-warning">PROJECT</span>
+                                    <span *ngIf="c.section.toString()=='TRANSACTION'"
+                                        class="badge light badge-success">TRANSACTION</span>
+                                    <span *ngIf="c.section.toString()=='OTHER'"
+                                        class="badge light badge-dark">OTHER</span>
+                                </td>
+                                <td>{{c.message}}</td>
+                              
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

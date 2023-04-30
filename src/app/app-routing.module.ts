@@ -6,6 +6,7 @@ import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dash
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
 import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
@@ -14,6 +15,7 @@ import { ComplaintsClientComponent } from './components/Client/complaints-client
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
 import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
@@ -35,6 +37,7 @@ import { LoanPersonalVisitorComponent } from './components/Visitor/loan-personal
 import { LoanProductVisitorComponent } from './components/Visitor/loan-product-visitor/loan-product-visitor.component';
 import { LoanVehiculeVisitorComponent } from './components/Visitor/loan-vehicule-visitor/loan-vehicule-visitor.component';
 import { NotfoundComponent } from './components/Visitor/notfound/notfound.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
@@ -62,7 +65,11 @@ const routes: Routes = [
         component:PublicNotificationAdminComponent
       },
       {
-        path:"private-notifications",
+        path:"notifications-pick-user",
+        component:NotificationPickUserComponent
+      },
+      {
+        path:"private-notification/:id",
         component:NotificationAdminComponent
       },
       {
@@ -94,6 +101,10 @@ const routes: Routes = [
       {
         path:"public-notif",
         component:PublicNotificationsClientComponent
+      },
+      {
+        path:"notifications",
+        component:NotificationsClientComponent
       },
       {
         path:"**",
@@ -193,6 +204,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactVisitorComponent
+      },
+      {
+        path: 'retirement-plan',
+        component: RetairementPlanVisitorComponent
       },
 
       {

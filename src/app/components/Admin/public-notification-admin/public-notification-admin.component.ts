@@ -18,9 +18,6 @@ export class PublicNotificationAdminComponent {
 
   ngOnInit(): void {
     const notificationsByYear: { [key: string]: number } = {};
-
-
-
     this._service.getPublicNotifForAdmin().subscribe(res => {
       this.notifs = res;
       this.notifs.forEach(notification => {

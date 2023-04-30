@@ -51,6 +51,9 @@ import { PublicNotificationAdminComponent } from './components/Admin/public-noti
 import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { RouterModule } from '@angular/router';
 import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +103,10 @@ import { NotificationAdminComponent } from './components/Admin/notification-admi
     ComplaintAddClientComponent,
     PublicNotificationAdminComponent,
     PublicNotificationsClientComponent,
-    NotificationAdminComponent
+    NotificationAdminComponent,
+    NotificationPickUserComponent,
+    NotificationsClientComponent,
+    RetairementPlanVisitorComponent
     ],
   imports: [
     RouterModule,

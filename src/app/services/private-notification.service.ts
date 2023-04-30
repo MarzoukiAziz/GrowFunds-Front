@@ -19,24 +19,38 @@ export class PrivateNotificationService {
     this.url = this.api_url + "/admin/notifications";
     return this._http.get<Notification[]>(this.url);
   }
+
+  getNotifClientAdmin(id:number): Observable<Notification[]> {
+    this.url = this.api_url + "/admin/notifications/u/"+id;
+    return this._http.get<Notification[]>(this.url);
+  }
   deleteNotification(pnid: number): Observable<Notification[]> {
     this.url = this.api_url + "/admin/notifications/n/" + pnid + "/delete";
+    console.log(this.url)
     return this._http.delete<Notification[]>(this.url);
   }
-  addPNnow(pn: Notification): Observable<Notification[]> {
-    this.url = this.api_url + "/admin/addInstantNotification";
+  addPNnow(pn: Notification,uid:number): Observable<Notification[]> {
+    this.url = this.api_url + "/admin/addInstantNotification/"+uid;
     return this._http.post<Notification[]>(this.url, pn);
   }
-  addPNlater(pn: Notification): Observable<Notification[]> {
-    console.log(pn)
-    this.url = this.api_url + "/admin/addScheduledNotification";
+  addPNlater(pn: Notification,uid:number): Observable<Notification[]> {
+    this.url = this.api_url + "/admin/addScheduledNotification/"+uid;
     return this._http.post<Notification[]>(this.url, pn);
+  }
+  updateNotification(pn: Notification): Observable<Notification[]> {
+    this.url = this.api_url + "/admin/notifications/edit";
+    return this._http.put<Notification[]>(this.url, pn);
   }
 
 
   //client
   getNotifsForClient(): Observable<Notification[]> {
-    this.url = this.api_url + "/client/publicnotif";
+    this.url = this.api_url + "/client/notifications/";
     return this._http.get<Notification[]>(this.url);
+  }
+
+  readNotification(id:number) {
+    this.url = this.api_url + "/client/notifications/read/"+id;
+    return this._http.put(this.url,{});
   }
 }
