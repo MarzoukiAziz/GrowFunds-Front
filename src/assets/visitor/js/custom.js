@@ -1,6 +1,37 @@
 (function ($) {
   "use strict";
 
+$("#btn-show-chart").on("click",function(){
+  var ctx = document.getElementById('myChart').getContext('2d');
+  const dta = document.getElementById("data254");
+  if (dta.innerText.length > 0) {
+    const data1 = JSON.parse(dta.textContent)
+    let even = [];
+    let odd = [];
+    for (let i = 0; i < data1.length; i++) {
+      if (i % 2 === 0) {
+        even.push(data1[i]);
+      } else {
+        odd.push(data1[i]);
+      }
+    }
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels:even ,
+        datasets: [{
+          label: 'Net Worth After Fees',
+          backgroundColor: 'rgba(24, 24, 24, 0.4)',
+          borderColor: 'rgba(2, 136, 53, 1)',
+          data: odd,
+          title:"Net Worth After Fees From Current Age To Retairement"
+        }]
+      },
+      options: {}
+    });
+  }
+})
+  
 
   // Sticky Section
   var fixed_top = $(".page-contains-area");
@@ -11,7 +42,7 @@
       fixed_top.removeClass("animated fadeInDown section-fixed");
     }
   });
- 
+
 
 
 

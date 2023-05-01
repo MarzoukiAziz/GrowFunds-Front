@@ -42,7 +42,6 @@ export class PrivateNotificationService {
     return this._http.put<Notification[]>(this.url, pn);
   }
 
-
   //client
   getNotifsForClient(): Observable<Notification[]> {
     this.url = this.api_url + "/client/notifications/";

@@ -18,6 +18,7 @@ export class RetairementPlanVisitorComponent {
   retirementAge!: number;
 
   data: Map<string, number>[] = [];
+  nums:number[]=[];
   constructor(private _service: RetairementService) { }
 
   calculate() {
@@ -32,9 +33,25 @@ export class RetairementPlanVisitorComponent {
       this.retirementAge
     ).subscribe(res => {
       this.data = res;
-      console.log(this.data)
       const selectElement = document.getElementById("res") as HTMLDivElement;
       selectElement.classList.remove("d-none")
+      
+    })
+
+    this._service.getData2(
+      this.currentAge,
+      this.initialNetWorth,
+      this.yearlyIncome,
+      this.yearlyIncreaseSalary,
+      this.portfolioYearlyReturn,
+      this.portfolioFees,
+      this.percentageInvesting,
+      this.retirementAge
+    ).subscribe(res => {
+      this.nums = res;
+      console.log(this.nums)
+      const dta = document.getElementById("data254") as HTMLParagraphElement;
+      dta.textContent=JSON.stringify(this.nums);
       
     })
   }
