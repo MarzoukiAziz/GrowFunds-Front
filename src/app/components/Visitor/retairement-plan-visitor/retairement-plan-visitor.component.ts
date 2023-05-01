@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { number } from 'joi';
 import { RetairementService } from 'src/app/services/retairement.service';
 
 @Component({
