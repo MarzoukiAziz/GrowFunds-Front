@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Packs </h4>
+                <div class="float-right">
+                    <a href="/admin/pack/add"><button type="button" class="btn btn-rounded btn-success"><span
+                                class="btn-icon-start text-success"><i class="fa fa-plus color-success"></i>
+                            </span>Add</button></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>Pack Name</th>
+                                <th>type Pack</th>
+                                <th>Price</th>
+                                <th>Product List</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of pack">
+                                <td>{{c.name}}</td>
+                                <td>{{c.typepack}}</td>
+                                <td>{{c.price}}</td>
+                                  <td>
+                                    <div class="table-responsive">
+                                    <table id="example5" class="table table-bordered" >
+                                      <tr *ngFor="let b of c.product_pack">
+                                        <td>{{b.nameProdcut}}</td>
+                                        <td>{{b.priceProduct}} DT</td>
+                                        <td>{{b.quantity}}</td>
+                                      </tr>
+                                    </table>
+                                    </div>
+                                  </td>
+                                 <td>
+                                    <button type="button" class="btn btn-square btn-outline-success">
+                                        <a style="color: white;" href="/admin/productsdetails/{{c.idPack}">Check</a>
+                                    </button>
+                                
+                                   </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

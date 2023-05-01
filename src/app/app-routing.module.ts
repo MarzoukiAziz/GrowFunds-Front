@@ -5,6 +5,12 @@ import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/co
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
+import { PackAddComponent } from './components/Admin/pack-add/pack-add.component';
+import { PackAdminComponent } from './components/Admin/pack-admin/pack-admin.component';
+import { PackDetailsComponent } from './components/Admin/pack-details/pack-details.component';
+import { ProductAddClientComponent } from './components/Admin/product-add-client/product-add-client.component';
+import { ProductAdminComponent } from './components/Admin/product-admin/product-admin.component';
+import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
@@ -12,6 +18,8 @@ import { ComplaintsClientComponent } from './components/Client/complaints-client
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
+import { PackClientComponent } from './components/Client/pack-client/pack-client.component';
+import { PackDetailsClientComponent } from './components/Client/pack-details-client/pack-details-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
 import { AboutVisitorComponent } from './components/Visitor/about-visitor/about-visitor.component';
@@ -53,8 +61,31 @@ const routes: Routes = [
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
+      {
+        path:"products",
+        component:ProductAdminComponent
+      },
+      {
+        path:"productsdetails/:id",
+        component:ProductDetailsAdminComponent
+      },
+      {
+        path:"products/add",
+        component:ProductAddClientComponent
+      },
   
-  
+      {
+        path:"pack",
+        component:PackAdminComponent
+      },
+      {
+        path:"pack/add",
+        component:PackAddComponent
+      },
+      {
+        path:"pack/details/:id",
+        component:PackDetailsComponent
+      },
       {
         path:"**",
         component:NotfoundAdminComponent
@@ -81,6 +112,15 @@ const routes: Routes = [
         path:"complaints/c/:id",
         component:ComplaintDetailsClientComponent
       },
+      {
+        path:"pack",
+        component:PackClientComponent
+      },
+      {
+        path:"pack/details/:id",
+        component:PackDetailsClientComponent
+      },
+     
       {
         path:"**",
         component:NotfoundAdminComponent

@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-lg-9 col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Product Details</h4>
+          <hr>
+          <div class="row">
+            <div class="col-sm-4">
+              <p><i class="fas fa-shopping-cart"></i> Name:</p>
+            </div>
+            <div class="col-sm-8">
+              <p>{{product.nameProdcut}}</p>
+            </div>
+            <div class="col-sm-4">
+              <p><i class="fas fa-tags"></i> Price:</p>
+            </div>
+            <div class="col-sm-8">
+              <p>{{product.priceProduct}} DT</p>
+            </div>
+            <div class="col-sm-4">
+              <p><i class="fas fa-box"></i> Quantity:</p>
+            </div>
+            <div class="col-sm-8">
+              <p>{{product.quantity}}</p>
+            </div>
+            <div class="col-sm-4">
+              <p><i class="fas fa-info-circle"></i> Details:</p>
+            </div>
+            <div class="col-sm-8">
+              <p>{{product.details}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Actions</h4>
+          <hr>
+          <div class="row">
+            
+                
+                <button  type="button" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</button>
+                <p></p>
+                <button (click)="deleteproduct()" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Remove</button>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

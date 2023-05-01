@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Products </h4>
+                <div class="float-right">
+                    <a href="/admin/pack/add"><button type="button" class="btn btn-rounded btn-success"><span
+                                class="btn-icon-start text-success"><i class="fa fa-plus color-success"></i>
+                            </span>Add</button></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of products">
+                              
+                                <td>{{c.nameProdcut}}</td>
+                                <td>{{c.quantity}}</td>
+                                <td>{{c.priceProduct}}</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-square btn-outline-success"><a style="color: white;" href="/admin/productsdetails/{{c.idProduct}}">Check</a></button>
+
+
+                                </td>
+                        
+
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

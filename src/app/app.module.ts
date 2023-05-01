@@ -47,6 +47,14 @@ import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { ProductAdminComponent } from './components/Admin/product-admin/product-admin.component';
+import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
+import { ProductAddClientComponent } from './components/Admin/product-add-client/product-add-client.component';
+import { PackClientComponent } from './components/Client/pack-client/pack-client.component';
+import { PackDetailsClientComponent } from './components/Client/pack-details-client/pack-details-client.component';
+import { PackAdminComponent } from './components/Admin/pack-admin/pack-admin.component';
+import { PackDetailsComponent } from './components/Admin/pack-details/pack-details.component';
+import { PackAddComponent } from './components/Admin/pack-add/pack-add.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +101,15 @@ import { ComplaintAddClientComponent } from './components/Client/complaint-add-c
     ComplaintDetailsAdminComponent,
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
-    ComplaintAddClientComponent
+    ComplaintAddClientComponent,
+    ProductAdminComponent,
+    ProductDetailsAdminComponent,
+    ProductAddClientComponent,
+    PackClientComponent,
+    PackDetailsClientComponent,
+    PackAdminComponent,
+    PackDetailsComponent,
+    PackAddComponent
     ],
   imports: [
     BrowserModule,
