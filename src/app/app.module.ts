@@ -55,6 +55,13 @@ import { PackDetailsClientComponent } from './components/Client/pack-details-cli
 import { PackAdminComponent } from './components/Admin/pack-admin/pack-admin.component';
 import { PackDetailsComponent } from './components/Admin/pack-details/pack-details.component';
 import { PackAddComponent } from './components/Admin/pack-add/pack-add.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
+import { RouterModule } from '@angular/router';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 
 @NgModule({
   declarations: [
@@ -109,9 +116,16 @@ import { PackAddComponent } from './components/Admin/pack-add/pack-add.component
     PackDetailsClientComponent,
     PackAdminComponent,
     PackDetailsComponent,
-    PackAddComponent
+    PackAddComponent,
+    PublicNotificationAdminComponent,
+    PublicNotificationsClientComponent,
+    NotificationAdminComponent,
+    NotificationPickUserComponent,
+    NotificationsClientComponent,
+    RetairementPlanVisitorComponent
     ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

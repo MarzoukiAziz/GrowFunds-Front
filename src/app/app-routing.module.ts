@@ -11,6 +11,9 @@ import { PackDetailsComponent } from './components/Admin/pack-details/pack-detai
 import { ProductAddClientComponent } from './components/Admin/product-add-client/product-add-client.component';
 import { ProductAdminComponent } from './components/Admin/product-admin/product-admin.component';
 import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
@@ -20,6 +23,8 @@ import { ForgetPasswordClientComponent } from './components/Client/forget-passwo
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
 import { PackClientComponent } from './components/Client/pack-client/pack-client.component';
 import { PackDetailsClientComponent } from './components/Client/pack-details-client/pack-details-client.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
 import { AboutVisitorComponent } from './components/Visitor/about-visitor/about-visitor.component';
@@ -40,6 +45,7 @@ import { LoanPersonalVisitorComponent } from './components/Visitor/loan-personal
 import { LoanProductVisitorComponent } from './components/Visitor/loan-product-visitor/loan-product-visitor.component';
 import { LoanVehiculeVisitorComponent } from './components/Visitor/loan-vehicule-visitor/loan-vehicule-visitor.component';
 import { NotfoundComponent } from './components/Visitor/notfound/notfound.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
@@ -73,7 +79,18 @@ const routes: Routes = [
         path:"products/add",
         component:ProductAddClientComponent
       },
-  
+      {
+        path:"public-notifications",
+        component:PublicNotificationAdminComponent
+      },
+      {
+        path:"notifications-pick-user",
+        component:NotificationPickUserComponent
+      },
+      {
+        path:"private-notification/:id",
+        component:NotificationAdminComponent
+      },
       {
         path:"pack",
         component:PackAdminComponent
@@ -121,6 +138,14 @@ const routes: Routes = [
         component:PackDetailsClientComponent
       },
      
+      {
+        path:"public-notif",
+        component:PublicNotificationsClientComponent
+      },
+      {
+        path:"notifications",
+        component:NotificationsClientComponent
+      },
       {
         path:"**",
         component:NotfoundAdminComponent
@@ -219,6 +244,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactVisitorComponent
+      },
+      {
+        path: 'retirement-plan',
+        component: RetairementPlanVisitorComponent
       },
 
       {

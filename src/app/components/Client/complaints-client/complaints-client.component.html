@@ -27,7 +27,7 @@
                             <tr *ngFor="let c of complaints">
 
                                 <td>{{c.objet}}</td>
-                                <td>{{c.dateComplaint}}</td>
+                                <td>{{c.dateComplaint| date: 'EEE d MMMM y' }}</td>
 
                                 <td>
                                     <span *ngIf="c.status.toString()=='NEW'"
