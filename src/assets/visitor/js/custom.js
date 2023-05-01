@@ -1,6 +1,37 @@
 (function ($) {
   "use strict";
 
+$("#btn-show-chart").on("click",function(){
+  var ctx = document.getElementById('myChart').getContext('2d');
+  const dta = document.getElementById("data254");
+  if (dta.innerText.length > 0) {
+    const data1 = JSON.parse(dta.textContent)
+    let even = [];
+    let odd = [];
+    for (let i = 0; i < data1.length; i++) {
+      if (i % 2 === 0) {
+        even.push(data1[i]);
+      } else {
+        odd.push(data1[i]);
+      }
+    }
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels:even ,
+        datasets: [{
+          label: 'Net Worth After Fees',
+          backgroundColor: 'rgba(24, 24, 24, 0.4)',
+          borderColor: 'rgba(2, 136, 53, 1)',
+          data: odd,
+          title:"Net Worth After Fees From Current Age To Retairement"
+        }]
+      },
+      options: {}
+    });
+  }
+})
+  
 
   // Sticky Section
   var fixed_top = $(".page-contains-area");
@@ -11,6 +42,7 @@
       fixed_top.removeClass("animated fadeInDown section-fixed");
     }
   });
+
 
 
 
@@ -192,8 +224,8 @@
           });
         }
       }, {
-        accY: 0
-      }
+      accY: 0
+    }
     );
   }
 
@@ -362,7 +394,7 @@
           elm.val(Math.ceil(this.value)).trigger('change');
         }
       });
-      $(this).append(function () {});
+      $(this).append(function () { });
     }, {
       accY: 20
     });
@@ -554,14 +586,12 @@
         $(form_result_div).remove();
         form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
         var form_btn_old_msg = form_btn.html();
-        form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
         $(form).ajaxSubmit({
           dataType: 'json',
           success: function (data) {
             if (data.status = 'true') {
               $(form).find('.form-control').val('');
             }
-            form_btn.prop('disabled', false).html(form_btn_old_msg);
             $(form_result_div).html(data.message).fadeIn('slow');
             setTimeout(function () {
               $(form_result_div).fadeOut('slow')
@@ -665,8 +695,8 @@
         $("html, body")
           .stop()
           .animate({
-              scrollTop: $(target.attr("href")).offset().top - headerH + "px"
-            },
+            scrollTop: $(target.attr("href")).offset().top - headerH + "px"
+          },
             600,
             "easeInSine"
           );
@@ -784,8 +814,8 @@
       var target = $(this).attr("data-target");
       // animate
       $("html, body").animate({
-          scrollTop: $(target).offset().top
-        },
+        scrollTop: $(target).offset().top
+      },
         100
       );
 

@@ -47,6 +47,13 @@ import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
+import { RouterModule } from '@angular/router';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 
 @NgModule({
   declarations: [
@@ -93,9 +100,16 @@ import { ComplaintAddClientComponent } from './components/Client/complaint-add-c
     ComplaintDetailsAdminComponent,
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
-    ComplaintAddClientComponent
+    ComplaintAddClientComponent,
+    PublicNotificationAdminComponent,
+    PublicNotificationsClientComponent,
+    NotificationAdminComponent,
+    NotificationPickUserComponent,
+    NotificationsClientComponent,
+    RetairementPlanVisitorComponent
     ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

@@ -131,11 +131,11 @@ let dataSet = [
 	
 	// dataTable5
 	var table = $('#example5').DataTable({
-		searching: false,
+		searching: true,
 		paging:true,
-		select: false,
+		select: true,
 		info: true,         
-		lengthChange:false ,
+		lengthChange:true ,
 		language: {
 			paginate: {
 			  next: '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',

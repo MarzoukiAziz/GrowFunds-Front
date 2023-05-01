@@ -30,6 +30,7 @@ export class TemplateVisitorComponent {
 
     if (!isFound) {
       var dynamicScripts = [
+        "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js",
         '/assets/visitor/vendors/jquery/jquery-3.6.0.min.js',
         '/assets/visitor/vendors/bootstrap/js/bootstrap.bundle.min.js',
         '/assets/visitor/vendors/bxslider/jquery.bxslider.min.js',
@@ -56,6 +57,7 @@ export class TemplateVisitorComponent {
         '/assets/visitor/vendors/round-progress-bar/knob.js',
         '/assets/visitor/vendors/aos/aos.js',
         '/assets/visitor/js/custom.js'
+        
 
       ];
 
