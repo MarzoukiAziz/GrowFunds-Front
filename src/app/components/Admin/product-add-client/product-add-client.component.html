@@ -1,52 +1,74 @@
-<div class="row page-titles">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a href="javascript:void(0)">Product</a></li>
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Add</a></li>
-    </ol>
-</div>
-
-
 <div class="col-xl-12 col-lg-12">
     <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">New Product</h4>
-        </div>
-        <div class="card-body">
-            <div class="basic-form">
-                <form method="post">
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Name</label>
-                        <div class="col-sm-9">
-                            <input  type="text" class="form-control" placeholder="Name" [(ngModel)]="p.nameProdcut" name="nameProdcut">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Price</label>
-                        <div class="col-sm-9">
-                            <input  type="number" class="form-control" placeholder="priceProduct" [(ngModel)]="p.priceProduct" name="priceProduct">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Quantity</label>
-                        <div class="col-sm-9">
-                            <input  type="text" class="form-control" placeholder="quantity" [(ngModel)]="p.quantity" name="quantity">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">
-                        <div class="col-sm-9">
-                            <textarea placeholder="details" class="form-control" rows="20"  name="details"  [(ngModel)]="p.details" ></textarea>
-                        </div>
-                    </label>
-                </div>
-                    <div class="mb-3 row align-right">
-                        <div class="col-sm-10">
-                            <button (click)="addproduct();" type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                    </div>
-                    
-                </form>
+      <div class="card-header">
+        <h4 class="card-title">New Product</h4>
+      </div>
+      <div class="card-body">
+        <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+          <div class="row mb-3">
+            <div class="col-sm-3 col-form-label text-end">
+              <label for="nameProduct" class="form-label">Name</label>
             </div>
-        </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-lg" id="nameProdcut" placeholder="Enter product name" [(ngModel)]="p.nameProdcut" name="nameProdcut">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3 col-form-label text-end">
+              <label for="priceProduct" class="form-label">Price</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="number" class="form-control form-control-lg" id="priceProduct" placeholder="Enter product price" [(ngModel)]="p.priceProduct" name="priceProduct">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3 col-form-label text-end">
+              <label for="quantity" class="form-label">Quantity</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control form-control-lg" id="quantity" placeholder="Enter product quantity" [(ngModel)]="p.quantity" name="quantity">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3 col-form-label text-end">
+              <label for="details" class="form-label">Details</label>
+            </div>
+            <div class="col-sm-9">
+              <textarea class="form-control form-control-lg" id="details" placeholder="Enter product details" rows="5" name="details" [(ngModel)]="p.details"></textarea>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-3 col-form-label text-end">
+              <label for="file" class="form-label">Image</label>
+            </div>
+         <div class="col-6">
+            <div >
+              <input type="file" class="form-control form-control-lg" id="file" name="file" accept=".jpg,.jpeg,.png" (change)="onFileSelected($event)">
+            </div>
+            <div class="mt-5">
+                <div class="row">
+                    <mat-grid-list cols="4"  rowHeight="1:1">
+                        <mat-grid-tile *ngFor="let file of p.image; let i = index;">
+                            <div style="position: relative">
+                                <span class="btn-remove-image"
+                                      (click)="removeImages(i)">x</span>
+                                <img [src]="file.url"
+                                     width="100px"
+                                     height="100px">
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+          </div>
+          </div> 
+          <div class="row mb-3">
+            <div class="col-sm-9 offset-sm-3">
+              <button type="submit" class="btn btn-primary btn-lg">Add Product</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
+  

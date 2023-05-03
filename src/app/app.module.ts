@@ -38,7 +38,6 @@ import { SidebarClientComponent } from './components/Client/sidebar-client/sideb
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { HeaderAdminComponent } from './components/Admin/header-admin/header-admin.component';
 import { SidebarAdminComponent } from './components/Admin/sidebar-admin/sidebar-admin.component';
-import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
@@ -62,6 +61,12 @@ import { NotificationAdminComponent } from './components/Admin/notification-admi
 import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
 import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
 import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { ProductClientComponent } from './components/Client/product-client/product-client.component';
+import { ShowProductImagesDialogComponent } from './components/Admin/show-product-images-dialog/show-product-images-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NgChartsModule } from 'ng2-charts';
+import { ProductDetailsClientComponent } from './components/Client/product-details-client/product-details-client.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +106,7 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
     TemplateAdminComponent,
     HeaderAdminComponent,
     SidebarAdminComponent,
-    DashboardAdminComponent,
+    
     LoginAdminComponent,
     NotfoundAdminComponent,
     ComplaintsAdminComponent,
@@ -122,14 +127,20 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
     NotificationAdminComponent,
     NotificationPickUserComponent,
     NotificationsClientComponent,
-    RetairementPlanVisitorComponent
+    RetairementPlanVisitorComponent,
+    ProductClientComponent,
+    ShowProductImagesDialogComponent,
+    ProductDetailsClientComponent
     ],
   imports: [
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    MatGridListModule,
+    MatDialogModule,
+    FormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

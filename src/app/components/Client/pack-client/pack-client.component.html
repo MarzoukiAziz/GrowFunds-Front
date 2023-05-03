@@ -1,47 +1,21 @@
 <div class="row">
-    <div class="col-12">
-        
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Packs </h4>
-               
-            </div>
-            <div class="row d-flex flex-wrap">
-                <div *ngFor="let c of pack" class="col-xl-3 col-lg-6 col-sm-6">
-                   <div class="card">
-                      <div class="card-body">
-                         <div class="new-arrival-product">
-                            <div class="new-arrivals-img-contnent">
-                                <img class="img-fluid" src="/assets/client/images/packs/{{c.typepack}}/{{getRandomImage(c.typepack)}}" alt="">
 
-                            </div>
-                            <div class="new-arrival-content text-center mt-3">
-                               <h4><a href="ecom-product-detail.html">Name :{{c.name}}</a></h4>
-                               <ul class="star-rating">
-                                  <li><i class="fa fa-star"></i></li>
-                                  <li><i class="fa fa-star"></i></li>
-                                  <li><i class="fa fa-star"></i></li>
-                                  <li><i class="fa fa-star-half-empty"></i></li>
-                                  <li><i class="fa fa-star-half-empty"></i></li>
-                               </ul>
-                               
-                               <span class="price">Price : {{c.price}} DT</span>
-
-                               <button type="button" class="btn btn-square btn-outline-success"><a style="color: white;" href="/client/pack/details/{{c.idPack}}">Check</a></button>
-
-                            </div>
-
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             
-             
-             
-             
-             
-             
-             
+<div *ngFor="let c of pack; let i = index" class="col-xl-3 col-lg-6 col-sm-6">
+    <div class="card mb-4 shadow-sm">
+      <img  class="card-img-top img-fluid" src="/assets/client/images/packs/{{c.typepack}}/{{getRandomImage(c.typepack)}}" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{c.name}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">Price: {{c.price}} DT</h6>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="like-container" (click)="like(i)" (click)="addlike(c.idPack)">
+            <i class="fa fa-heart" [ngClass]="{'fas': likesClicked[i], 'far': !likesClicked[i]}"></i>
+            <span class="text-muted">{{ likesCount[i] }}</span>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            <a href="/client/pack/details/{{c.idPack}}">Check</a>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
-import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { PackAddComponent } from './components/Admin/pack-add/pack-add.component';
@@ -49,16 +48,15 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { ProductClientComponent } from './components/Client/product-client/product-client.component';
+import { ProductDetailsClientComponent } from './components/Client/product-details-client/product-details-client.component';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: TemplateAdminComponent,
     children:[
-      {
-        path:"dashboard",
-        component:DashboardAdminComponent
-      },
+      
       {
         path:"complaints",
         component:ComplaintsAdminComponent
@@ -128,6 +126,14 @@ const routes: Routes = [
       {
         path:"complaints/c/:id",
         component:ComplaintDetailsClientComponent
+      },
+      {
+        path:"product",
+        component:ProductClientComponent
+      },
+      {
+        path:"product/details/:id",
+        component:ProductDetailsClientComponent
       },
       {
         path:"pack",

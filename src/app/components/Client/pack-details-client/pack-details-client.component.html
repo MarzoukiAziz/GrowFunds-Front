@@ -1,58 +1,61 @@
 <div class="product-container" style="border-radius: 10px; border: 3px solid rgb(169, 152, 211); padding: 10px; margin-bottom: 70px;">
     <div class="row">
-        <div class="col-md-4">
-            <img src="/assets/client/images/packs/{{pack.typepack}}/{{getRandomImage(pack.typepack)}}" class="img-fluid w-100" alt="Image">
-        </div>
-        <div class="col-md-8">
-            <div class="product-details pr">
-                <h2 class="product-name">{{pack.name}}</h2>
-                <div class="product-rating star-rating">
-                    <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                    </ul>
-                    <span class="product-review-count">(34 reviews) / </span><a class="product-review-link" href="" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a review?</a>
-                </div>
-                <div class="d-table mb-2">
-                    <h3 class="product-price float-start d-block">{{pack.price}} DT</h3>
-                </div>
-                <p class="product-availability">Availability: <span class="item"> {{pack.idPack}} <i class="fa fa-shopping-basket"></i></span></p>
-                <p class="product-code">Product code: <span class="item">0405689</span></p>
-                <h4 class="product-description">  {{pack.descriptionpack}}</h4>
-
-                <h3 class="product-subtitle">Liste des produits :</h3>
-
-                <div class="row">
-                 <div *ngFor="let c of pack.product_pack" class="col-md-3">
-                 <div class="card">
-                     <div class="card-body"> 
-                        <div class="product-card">
-                            <div class="product-card-body">
-                                <div class="product-image-container">
-                                    <img class="product-image img-fluid" src="/assets/client/images/productq/{{c.nameProdcut}}.jpg" alt="">
-                                </div>
-                                <div class="product-content text-center mt-3">
-                                    <h5 class="product-title"><a href="ecom-product-detail.html">{{c.nameProdcut}}</a></h5>
-                                    <ul class="product-rating star-rating">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star-half-empty"></i></li>
-                                        <li><i class="fa fa-star-half-empty"></i></li>
-                                    </ul>
-                                    <span class="product-price-label">price :</span>
-                                    <h5 class="product-price">{{c.priceProduct}} DT</h5> 
-                                </div>
-                            </div>
+      <div class="col-md-4">
+        <img src="/assets/client/images/packs/{{pack.typepack}}/{{getRandomImage(pack.typepack)}}" class="img-fluid w-100" alt="Image">
+      </div>
+      <div class="col-md-8">
+        <div class="product-details pr">
+          <h2 class="product-name">{{pack.name}}</h2>
+          <div class="product-rating star-rating">
+            <ul>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span class="product-review-count">(34 reviews) / </span><a class="product-review-link" href="" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a review?</a>
+          </div>
+          <div class="d-table mb-2">
+            <h3 class="product-price float-start d-block">{{pack.price}} DT</h3>
+          </div>
+          <p class="product-availability">Availability: <span class="item"> {{pack.idPack}} <i class="fa fa-shopping-basket"></i></span></p>
+          <p class="product-code">Product code: <span class="item">0405689</span></p>
+          <h4 class="product-description">  {{pack.descriptionpack}}</h4>
+  
+          <h3 class="product-subtitle">Liste des produits :</h3>
+  
+          <div class="row">
+            <div *ngFor="let c of pack.product_pack" class="col-md-3">
+              <div class="card">
+                <div class="card-body"> 
+                  <div class="product-card">
+                    <div class="product-card-body">
+                      <div class="product-content text-center mt-3">
+                        <div class="image-container">
+                          <img class="home-page-product-image" [src]="c.image[0].url" alt="">
                         </div>
+                        <h5 class="product-title"><a href="ecom-product-detail.html">{{c.nameProdcut}}</a></h5>
+                        <ul class="product-rating star-rating">
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star-half-empty"></i></li>
+                          <li><i class="fa fa-star-half-empty"></i></li>
+                        </ul>
+                        <span class="product-price-label">price :</span>
+                        <h5 class="product-price">{{c.priceProduct}} DT</h5> 
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-            </div>
-        </div>
+        <button type="button" class="btn btn-primary float-end" style="border-radius: 10px;">Take your Credit</button>
+
+      </div>
     </div>
-</div>
+  </div>
+  

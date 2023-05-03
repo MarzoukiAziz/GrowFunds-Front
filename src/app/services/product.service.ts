@@ -18,6 +18,7 @@ export class ProductService {
   getProductsAdmin() {
     this.url = this.api_url + "/admin/product/showall";
     return this._http.get<Product[]>(this.url);
+   
   
 
   }
@@ -30,9 +31,14 @@ deleteProduct(p:Product){
   return this._http.delete(this.url);
 }
   //client
-  addproductadmin(c:Product):Observable<Product>{
-    this.url=this.api_url+"/admin/add";
-    return  this._http.post<Product>(this.url, c);
-}
+  
+
+    public addProduct(product: FormData) {
+      this.url=this.api_url+"/admin/add";
+      return this._http.post<Product>(this.url, product);
+    } 
+   
+  
+
 
 }

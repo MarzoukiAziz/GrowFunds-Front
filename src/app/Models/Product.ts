@@ -1,3 +1,4 @@
+import { FileHandle } from "./file-handle.model";
 
 export class Product {
     idProduct!: number;
@@ -5,5 +6,7 @@ export class Product {
     priceProduct!: number;
     quantity!: number;
     details!:string;
+    image!:FileHandle[];
+    
   }
   
