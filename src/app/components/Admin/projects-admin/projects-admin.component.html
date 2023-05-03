@@ -1,0 +1,92 @@
+
+<div class="row">
+    <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body  p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-danger text-danger">
+                        <img src="/assets/client/icons/flaticon/project.png" height="50px" width="50px"
+                            style="color :white">
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">Projects</p>
+                        <h4 class="mb-0">{{projects.length }} </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-primary text-primary">
+                        <img src="/assets/client/icons/flaticon/budget.png" height="50px" width="50px"
+                        style="color :white">
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">Total Budget</p>
+                        <h4 class="mb-0">{{budgetTotal| number:'1.0-3'}} Dt</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Projects</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Founder</th>
+                                <th>Category</th>
+                                <th>Budget</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of projects">
+
+                                <td>{{c.name}}</td>
+                                <td>{{c.founder.username}}</td>
+
+                                <td>{{c.category}}</td>
+                                <td>{{c.budget| number:'1.0-3'}}</td>
+                                <td>
+                                    <span *ngIf="c.status.toString()=='NOT_STARTED'"
+                                        class="badge light badge-primary">NOT_STARTED</span>
+                                    <span *ngIf="c.status.toString()=='APPROVED'"
+                                        class="badge light badge-success">APPROVED</span>
+                                    <span *ngIf="c.status.toString()=='REJECTED'"
+                                        class="badge light badge-danger">REJECTED</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-square btn-outline-success"><a
+                                            style="color: white;"
+                                            href="/admin/projects/p/{{c.idProject}}">Check</a></button>
+
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

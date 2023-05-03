@@ -47,13 +47,6 @@ import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
-import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
-import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
-import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
-import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
-import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
-import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
-import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 
 @NgModule({
   declarations: [
@@ -100,17 +93,10 @@ import { CurrencyConverterClientComponent } from './components/Client/currency-c
     ComplaintDetailsAdminComponent,
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
-    ComplaintAddClientComponent,
-    
-    UserDetailsAdminComponent,
-    UpdateUserAdminComponent,
-    UsersClientsAdminComponent,
-    UsersAgentsAdminComponent,
-    UsersAdminsAdminComponent,
-    UserAdminComponent,
-    CurrencyConverterClientComponent
+    ComplaintAddClientComponent
     ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

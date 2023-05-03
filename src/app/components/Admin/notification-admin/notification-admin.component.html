@@ -1,0 +1,239 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item ">Notifications</li>
+        <li class="breadcrumb-item active">Private Notifications</li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="card bg-info">
+            <div class="card-body">
+                <div class="students d-flex align-items-center justify-content-between flex-wrap">
+                    <div>
+                        <h4>{{notifs.length}}</h4>
+                        <h5>Total Notifications</h5>
+                    </div>
+                    <div>
+                        <img src="/assets/client/icons/flaticon/notifications.png" height="60px" width="60px"
+                        style="color :white;margin-right: 15px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6"></div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6"></div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="card bg-success overflow-hidden">
+            <div class="card-body">
+                <div class="students d-flex align-items-center justify-content-between flex-wrap">
+                    <div>
+                        <h4>{{read*100/notifs.length| number:'1.0-0'}} %</h4>
+                        <h5>are Read</h5>
+                        <span>{{notifs.length-read}} not yet !</span>
+                    </div>
+                    <div>
+                        <img src="/assets/client/icons/flaticon/read.png" height="60px" width="60px"
+                        style="color :white;margin-right: 15px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+</div>
+
+
+<div class="row">
+    <div class="col-xl-4">
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Add Instant Private Notification : </h4><br><br>
+
+
+                            <div class="col-lg-12">
+                                <form method="post">
+                                    <div>
+                                        <label>Section</label>
+                                        <select id="sec" class="default-select form-control wide mb-3">
+                                            <option value="ACCOUNT">ACCOUNT</option>
+                                            <option value="CREDIT">CREDIT</option>
+                                            <option value="PROJECT">PROJECT</option>
+                                            <option value="TRANSACTION">TRANSACTION</option>
+                                            <option value="OTHER">OTHER</option>
+                                        </select>
+                                    </div>
+                                    <label>Message</label>
+
+                                    <div class="mb-3">
+                                        <textarea type="text" rows="8" class="form-control" name="message"
+                                            placeholder="Message" id="comment" [(ngModel)]="n.message"></textarea>
+
+                                    </div>
+                                    <div style="display: grid;margin-top: 25px;">
+
+                                        <button (click)="createNow();" type="button" class="toastr-added-notification btn btn-outline-success"> <i
+                                                class="fa fa-plus"></i> &nbsp;&nbsp;&nbsp; Create
+                                            Now
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Add Scheduled Private Notification : </h4><br><br>
+
+                            <form action="post">
+                                <div class="">
+                                    <label class="form-label">Date</label>
+                                    <input [(ngModel)]="n2.sentDate" name="sentDate" type="text" id="date-format"
+                                        class="form-control">
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Section</label>
+                                    <select id="sec2" class="default-select form-control wide mb-3">
+                                        <option value="ACCOUNT">ACCOUNT</option>
+                                        <option value="CREDIT">CREDIT</option>
+                                        <option value="PROJECT">PROJECT</option>
+                                        <option value="TRANSACTION">TRANSACTION</option>
+                                        <option value="OTHER">OTHER</option>
+                                    </select>
+                                </div>
+                                <br><br>
+                                <div class="col-lg-12">
+                                    <label class="form-label">Message</label>
+
+                                    <div class="mb-3">
+                                        <textarea type="text" rows="8" class="form-control" name="message"
+                                            placeholder="Message" id="comment" [(ngModel)]="n2.message"></textarea>
+
+                                    </div>
+                                </div>
+
+                                <div style="display: grid;margin-top: 25px;">
+
+                                    <button (click)="createLater();" type="button" class="toastr-added-notification btn btn-outline-success"> <i
+                                            class="fa fa-clock"></i> &nbsp;&nbsp;&nbsp; Create
+                                        Later
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <i class="fa-solid fa-alarm-clock"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="col-xl-12 d-none" id="editform">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="profile-interest">
+                        <h4 class="d-inline">Edit Notification : </h4><br><br>
+
+                        <form action="post">
+                            
+                            <div>
+                                <label>Section</label>
+                                <select id="sec3" class="default-select form-control wide mb-3" >
+                                    <option  value="ACCOUNT">ACCOUNT</option>
+                                    <option value="CREDIT">CREDIT</option>
+                                    <option value="PROJECT">PROJECT</option>
+                                    <option value="TRANSACTION">TRANSACTION</option>
+                                    <option value="OTHER">OTHER</option>
+                                </select>
+                            </div>
+                            <br><br>
+                            <div class="col-lg-12">
+                                <label class="form-label">Message</label>
+
+                                <div class="mb-3">
+                                    <textarea type="text" rows="8" class="form-control" name="message"
+                                        placeholder="Message" id="comment" [(ngModel)]="ntoupdate.message"></textarea>
+
+                                </div>
+                            </div>
+
+                            <div class="raw" style="margin-top: 25px; display: flex;justify-content: space-between;"  >
+
+                                    <button (click)="cancel();" type="button" class="btn btn-outline-warning">Cancel
+                                    </button>
+
+                                    <button (click)="update();" type="button" class="toastr-updated-notification btn btn-outline-success"> <i
+                                            class="fa fa-pen"></i> &nbsp;&nbsp;&nbsp; Update
+                                    </button>
+                            </div>
+                        </form>
+                    </div>
+                    <i class="fa-solid fa-alarm-clock"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Private Notifications</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th>Sent Date</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of notifs">
+                                <td>
+                                    <span *ngIf="c.section.toString()=='ACCOUNT'"
+                                        class="badge light badge-primary">ACCOUNT</span>
+                                    <span *ngIf="c.section.toString()=='CREDIT'"
+                                        class="badge light badge-secondary">CREDIT</span>
+                                    <span *ngIf="c.section.toString()=='PROJECT'"
+                                        class="badge light badge-warning">PROJECT</span>
+                                    <span *ngIf="c.section.toString()=='TRANSACTION'"
+                                        class="badge light badge-success">TRANSACTION</span>
+                                    <span *ngIf="c.section.toString()=='OTHER'"
+                                        class="badge light badge-dark">OTHER</span>
+                                </td>
+                                <td>{{c.sentDate | date: 'EEE d MMMM y - HH:mm' }}</td>
+                                <td>{{c.message}}</td>
+                                <td>{{c.status}}</td>
+                                <td><button type="button" (click)="openform(c)"
+                                    class="btn btn-square btn-outline-warning">Edit</button></td>
+                                <td>
+                                    
+                                    <button id=""  type="button" (click)="deleteNotif(c.idNotification)"
+                                        class="btn btn-square btn-outline-danger toastr-delete-notification">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
