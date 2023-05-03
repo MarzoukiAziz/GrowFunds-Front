@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { BodyVisitorComponent } from './components/Visitor/body-visitor/body-visitor.component';
 import { FooterVisitorComponent } from './components/Visitor/footer-visitor/footer-visitor.component';
