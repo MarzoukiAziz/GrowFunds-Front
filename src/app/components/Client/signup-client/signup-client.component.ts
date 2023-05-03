@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup-client',
@@ -7,48 +8,32 @@ import { Component } from '@angular/core';
 })
 export class SignupClientComponent {
 
-  loadAPI: Promise<any>;
 
-  constructor() {
-    this.loadAPI = new Promise((resolve) => {
-      this.loadScript();
-      
-      resolve(true);
-    });
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit(): void {
   }
-
-  public loadScript() {
-    var isFound = false;
-    var scripts = document.getElementsByTagName("script")
-  
-    for (var i = 0; i < scripts.length; ++i) {
-      if (scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src')!.includes("loader")) {
-        isFound = true;
+  onSubmit(): void {
+    this.authService.signup(this.form).subscribe(
+      data => {
+        if (data === null) {
+          this.isSignUpFailed = true;
+          this.errorMessage = 'An error occurred while saving.';
+          return;
+        }
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
       }
-    }
-
-    if (!isFound) {
-      var dynamicScripts = [
-        '/assets/client/vendor/global/global.min.js',
-        '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
-        '/assets/client/js/custom.min.js',
-        '/assets/client/js/dlabnav-init.js'
-
-
-      ];
-
-      for (var i = 0; i < dynamicScripts.length; i++) {
-        let node = document.createElement('script');
-        node.src = dynamicScripts[i];
-        node.type = 'text/javascript';
-        node.async = false;
-        node.charset = 'utf-8';
-        document.getElementsByTagName('head')[0].appendChild(node);
-      }
-      
-
-    }
-
-    
+    );
   }
-}
+}  

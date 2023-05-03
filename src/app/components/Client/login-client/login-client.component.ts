@@ -1,54 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-login-client',
   templateUrl: './login-client.component.html',
   styleUrls: ['./login-client.component.scss']
 })
-export class LoginClientComponent {
-  loadAPI: Promise<any>;
+export class LoginClientComponent implements OnInit {
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  constructor() {
-    this.loadAPI = new Promise((resolve) => {
-      this.loadScript();
-      
-      resolve(true);
-    });
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
   }
 
-  public loadScript() {
-    var isFound = false;
-    var scripts = document.getElementsByTagName("script")
-  
-    for (var i = 0; i < scripts.length; ++i) {
-      if (scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src')!.includes("loader")) {
-        isFound = true;
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
       }
-    }
+    );
+  }
 
-    if (!isFound) {
-      var dynamicScripts = [
-        '/assets/client/vendor/global/global.min.js',
-        '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
-        '/assets/client/js/custom.min.js',
-        '/assets/client/js/dlabnav-init.js'
-
-
-      ];
-
-      for (var i = 0; i < dynamicScripts.length; i++) {
-        let node = document.createElement('script');
-        node.src = dynamicScripts[i];
-        node.type = 'text/javascript';
-        node.async = false;
-        node.charset = 'utf-8';
-        document.getElementsByTagName('head')[0].appendChild(node);
-      }
-      
-
-    }
-
-    
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }

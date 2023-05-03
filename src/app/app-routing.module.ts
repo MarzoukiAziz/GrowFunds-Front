@@ -35,6 +35,13 @@ import { NotfoundComponent } from './components/Visitor/notfound/notfound.compon
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
+import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
+import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
+import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
+import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
+import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
+import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 
 const routes: Routes = [
   {
@@ -50,10 +57,33 @@ const routes: Routes = [
         component:ComplaintsAdminComponent
       },
       {
+        path:"users",
+        component:UserAdminComponent
+      },
+      {
+        path:"users/clients",
+        component:UsersClientsAdminComponent
+      },
+      {
+        path:"users/agents",
+        component:UsersAgentsAdminComponent
+      },
+      {
+        path:"users/admins",
+        component:UsersAdminsAdminComponent
+      },
+      {
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
-  
+      {
+        path:"users/u/:id",
+        component:UserDetailsAdminComponent
+      },
+      {
+        path:"users/u/:id/update",
+        component: UpdateUserAdminComponent
+      },
   
       {
         path:"**",
@@ -68,6 +98,10 @@ const routes: Routes = [
       {
         path:"dashboard",
         component:DashboardClientComponent
+      }, 
+      {
+        path:"currency-converter",
+        component:CurrencyConverterClientComponent
       },
       {
         path:"complaints",
