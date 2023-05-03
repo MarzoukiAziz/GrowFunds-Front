@@ -54,6 +54,13 @@ import { NotificationAdminComponent } from './components/Admin/notification-admi
 import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
 import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
 import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
+import { ProjectsClientComponent } from './components/Client/projects-client/projects-client.component';
+import { ProjectDetailsClientComponent } from './components/Client/project-details-client/project-details-client.component';
+import { ProjectAddClientComponent } from './components/Client/project-add-client/project-add-client.component';
+import { ProjectsAdminComponent } from './components/Admin/projects-admin/projects-admin.component';
+import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
+import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
+import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +113,14 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
     NotificationAdminComponent,
     NotificationPickUserComponent,
     NotificationsClientComponent,
-    RetairementPlanVisitorComponent
+    RetairementPlanVisitorComponent,
+    ProjectsClientComponent,
+    ProjectDetailsClientComponent,
+    ProjectAddClientComponent,
+    ProjectsAdminComponent,
+    ProjectDetailsAdminComponent,
+    InvestmenetsClientsComponent,
+    InvestementDetailsClientComponent
     ],
   imports: [
     RouterModule,

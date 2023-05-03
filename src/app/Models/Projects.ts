@@ -1,14 +1,15 @@
 import { User } from './User';
 import { Investisment } from './Investisment';
-import { TypeInvestor } from './TypeInvestor';
+import { TypeProjectStatus } from './TypeProjectStatus';
+import { Revenue } from './Revenue';
 
 export class Projects {
   idProject!: number;
   name!: string;
-  type!: string;
+  category!: string;
   budget!: number;
-  user!: User;
-  investor!: User;
-  investtisment!: Investisment;
-  leTypeInvestor!: TypeInvestor;
+  status!:TypeProjectStatus ;
+  founder!: User;
+  investisments!: Investisment[];
+  revenues!: Revenue[];
 }

@@ -7,6 +7,8 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
 import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
+import { ProjectsAdminComponent } from './components/Admin/projects-admin/projects-admin.component';
 import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
@@ -14,8 +16,13 @@ import { ComplaintDetailsClientComponent } from './components/Client/complaint-d
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
+import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
+import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
 import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { ProjectAddClientComponent } from './components/Client/project-add-client/project-add-client.component';
+import { ProjectDetailsClientComponent } from './components/Client/project-details-client/project-details-client.component';
+import { ProjectsClientComponent } from './components/Client/projects-client/projects-client.component';
 import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
@@ -48,8 +55,20 @@ const routes: Routes = [
     component: TemplateAdminComponent,
     children:[
       {
+        path:"",
+        component:DashboardAdminComponent
+      },
+      {
         path:"dashboard",
         component:DashboardAdminComponent
+      },
+      {
+        path:"projects",
+        component:ProjectsAdminComponent
+      },
+      {
+        path:"projects/p/:id",
+        component:ProjectDetailsAdminComponent
       },
       {
         path:"complaints",
@@ -83,9 +102,34 @@ const routes: Routes = [
     component: TemplateClientComponent,
     children:[
       {
+        path:"",
+        component:DashboardClientComponent
+      },
+      {
         path:"dashboard",
         component:DashboardClientComponent
       },
+      {
+        path:"investments",
+        component:InvestmenetsClientsComponent
+      },
+      {
+        path:"investments/p/:id",
+        component:InvestementDetailsClientComponent
+      },
+      {
+        path:"projects",
+        component:ProjectsClientComponent
+      },
+      {
+        path:"projects/p/:id",
+        component:ProjectDetailsClientComponent
+      },
+      {
+        path:"projects/add",
+        component:ProjectAddClientComponent
+      },
+    
       {
         path:"complaints",
         component:ComplaintsClientComponent

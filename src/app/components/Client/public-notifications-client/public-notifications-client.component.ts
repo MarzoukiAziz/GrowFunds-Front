@@ -15,6 +15,7 @@ export class PublicNotificationsClientComponent {
   ngOnInit(): void {
     this._service.getPublicNotifForClient().subscribe(res => {
       this.notifs = res;
+      console.log(this.notifs)
     });
 
   }
