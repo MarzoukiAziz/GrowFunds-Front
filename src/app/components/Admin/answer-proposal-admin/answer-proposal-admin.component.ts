@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Credits } from 'src/app/models/Credits';
 import { User } from 'src/app/models/User';
@@ -6,11 +6,11 @@ import { PostModel } from 'src/app/models/post-model';
 import { CreditService } from 'src/app/services/credit.service';
 
 @Component({
-  selector: 'app-credit-details-admin',
-  templateUrl: './credit-details-admin.component.html',
-  styleUrls: ['./credit-details-admin.component.css']
+  selector: 'app-answer-proposal-admin',
+  templateUrl: './answer-proposal-admin.component.html',
+  styleUrls: ['./answer-proposal-admin.component.css']
 })
-export class CreditDetailsAdminComponent {
+export class AnswerProposalAdminComponent {
   idCredit!: number;
   credit!: Credits;
   user! : User;
@@ -28,7 +28,4 @@ export class CreditDetailsAdminComponent {
     this._service.getClientClassPredictions(this.idCredit).subscribe(res =>{
       this.postModel = res;
     });
-
-  }
-
-}
+}}

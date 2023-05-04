@@ -9,7 +9,6 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Client name</th>
                                                 <th>Amount</th>
                                                 <th>Interest Rate</th>
                                                 <th>Payment Mounthly</th>
@@ -21,9 +20,8 @@
                                         <tbody>
                                             <tr *ngFor="let c of credit">
                                                 <td>{{c.idCredit}}</td>
-												<td>{{c.judgment}}</td>
                                                 <td>{{c.amount}}</td>
-                                                <td>{{c.interestRate*100}}%</td>
+                                                <td>{{c.interestRate}}%</td>
                                                 <td>{{c.paymentMounthly}}</td>
                                                 <td>{{c.typeCredit}}</td>
                                                 <td><span class="badge" [ngClass]="{'badge-primary light': c.status=='PENDING','badge-success':c.status=='ACTIVE','badge-danger':c.status=='DENIED'}">{{c.status}}</span>
@@ -35,7 +33,7 @@
 														</div>
 														<div class="dropdown-menu dropdown-menu-end">
                                                             <a class="dropdown-item" href="admin/creditDetails/{{c.idCredit}}">Details</a>
-                                                            <a class="dropdown-item" href="javascript:void();;" *ngIf="c.status=='PENDING'">Answer Proposal</a>
+                                                            <a class="dropdown-item" href="admin/answerProposal/{{c.idCredit}}" *ngIf="c.status=='PENDING'">Answer Proposal</a>
                                                             <a class="dropdown-item" href="javascript:void();;" *ngIf="c.status=='ACTIVE'">Payment History</a>
                                                             <a class="dropdown-item text-danger" href="javascript:void();;">Cancel</a>
                                                         </div>
