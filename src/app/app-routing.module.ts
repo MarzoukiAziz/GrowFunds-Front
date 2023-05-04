@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
+import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
+import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
@@ -33,6 +35,13 @@ import { NotfoundComponent } from './components/Visitor/notfound/notfound.compon
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
+import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
+import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
+import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
+import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
+import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
+import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 
 const routes: Routes = [
   {
@@ -48,10 +57,33 @@ const routes: Routes = [
         component:ComplaintsAdminComponent
       },
       {
+        path:"users",
+        component:UserAdminComponent
+      },
+      {
+        path:"users/clients",
+        component:UsersClientsAdminComponent
+      },
+      {
+        path:"users/agents",
+        component:UsersAgentsAdminComponent
+      },
+      {
+        path:"users/admins",
+        component:UsersAdminsAdminComponent
+      },
+      {
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
-  
+      {
+        path:"users/u/:id",
+        component:UserDetailsAdminComponent
+      },
+      {
+        path:"users/u/:id/update",
+        component: UpdateUserAdminComponent
+      },
   
       {
         path:"**",
@@ -66,6 +98,22 @@ const routes: Routes = [
       {
         path:"dashboard",
         component:DashboardClientComponent
+      }, 
+      {
+        path:"currency-converter",
+        component:CurrencyConverterClientComponent
+      },
+      {
+        path:"complaints",
+        component:ComplaintsClientComponent
+      },
+      {
+        path:"complaints/add",
+        component:ComplaintAddClientComponent
+      },
+      {
+        path:"complaints/c/:id",
+        component:ComplaintDetailsClientComponent
       },
       {
         path:"**",

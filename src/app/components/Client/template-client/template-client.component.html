@@ -4,14 +4,15 @@
 
 <!-- FAVICONS ICON -->
 <link rel="shortcut icon" type="image/png" href="/assets/client/images/favicon.png">
+<link href="/assets/client/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
 <link href="/assets/client/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 <link href="/assets/client/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 <link href="/assets/client/vendor/jquery-autocomplete/jquery-ui.css" rel="stylesheet">
-
+<link href="/assets/client/vendor/toastr/css/toastr.min.css" rel="stylesheet">
 <!-- Style css -->
 
 <link href="/assets/client/css/style.css" rel="stylesheet">
-
 
 <!--*******************
         Preloader start
@@ -118,8 +119,12 @@
 
     <app-header-client></app-header-client>
    <app-sidebar-client></app-sidebar-client>
-    <router-outlet></router-outlet>
-
+   <div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+</div>
 
 
 

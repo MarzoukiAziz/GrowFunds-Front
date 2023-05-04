@@ -1,0 +1,83 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/complaints">Complaints</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">{{complaint.objet}}</a></li>
+    </ol>
+</div>
+
+<div class="row">
+  
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="post-details">
+                    <h3 class="mb-2 ">{{complaint.objet}}</h3>
+                    <ul class="mb-4 post-meta ">
+
+                        <li>
+                            <h6 class="d-inline">Date : <span class="text-success">{{complaint.dateComplaint}}  </span>
+                            </h6>
+                            <h6 class="d-inline">Status : </h6>
+                            <span *ngIf="complaint.status.toString()=='NEW'" class="badge  badge-primary">NEW</span>
+                            <span *ngIf="complaint.status.toString()=='IN_PROGRESS'"
+                                class="badge  badge-warning">IN_PROGRESS</span>
+                            <span *ngIf="complaint.status.toString()=='RESOLVED'"
+                                class="badge  badge-success">RESOLVED</span>
+                            <span *ngIf="complaint.status.toString()=='CLOSED'" class="badge  badge-dark">CLOSED</span>
+                            
+                        </li>
+                       
+
+                    </ul>
+                    <br>
+
+
+                    <p>
+                        {{complaint.description}}
+                    </p>
+                    
+                    <br>
+                    <div class="profile-skills mt-5 mb-5">
+                        <h4 class="text-primary mb-2">Replies ({{complaint.responses.length}})</h4>
+                        <div *ngFor="let r of complaint.responses" class="card " id="card-title-2">
+                            <div class="card-header bg-primary">
+                                <h5 *ngIf="r.user.id==complaint.user.id" ng class="card-title">Client</h5>
+                                <h5 *ngIf="r.user.id!=complaint.user.id " ng class="card-title">Support</h5>
+                                <p class="align-right card-text d-inline">{{r.dateResponse}}</p>
+                                
+                            </div>
+                            <div class="card-body ">
+                                <p class="card-text">{{r.description}}</p>
+                            </div>
+                            
+                              
+                        </div>
+                    </div>
+                    <div *ngIf="complaint.status.toString()=='NEW' || complaint.status.toString()=='IN_PROGRESS'"
+                        class="comment-respond" id="respond">
+                        <h4 class="comment-reply-title text-primary mb-3" id="reply-title">Add New Reply </h4>
+                        
+                        <form class="comment-form" id="commentform" method="post">
+                            <div class="row">
+
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <textarea type="text" rows="8" class="form-control" name="comment"
+                                            placeholder="Comment" id="comment" [(ngModel)]="cr.description"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <input (click)="addResponse();" type="submit" value="Post Reply"
+                                            class="submit btn btn-primary btn-sm" id="submit" name="submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
