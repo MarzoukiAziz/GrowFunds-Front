@@ -1,0 +1,44 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a routerLink="/client/products">Packs</a></li>
+    </ol>
+
+</div>
+
+
+<div class="row">
+    <div *ngFor="let p of packs" class="col-lg-12 col-xl-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row m-b-30">
+                    <div class="col-md-5 col-xxl-12">
+                        <div class="new-arrival-product mb-4 mb-xxl-4 mb-md-0">
+                            <div class="new-arrivals-img-contnent">
+                                <img class="img-fluid" src="{{p.imgUrl}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-xxl-12">
+                        <div class="new-arrival-content position-relative">
+                            <h4><a href="/client/packs/{{p.idPacks}}">{{p.name}}</a></h4>
+                            <div class="comment-review star-rating">
+                                <i class="fa fa-star"></i> &nbsp;
+                                <span class="review-text">{{p.likedByUsers.length}} </span>
+                                <p class="price">{{p.price| number:'1.0-0'}} Dt</p>
+                            </div>
+                            <a href="javascript:void(0)" class="badge badge-rounded badge-success">{{p.category}}</a>
+                            <br><br>
+                            <p>-> {{p.product_pack.length}} Products : </p>
+                            <ul>
+                                <li *ngFor="let e of p.product_pack">
+                                    <div class="dd-handle">{{e.name}}</div><br>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
