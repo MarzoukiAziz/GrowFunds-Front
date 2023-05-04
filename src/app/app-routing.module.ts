@@ -1,3 +1,15 @@
+import { StatAdminComponent } from './components/Admin/stat-admin/stat-admin.component';
+import { StatClientComponent } from './components/Client/stat-client/stat-client.component';
+import { TransactionDetailsAdminComponent } from './components/Admin/transaction-details-admin/transaction-details-admin.component';
+
+import { TransactionApproveComponent } from './components/Client/transaction-approve/transaction-approve.component';
+import { TransactionAddClientComponent } from './components/Client/transaction-add-client/transaction-add-client.component';
+import { TransactionClientComponent } from './components/Client/transaction-client/transaction-client.component';
+import { AccountAddAdminComponent } from './components/Admin/account-add-admin/account-add-admin.component';
+import { AccountDetailsClientComponent } from './components/Client/account-details-client/account-details-client.component';
+import { AccountDetailsAdminComponent } from './components/Admin/account-details-admin/account-details-admin.component';
+import { AccountClientComponent } from './components/Client/account-client/account-client.component';
+import { TransactionsAdminComponent } from './components/Admin/transactions-admin/transactions-admin.component';
 import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -58,6 +70,26 @@ const routes: Routes = [
         path:"accounts",
         component:AccountsAdminComponent
       },
+      {
+        path:"transactions",
+        component:TransactionsAdminComponent
+      },
+      {
+        path:"transactions/c/:id",
+        component:TransactionDetailsAdminComponent
+      },
+      {
+        path:"accounts/c/:id",
+        component:AccountDetailsAdminComponent
+      },
+      {
+        path:"accounts/add",
+        component:AccountAddAdminComponent
+      },
+      {
+        path:"month",
+        component:StatAdminComponent
+      },
 
 
       {
@@ -86,6 +118,28 @@ const routes: Routes = [
         path:"complaints/c/:id",
         component:ComplaintDetailsClientComponent
       },
+      {
+        path:"account",
+        component:AccountClientComponent
+      },
+      {
+        path:"accounts/c/:id",
+        component:AccountDetailsClientComponent
+      },
+      {
+        path:"transaction",
+        component:TransactionClientComponent
+      },
+      {
+        path:"transactions/add",
+        component:TransactionAddClientComponent
+      },
+
+      {
+        path:"transactions/approve",
+        component:TransactionApproveComponent
+      },
+
       {
         path:"**",
         component:NotfoundAdminComponent

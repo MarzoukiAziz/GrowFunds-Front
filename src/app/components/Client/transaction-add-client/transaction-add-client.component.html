@@ -1,0 +1,103 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Transaction</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+</div>
+
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">New Transaction</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Date</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="CIN" class="form-control"  id="comment" name="cin"  [(ngModel)]="myDate" ></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">RIB Source</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Account RIB" class="form-control" id="comment" name="rib"  [(ngModel)]="c.ribsource" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">RIB Recipient</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Account Type" class="form-control"  id="comment" name="typeAcc"  [(ngModel)]="c.ribrecipient" ></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Amount</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.amount" ></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Type Transaction</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.typetrans" ></textarea>
+                        </div>
+                    </div>
+                    <!--<div class="basic-dropdown">
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown">
+                            Transaction Type
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:voiud(0);" [(ngModel)]="c.typetrans">VIREMENT</a>
+                            <a class="dropdown-item" href="javascript:voiud(0);" [(ngModel)]="c.typetrans">VERSEMENT</a>
+                          </div>
+                        </div>
+                      </div> -->
+
+
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Category</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.category" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row align-right">
+                        <div class="col-sm-10">
+                            <button (click)="addTransactionC();" type="submit" class="btn btn-success">Submit</button>
+                          <!-- <button (click)="apptransactions(c,C.ribsource)" type="submit" class="btn btn-success">Submit</button> -->
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="test">
+
+<div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label >saisissez votre code</label>
+        <div class="input-group">"
+          <input  class="form-control" placeholder="code" name="code" type="number"  [(ngModel)]="code" >
+          <button type="submit" class="btn btn-outline-dark" (click)="apptransactions()" >Save </button>
+
+
+        </div>
+      </div>
+    </form>
+    <h3>{{v}}</h3>
+  </div>
+
+
+</div>
+
+

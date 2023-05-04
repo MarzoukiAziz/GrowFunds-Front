@@ -1,0 +1,85 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/accounts">Account number {{account.accountNum}} Informations :</a></li>
+        <!--<li class="breadcrumb-item"><a href="javascript:void(0)">{{account.accountNum}}</a></li>-->
+    </ol>
+</div>
+
+<div class="row">
+
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="post-details">
+
+                    <h3 class="mb-2 ">RIB : {{account.rib}}</h3>
+                    <ul class="mb-4 post-meta ">
+
+                        <li>
+                            <h3 class="d-inline">CIN : <span class="text-success">{{account.cin}}  </span>
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="d-inline">Sold : <span class="text-success">{{account.solde}}  </span>
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="d-inline">Account Type : <span class="text-success">{{account.typeAcc}}  </span>
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="d-inline">Opening Date : <span class="text-success">{{account.date}}  </span>
+                            </h3>
+                        </li>
+                        <li>
+                            <h3 class="d-inline">Status : </h3>
+                            <span *ngIf="account.state== true" class="badge  badge-primary">OPEN</span>
+                            <span *ngIf="account.state==false"
+                                class="badge  badge-warning">CLOSED</span>
+
+                        </li>
+
+                        <div class="float-right">
+                            <h4 class="d-inline">Aliment Account : </h4>
+                        <button (click)="deleteAccount()" id="toastr-closed-status"
+                            class="badge badge-success" style="width:130px"> Depose</button>
+                        </div>
+
+                    </ul>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+
+                            <br><br>
+                            <div style="display: flex;justify-content: space-evenly;"></div>
+                            <div>>
+                            <h4 class="d-inline">Update Account : </h4>
+                                <button id="toastr-resolved-status"
+                                    class="badge badge-warning">UPDATE</button>
+                            </div>
+
+                            <div>
+
+                                    <h4 class="d-inline">Delete Account : </h4>
+                                <button (click)="deleteAccount()" id="toastr-closed-status"
+                                    class="badge badge-danger" style="width:130px">DELETE</button>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

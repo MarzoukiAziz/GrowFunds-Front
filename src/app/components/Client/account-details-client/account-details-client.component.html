@@ -1,0 +1,46 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/accounts">Accounts</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">{{account.rib}}</a></li>
+    </ol>
+</div>
+
+<div class="row">
+
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="post-details">
+                    <h3 class="mb-2 ">{{account.rib}</h3>
+                    <ul class="mb-4 post-meta ">
+
+                        <li>
+                            <h6 class="d-inline">Date : <span class="text-success">{{account.cin}}  </span>
+                            </h6>
+                            <h6 class="d-inline">Date : <span class="text-success">{{account.solde}}  </span>
+                            </h6>
+                            <h6 class="d-inline">Date : <span class="text-success">{{account.typeAcc}}  </span>
+                            </h6>
+                            <h6 class="d-inline">Date : <span class="text-success">{{account.date}}  </span>
+                            </h6>
+                            <h6 class="d-inline">Status : </h6>
+                            <span *ngIf="account.state== true" class="badge  badge-primary">OPEN</span>
+                            <span *ngIf="account.state==false"
+                                class="badge  badge-warning">CLOSED</span>
+
+                        </li>
+
+
+                    </ul>
+                    <br>
+
+
+
+
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
