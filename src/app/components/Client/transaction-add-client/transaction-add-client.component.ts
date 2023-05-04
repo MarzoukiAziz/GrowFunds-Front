@@ -17,6 +17,10 @@ export class TransactionAddClientComponent {
   list!: number[];
   code!:number;
   // private modalService: NgbModal
+  ref:boolean=false;
+  acc:boolean=false;
+  v!:number
+
   constructor(private router: Router, private service: TransactionsService,) {
   }
 test!:boolean
@@ -30,45 +34,18 @@ test!:boolean
       res => {
         this.service.code = res;
 
-
-
-
-
-
-        //.then(() => {
-        //window.location.reload();
-        //this.service.addAccountAdmin(this.c).subscribe(()=> this.router.navigateByUrl("/admin/accounts")
-
       })
       this.test=true;
   }
-v!:number
   apptransactions(){
     console.log(this.code);
     this.service.apptransaction(this.service.code ,this.code).subscribe( data => {
       this.v = data;
-      console.log(this.service.code)
-      console.log(this.code)
-     
-      //this.trs={};
-     // this.goTotransactionsList();
-    }) ;
-    //console.log(this.trs);
-   // this.modalClose.nativeElement.click();
+
+      if(this.v==0)this.ref=true
+      else this.acc=true;
+    })
   }
 
 }
-
-
-      //}));
-
-    //this.openVerticallyCentered(content)
-    //console.log(this.trs);
-
-  //openVerticallyCentered(content) {
-  //  this.modalService.open(content, { centered: true });
-  //}
-
-
-
 

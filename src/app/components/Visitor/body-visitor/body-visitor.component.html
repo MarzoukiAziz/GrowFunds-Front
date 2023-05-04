@@ -447,7 +447,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>$1,000,000</h5>
+                                                                <h5>{{v1}} Dt</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -465,7 +465,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>20Yrs</h5>
+                                                                <h5>{{v2}} Yrs</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -483,7 +483,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>8%</h5>
+                                                                <h5>{{v3}}%</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -497,13 +497,13 @@
                                                             <span class="icon-loan-3"></span>
                                                         </div>
                                                         <div class="inner-title">
-                                                            <h3>Your Monthly EMI</h3>
-                                                            <h2><span>$</span>10,250</h2>
+                                                            <h3>Your Final EMI</h3>
+                                                            <h2>{{r1| number:'1.0-0'}}<span>Dt</span></h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
-                                                        <a class="btn-one" href="#">
-                                                            <span class="txt">Apply Online</span>
+                                                        <a class="btn-one" (click)="calculate();">
+                                                            <span class="txt">Calculate</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -515,12 +515,12 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="#">Interest Amount</a>
-                                                                    <p>$720,260</p>
+                                                                    <a href="#">Net Gain</a>
+                                                                    <p>{{r2| number:'1.0-0'}} Dt</p>
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li>
+                                                        <li class="d-none">
                                                             <div class="inner">
                                                                 <div class="icon">
                                                                     <span class="icon-right-arrow"></span>
@@ -551,13 +551,13 @@
                                                                 <div class="price-range-slider"></div>
                                                                 <div class="range-input">
                                                                     <div class="input">
-                                                                        <input type="text" class="property-amount"
+                                                                        <input type="text" class="property-amount" id="v1"
                                                                             name="field-name" readonly="">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>$1,000,000</h5>
+                                                                <h5>{{v1}} Dt</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -569,13 +569,13 @@
                                                                 <div class="loan-term-range-slider"></div>
                                                                 <div class="range-input">
                                                                     <div class="input">
-                                                                        <input type="text" class="loan-term-range"
+                                                                        <input type="text" class="loan-term-range" id="v2"
                                                                             name="field-name" readonly="">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>20Yrs</h5>
+                                                                <h5>{{v2}}Yrs</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -587,13 +587,13 @@
                                                                 <div class="interest-rate-range-slider"></div>
                                                                 <div class="range-input">
                                                                     <div class="input">
-                                                                        <input type="text" class="interest-rate-range"
+                                                                        <input type="text" class="interest-rate-range" id="v3"
                                                                             name="field-name" readonly="">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>8%</h5>
+                                                                <h5>{{v3}}%</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -607,13 +607,13 @@
                                                             <span class="icon-loan-3"></span>
                                                         </div>
                                                         <div class="inner-title">
-                                                            <h3>Your Monthly EMI</h3>
-                                                            <h2><span>$</span>10,250</h2>
+                                                            <h3>Your Final EMI</h3>
+                                                            <h2>{{r1| number:'1.0-0'}}<span>Dt</span></h2>
                                                         </div>
                                                     </div>
-                                                    <div class="btns-box">
-                                                        <a class="btn-one" href="#">
-                                                            <span class="txt">Apply Online</span>
+                                                    <div (click)="calculate();" class="btns-box">
+                                                        <a class="btn-one" >
+                                                            <span class="txt">Calculate</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -625,22 +625,12 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="#">Interest Amount</a>
-                                                                    <p>$720,260</p>
+                                                                    <a href="#">Net Gain</a>
+                                                                    <p>{{r2| number:'1.0-0'}} Dt</p>
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li>
-                                                            <div class="inner">
-                                                                <div class="icon">
-                                                                    <span class="icon-right-arrow"></span>
-                                                                </div>
-                                                                <div class="text">
-                                                                    <a href="#">Total Amount Payble</a>
-                                                                    <p>$720,260</p>
-                                                                </div>
-                                                            </div>
-                                                        </li>
+
                                                     </ul>
                                                 </div>
                                             </div>
@@ -667,7 +657,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>$1,000,000</h5>
+                                                                <h5>{{v1}} Dt</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -685,7 +675,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>20Yrs</h5>
+                                                                <h5> {{v2}} Yrs</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -703,7 +693,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="right-box">
-                                                                <h5>8%</h5>
+                                                                <h5>{{v3}} %</h5>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -717,13 +707,13 @@
                                                             <span class="icon-loan-3"></span>
                                                         </div>
                                                         <div class="inner-title">
-                                                            <h3>Your Monthly EMI</h3>
-                                                            <h2><span>$</span>10,250</h2>
+                                                            <h3>Your Final EMI</h3>
+                                                            <h2>{{r1| number:'1.0-0'}}<span>Dt</span></h2>
                                                         </div>
                                                     </div>
                                                     <div class="btns-box">
-                                                        <a class="btn-one" href="#">
-                                                            <span class="txt">Apply Online</span>
+                                                        <a class="btn-one" (click)="calculate();">
+                                                            <span class="txt">Calculate</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -735,12 +725,12 @@
                                                                     <span class="icon-right-arrow"></span>
                                                                 </div>
                                                                 <div class="text">
-                                                                    <a href="#">Interest Amount</a>
-                                                                    <p>$720,260</p>
+                                                                    <a href="#">Net Gain</a>
+                                                                    <p>{{r2| number:'1.0-0'}} Dt</p>
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li>
+                                                        <li class="d-none">
                                                             <div class="inner">
                                                                 <div class="icon">
                                                                     <span class="icon-right-arrow"></span>

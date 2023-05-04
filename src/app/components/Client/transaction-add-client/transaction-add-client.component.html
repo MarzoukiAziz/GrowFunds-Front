@@ -18,7 +18,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Date</label>
                         <div class="col-sm-9">
-                            <textarea placeholder="CIN" class="form-control"  id="comment" name="cin"  [(ngModel)]="myDate" ></textarea>
+                            <textarea placeholder="Date" class="form-control"  id="comment" name="cin"  [(ngModel)]="myDate" ></textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -37,34 +37,37 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Amount</label>
                         <div class="col-sm-9">
-                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.amount" ></textarea>
+                            <textarea placeholder="Amount" class="form-control"  id="comment" name="description"  [(ngModel)]="c.amount" ></textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Type Transaction</label>
-                        <div class="col-sm-9">
-                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.typetrans" ></textarea>
-                        </div>
+                        <select class="default-select form-control form-control-lg wide mb-3" [(ngModel)]="c.typetrans" >
+                            <option>VIREMENT</option>
+                            <option>VERSEMENT</option>
+
+                          </select>
+
                     </div>
-                    <!--<div class="basic-dropdown">
-                        <div class="dropdown">
-                          <button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown">
-                            Transaction Type
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:voiud(0);" [(ngModel)]="c.typetrans">VIREMENT</a>
-                            <a class="dropdown-item" href="javascript:voiud(0);" [(ngModel)]="c.typetrans">VERSEMENT</a>
-                          </div>
-                        </div>
-                      </div> -->
+
 
 
 
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Category</label>
-                        <div class="col-sm-9">
-                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.category" ></textarea>
-                        </div>
+                        <select class="default-select form-control form-control-lg wide mb-3" [(ngModel)]="c.category" >
+                            <option>COURSES</option>
+                            <option>FUEL</option>
+                            <option>TRANSPORT</option>
+                            <option>ENTERTAIMENT</option>
+                            <option>EDUCATION</option>
+                            <option>CREDIT_LOANS</option>
+                            <option>UNCATEGORIZED</option>
+
+
+
+                          </select>
+
                     </div>
 
                     <div class="mb-3 row align-right">
@@ -94,7 +97,12 @@
         </div>
       </div>
     </form>
-    <h3>{{v}}</h3>
+    <div *ngIf="acc" >
+        <h3>Transaction Approved Succefully</h3>
+        </div>
+    <div *ngIf="ref">
+            <h3>Transaction Not Approved </h3>
+    </div>
   </div>
 
 
