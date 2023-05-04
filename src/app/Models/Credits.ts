@@ -14,7 +14,7 @@ export class Credits {
   interestRate!: number;
   status!: string;
   typeCredit!: TypeCredit;
-  Judgment!: string;
+  judgment!: string;
   checkingAccount!: number;
   Duration!: number;
   creditHistory!: number;

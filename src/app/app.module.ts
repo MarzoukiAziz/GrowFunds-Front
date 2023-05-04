@@ -47,6 +47,8 @@ import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
+import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,9 @@ import { ComplaintAddClientComponent } from './components/Client/complaint-add-c
     ComplaintDetailsAdminComponent,
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
-    ComplaintAddClientComponent
+    ComplaintAddClientComponent,
+    CreditAdminComponent,
+    CreditDetailsAdminComponent,
     ],
   imports: [
     BrowserModule,

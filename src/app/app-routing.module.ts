@@ -35,6 +35,8 @@ import { NotfoundComponent } from './components/Visitor/notfound/notfound.compon
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
+import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,14 @@ const routes: Routes = [
       {
         path:"dashboard",
         component:DashboardAdminComponent
+      },
+      {
+        path:"credits",
+        component:CreditAdminComponent
+      },
+      {
+        path:"creditDetails/:id",
+        component:CreditDetailsAdminComponent
       },
       {
         path:"complaints",
