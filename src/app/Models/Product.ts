@@ -1,10 +1,11 @@
-import { Packs } from "./Packs";
 
 export class Product {
     idProduct!: number;
-    nameProdcut!: string;
-    priceProduct!: number;
-    Quantity!: number;
-    packs!: Packs[];
+    name!: string;
+    price!: number;
+    category!:string;
+    description!:string;
+    interest!: number;
+    imgUrl!:string
   }
   

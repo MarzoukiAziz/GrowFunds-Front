@@ -1,14 +1,13 @@
-import { Credits } from './Credits';
 import { Product } from './Product';
 import { User } from './User';
 
 export class Packs {
-    idPack!: number;
+    idPacks!: number;
     name!: string;
-    typepack!: string;
-    descriptionpack!: string;
+    description!: string;
+    category!: string;
     price!: number;
-    creditsList!: Credits[];
+    imgUrl!: string;
     product_pack!: Product[];
     likedByUsers!: User[];
 }

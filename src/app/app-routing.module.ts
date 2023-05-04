@@ -7,6 +7,10 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
 import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { ProductAddAdminComponent } from './components/Admin/product-add-admin/product-add-admin.component';
+import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
+import { ProductEditAdminComponent } from './components/Admin/product-edit-admin/product-edit-admin.component';
+import { ProductsAdminComponent } from './components/Admin/products-admin/products-admin.component';
 import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
 import { ProjectsAdminComponent } from './components/Admin/projects-admin/projects-admin.component';
 import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
@@ -20,6 +24,10 @@ import { InvestementDetailsClientComponent } from './components/Client/investeme
 import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
 import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { PacksClientComponent } from './components/Client/packs-client/packs-client.component';
+import { PacksDetailsClientComponent } from './components/Client/packs-details-client/packs-details-client.component';
+import { ProductDetailsClientComponent } from './components/Client/product-details-client/product-details-client.component';
+import { ProductsClientComponent } from './components/Client/products-client/products-client.component';
 import { ProjectAddClientComponent } from './components/Client/project-add-client/project-add-client.component';
 import { ProjectDetailsClientComponent } from './components/Client/project-details-client/project-details-client.component';
 import { ProjectsClientComponent } from './components/Client/projects-client/projects-client.component';
@@ -44,6 +52,7 @@ import { LoanPersonalVisitorComponent } from './components/Visitor/loan-personal
 import { LoanProductVisitorComponent } from './components/Visitor/loan-product-visitor/loan-product-visitor.component';
 import { LoanVehiculeVisitorComponent } from './components/Visitor/loan-vehicule-visitor/loan-vehicule-visitor.component';
 import { NotfoundComponent } from './components/Visitor/notfound/notfound.component';
+import { ProductsVisitorComponent } from './components/Visitor/products-visitor/products-visitor.component';
 import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
@@ -70,6 +79,23 @@ const routes: Routes = [
         path:"projects/p/:id",
         component:ProjectDetailsAdminComponent
       },
+      {
+        path:"products",
+        component:ProductsAdminComponent
+      },
+      {
+        path:"products/add",
+        component:ProductAddAdminComponent
+      },
+      {
+        path:"product/:id/edit",
+        component:ProductEditAdminComponent
+      },
+      {
+        path:"product/:id",
+        component:ProductDetailsAdminComponent
+      },
+
       {
         path:"complaints",
         component:ComplaintsAdminComponent
@@ -129,7 +155,25 @@ const routes: Routes = [
         path:"projects/add",
         component:ProjectAddClientComponent
       },
-    
+      {
+        path:"products",
+        component:ProductsClientComponent
+      },
+     
+      {
+        path:"product/:id",
+        component:ProductDetailsClientComponent
+      },
+
+      {
+        path:"packs",
+        component:PacksClientComponent
+      },
+     
+      {
+        path:"packs/:id",
+        component:PacksDetailsClientComponent
+      },
       {
         path:"complaints",
         component:ComplaintsClientComponent
@@ -180,6 +224,10 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutVisitorComponent
+      },
+      {
+        path: 'products',
+        component: ProductsVisitorComponent
       },
       {
         path: 'account-current',

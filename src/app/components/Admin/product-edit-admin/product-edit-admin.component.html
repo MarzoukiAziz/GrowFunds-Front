@@ -1,0 +1,67 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a routerLink="/admin/products">Products</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Edit</a></li>
+    </ol>
+</div>
+
+
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Edit Product</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Name" [(ngModel)]="p.name" name="name">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Category</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Category" [(ngModel)]="p.category" name="category">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Price</label>
+                        <div class="col-sm-9">
+                            <input  type="number" class="form-control" placeholder="Price" [(ngModel)]="p.price" name="price">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Interest</label>
+                        <div class="col-sm-9">
+                            <input  type="number" class="form-control" placeholder="Interest" [(ngModel)]="p.interest" name="interest">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control" rows="4" id="comment" name="description"  [(ngModel)]="p.description" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Image Url</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Image" [(ngModel)]="p.imgUrl" name="imgUrl">
+                        </div>
+                    </div>
+                    <div class="mb-3 row align-right">
+                        <div class="col-sm-10">
+                            <button (click)="editProduct();" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+</div>

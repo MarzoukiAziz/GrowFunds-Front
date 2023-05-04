@@ -61,6 +61,15 @@ import { ProjectsAdminComponent } from './components/Admin/projects-admin/projec
 import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
 import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
 import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
+import { ProductsAdminComponent } from './components/Admin/products-admin/products-admin.component';
+import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
+import { ProductAddAdminComponent } from './components/Admin/product-add-admin/product-add-admin.component';
+import { ProductEditAdminComponent } from './components/Admin/product-edit-admin/product-edit-admin.component';
+import { ProductsClientComponent } from './components/Client/products-client/products-client.component';
+import { ProductDetailsClientComponent } from './components/Client/product-details-client/product-details-client.component';
+import { ProductsVisitorComponent } from './components/Visitor/products-visitor/products-visitor.component';
+import { PacksClientComponent } from './components/Client/packs-client/packs-client.component';
+import { PacksDetailsClientComponent } from './components/Client/packs-details-client/packs-details-client.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +129,16 @@ import { InvestementDetailsClientComponent } from './components/Client/investeme
     ProjectsAdminComponent,
     ProjectDetailsAdminComponent,
     InvestmenetsClientsComponent,
-    InvestementDetailsClientComponent
+    InvestementDetailsClientComponent,
+    ProductsAdminComponent,
+    ProductDetailsAdminComponent,
+    ProductAddAdminComponent,
+    ProductEditAdminComponent,
+    ProductsClientComponent,
+    ProductDetailsClientComponent,
+    ProductsVisitorComponent,
+    PacksClientComponent,
+    PacksDetailsClientComponent
     ],
   imports: [
     RouterModule,
