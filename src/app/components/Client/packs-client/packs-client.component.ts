@@ -9,13 +9,18 @@ import { PacksService } from 'src/app/services/packs.service';
 })
 export class PacksClientComponent {
   packs!: Packs[];
+  recommanded :Packs[]=[];
   constructor(private _service: PacksService) { }
 
 
   ngOnInit(): void {
     this._service.getAllPackssClient().subscribe(res => {
       this.packs = res;
+      this.packs.sort((a: Packs, b: Packs) => b.likedByUsers.length - a.likedByUsers.length);
+        const p = this.packs.shift()
+        console.log(p)
+        if(p!= undefined)this.recommanded.push(p);   
+        console.log(this.recommanded)   
     });
-
   }
 }

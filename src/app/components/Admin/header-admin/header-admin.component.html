@@ -1,10 +1,30 @@
+<style>
+    /* Define the animation */
+    @keyframes change-color {
+      0% {
+        color: #1eae7a;
+      }
+      50% {
+        color: white;
+      }
+      100% {
+        color: #1eae7a;
+      }
+    }
+    /* Apply the animation to the span element */
+    .ai {
+      animation-name: change-color;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  </style>
 <div class="header">
     <div class="header-content">
         <nav class="navbar navbar-expand">
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
                     <div class="dashboard_bar">
-                       Admin 
+                       Admin  <span class="fs-14 " style=" font-weight: 600;"><span class="btn-icon-end"><i  class="ai fa fa-robot"></i></span> &nbsp;Enhanced by <span class="ai" style="font-weight: 800;">AI</span>  </span>
                     </div>
                 </div>
   

@@ -7,6 +7,10 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
 import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs-add-admin.component';
+import { PacksAdminComponent } from './components/Admin/packs-admin/packs-admin.component';
+import { PacksDetailsAdminComponent } from './components/Admin/packs-details-admin/packs-details-admin.component';
+import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
 import { ProductAddAdminComponent } from './components/Admin/product-add-admin/product-add-admin.component';
 import { ProductDetailsAdminComponent } from './components/Admin/product-details-admin/product-details-admin.component';
 import { ProductEditAdminComponent } from './components/Admin/product-edit-admin/product-edit-admin.component';
@@ -22,6 +26,7 @@ import { DashboardClientComponent } from './components/Client/dashboard-client/d
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
 import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
 import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
+import { LivechatComponent } from './components/Client/livechat/livechat.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
 import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
 import { PacksClientComponent } from './components/Client/packs-client/packs-client.component';
@@ -52,6 +57,7 @@ import { LoanPersonalVisitorComponent } from './components/Visitor/loan-personal
 import { LoanProductVisitorComponent } from './components/Visitor/loan-product-visitor/loan-product-visitor.component';
 import { LoanVehiculeVisitorComponent } from './components/Visitor/loan-vehicule-visitor/loan-vehicule-visitor.component';
 import { NotfoundComponent } from './components/Visitor/notfound/notfound.component';
+import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
 import { ProductsVisitorComponent } from './components/Visitor/products-visitor/products-visitor.component';
 import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
@@ -95,7 +101,24 @@ const routes: Routes = [
         path:"product/:id",
         component:ProductDetailsAdminComponent
       },
+      {
+        path:"packs",
+        component:PacksAdminComponent
+      },
+      {
+        path:"packs/add",
+        component:PacksAddAdminComponent
+      },
+      {
+        path:"packs/:id",
+        component:PacksDetailsAdminComponent
+      },
 
+      
+      {
+        path:"packs/:id/edit",
+        component:PacksEditAdminComponent
+      },
       {
         path:"complaints",
         component:ComplaintsAdminComponent
@@ -130,6 +153,10 @@ const routes: Routes = [
       {
         path:"",
         component:DashboardClientComponent
+      },
+      {
+        path:"livechat",
+        component:LivechatComponent
       },
       {
         path:"dashboard",
@@ -169,6 +196,7 @@ const routes: Routes = [
         path:"packs",
         component:PacksClientComponent
       },
+    
      
       {
         path:"packs/:id",
@@ -228,6 +256,10 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductsVisitorComponent
+      },
+      {
+        path: 'packs',
+        component: PacksVisitorComponent
       },
       {
         path: 'account-current',

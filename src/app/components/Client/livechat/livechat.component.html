@@ -1,0 +1,65 @@
+<style>
+    /* Define the animation */
+    @keyframes change-color {
+      0% {
+        color: #1eae7a;
+      }
+      50% {
+        color: white;
+      }
+      100% {
+        color: #1eae7a;
+      }
+    }
+    /* Apply the animation to the span element */
+    .ai {
+      animation-name: change-color;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  </style>
+
+<div class="row page-titles" style="background-color: darkmagenta;">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/investments">Live Chat with Our ChatBot GoGo</a>  <span class="fs-14 " style=" font-weight: 600;"><span class="btn-icon-end"><i  class="ai fa fa-robot"></i></span> &nbsp;Enhanced by <span class="ai" style="font-weight: 800;">AI</span>  </span></li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div *ngFor="let m of messages" >
+           
+            <div class="" style="    margin: 10px;
+            background-color: darkslategray;
+            color: white;
+            padding: 20px;
+            font-size: 17px;
+            border-radius: 15px;">
+                <p class="card-text">{{m}}</p>
+            </div>
+            
+    </div>
+
+</div>
+
+<div class="comment-respond col-lg-12" id="respond" style="position: fixed;bottom: 20px;">
+
+    <form class="comment-form" id="commentform" method="post">
+        <div class="row">
+
+            <div class="col-lg-9">
+                <div class="mb-3">
+                    <textarea type="text" rows="3" class="form-control" name="comment"
+                        id="comment" ></textarea>
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mb-3">
+                    <input  type="submit" value="Send" (click)="addMessage()"
+                        class="submit btn btn-primary btn-sm" id="submit" name="submit">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

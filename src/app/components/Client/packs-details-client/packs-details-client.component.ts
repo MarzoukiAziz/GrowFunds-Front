@@ -11,16 +11,30 @@ import { PacksService } from 'src/app/services/packs.service';
 export class PacksDetailsClientComponent {
   pid!: number;
   pack!: Packs;
+  liked!: Boolean;
   constructor(private router: Router, private _service: PacksService, private route: ActivatedRoute) {
   }
   ngOnInit(): void {
     this.pid = this.route.snapshot.params['id'];
     this._service.getPacksByIdClient(this.pid).subscribe(res => {
       this.pack = res;
+      //to be changed later
+      this.liked = false;
+      this.pack.likedByUsers.forEach(u => {
+        if (u.id == 2) {
+          this.liked = true
+        }
+      })
     });
   }
 
-  like(){
-    this._service.like(this.pack).subscribe(res=>this.pack=res)
+  like() {
+    this._service.like(this.pack).subscribe(res => {
+      this.pack = res; this.pack.likedByUsers.forEach(u => {
+        if (u.id == 2) {
+          this.liked = true
+        }
+      })
+    })
   }
 }

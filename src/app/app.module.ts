@@ -70,6 +70,12 @@ import { ProductDetailsClientComponent } from './components/Client/product-detai
 import { ProductsVisitorComponent } from './components/Visitor/products-visitor/products-visitor.component';
 import { PacksClientComponent } from './components/Client/packs-client/packs-client.component';
 import { PacksDetailsClientComponent } from './components/Client/packs-details-client/packs-details-client.component';
+import { PacksAdminComponent } from './components/Admin/packs-admin/packs-admin.component';
+import { PacksDetailsAdminComponent } from './components/Admin/packs-details-admin/packs-details-admin.component';
+import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs-add-admin.component';
+import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
+import { LivechatComponent } from './components/Client/livechat/livechat.component';
+import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
 
 @NgModule({
   declarations: [
@@ -138,7 +144,13 @@ import { PacksDetailsClientComponent } from './components/Client/packs-details-c
     ProductDetailsClientComponent,
     ProductsVisitorComponent,
     PacksClientComponent,
-    PacksDetailsClientComponent
+    PacksDetailsClientComponent,
+    PacksAdminComponent,
+    PacksDetailsAdminComponent,
+    PacksAddAdminComponent,
+    PacksEditAdminComponent,
+    LivechatComponent,
+    PacksVisitorComponent
     ],
   imports: [
     RouterModule,
