@@ -1,0 +1,334 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">File For a loan</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-validation">
+                    <form class="needs-validation" novalidate >
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01"> Account Number
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="validationCustom01" [(ngModel)]="num" name="num"  required>
+                                        <div class="invalid-feedback">
+                                            Please enter National Security Number.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01">Amount
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="validationCustom01" [(ngModel)]="credit.amount" name="amount" placeholder="{{credit.amount}}" required>
+                                        <div class="invalid-feedback">
+                                            Please enter the amount.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom03">Credit history
+                                      <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                      <div class="basic-form">
+                                        <form>
+                                          <select class="default-select form-control form-control-sm wide" id="validationCustom03" [(ngModel)]="credit.creditHistory" name="creditHistory" required>
+                                            <option value="">Choose...</option>
+                                            <option value="0">No credits taken/all credits paid back duly</option>
+                                            <option value="1">All credits at this bank paid back duly</option>
+                                            <option value="2">Existing credits paid back duly till now</option>
+                                            <option value="3">Delay in paying off in the past</option>
+                                            <option value="4">Critical account/other credits existing (not at this bank)</option>
+                                          </select>
+                                        </form>
+                                      </div>
+                                      <div class="invalid-feedback">
+                                        Please choose your credit history.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom03">Purpose
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom03" [(ngModel)]="credit.purpose" name="purpose" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="0">Car (new)</option>
+                                                    <option value="1">Car (used)</option>
+                                                    <option value="2">Furniture/Equipment</option>
+                                                    <option value="3">Radio/Television</option>
+                                                    <option value="4">Domestic Appliances</option>
+                                                    <option value="5">Repairs</option>
+                                                    <option value="6">Education</option>
+                                                    <option value="7">Vacation</option>
+                                                    <option value="8">Retraining</option>
+                                                    <option value="9">Business</option>
+                                                    <option value="10">Others</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose the purpose of the credit.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom02">Status of Existing Checking Account
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom02" [(ngModel)]="credit.checkingAccount" name="checkingAccount" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Less than 0 DM</option>
+                                                    <option value="2">0 to 200 DM</option>
+                                                    <option value="3">More than 200 DM / salary assignments for at least 1 year</option>
+                                                    <option value="4">No checking account</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose the status of your existing checking account.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom06">Savings account/bonds
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom06" [(ngModel)]="credit.bondsStatus" name="bondsStatus" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Less than 100 DM</option>
+                                                    <option value="2">100 to 500 DM</option>
+                                                    <option value="3">500 to 1000 DM</option>
+                                                    <option value="4">More than 1000 DM</option>
+                                                    <option value="5">Unknown/No savings account</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose your savings account/bonds status.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom07">Present Employment Since
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom07" [(ngModel)]="credit.employmentYears" name="employmentYears" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Unemployed</option>
+                                                    <option value="2">Less than 1 year</option>
+                                                    <option value="3">1 to 4 years</option>
+                                                    <option value="4">4 to 7 years</option>
+                                                    <option value="5">More than 7 years</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose your employment status.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom08">Installment Rate (% of Disposable Income)
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control" id="validationCustom08" [(ngModel)]="credit.installmentRate" name="installmentRate" placeholder="{{credit.installmentRate}}" required>
+                                        <div class="invalid-feedback">
+                                            Please enter the installment rate.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom09">Personal Status and Sex<span class="text-danger">*</span></label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom09" [(ngModel)]="credit.statusAndSex" name="statusAndSex" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Male: Divorced/Separated</option>
+                                                    <option value="2">Female: Divorced/Separated/Married</option>
+                                                    <option value="3">Male: Single</option>
+                                                    <option value="4">Male: Married/Widowed</option>
+                                                    <option value="5">Female: Single</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">Please select your personal status and sex.</div>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom10">Other Debtors/Guarantors
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom10" [(ngModel)]="credit.gurantOrCoapplicant" name="gurantOrCoapplicant" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">None</option>
+                                                    <option value="2">Co-applicant</option>
+                                                    <option value="3">Guarantor</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose whether you have other debtors or guarantors.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom11">Present Residence Since
+                                      <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                      <input type="number" class="form-control form-control-sm" id="validationCustom11" [(ngModel)]="credit.residenceSince" name="residenceSince" required>
+                                      <div class="invalid-feedback">
+                                        Please enter the number of years you have been living in your current residence.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom12">Property
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom12" [(ngModel)]="credit.property" name="property" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Real Estate</option>
+                                                    <option value="2">Building Society Savings Agreement/Life Insurance</option>
+                                                    <option value="3">Car or Other</option>
+                                                    <option value="4">Unknown/No Property</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose the property status.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="age">Age
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="number" class="form-control form-control-sm" id="age" [(ngModel)]="credit.age" name="age" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your age.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                  
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="otherPlans">Other Installment Plans</label>
+                                    <div class="col-lg-6">
+                                      <div class="basic-form">
+                                        <form>
+                                          <select class="default-select form-control form-control-sm wide" id="otherPlans" [(ngModel)]="credit.otherPlans" name="otherPlans">
+                                            <option value="0">Choose...</option>
+                                            <option value="1">Bank</option>
+                                            <option value="2">Stores</option>
+                                            <option value="3">None</option>
+                                          </select>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="housing">Housing<span class="text-danger">*</span></label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="housing" [(ngModel)]="credit.housing" name="housing" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Rent</option>
+                                                    <option value="2">Own</option>
+                                                    <option value="3">For Free</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please select your housing status.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom16">Number of Existing Credits at This Bank <span class="text-danger">*</span></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control form-control-sm" type="number" min="0" id="validationCustom16" [(ngModel)]="credit.numOfExistingCredits" name="numOfExistingCredits" required>
+                                        <div class="invalid-feedback">
+                                            Please enter the number of existing credits you have at this bank.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom17">Job <span class="text-danger">*</span></label>
+                                    <div class="col-lg-6">
+                                        <div class="basic-form">
+                                            <form>
+                                                <select class="default-select form-control form-control-sm wide" id="validationCustom17" [(ngModel)]="credit.job" name="job" required>
+                                                    <option value="">Choose...</option>
+                                                    <option value="1">Unemployed/Unskilled - Non-Resident</option>
+                                                    <option value="2">Unskilled - Resident</option>
+                                                    <option value="3">Skilled Employee/Official</option>
+                                                    <option value="4">Management/Self-Employed/Highly Qualified Employee/Officer</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please choose your job type.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <div class="col-lg-8 ms-auto">
+                                        <button type="submit" (click)="onSubmit()" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
