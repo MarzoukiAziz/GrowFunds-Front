@@ -14,7 +14,7 @@ export class UserService {
 
 
   constructor(private _service:HttpClient) {
-    
+
     this.api_url = environment.apiserver;
    }
    getUserForAdmin(): Observable<User[]> {
@@ -44,6 +44,7 @@ getUserDetailsForAdmin(id: number): Observable<User> {
 }
 getCurrentUser(): Observable<User> {
   this.url = this.api_url + "/admin/currentUsers" ;
+
   return this._service.get<User>(this.url);
 }
 deleteUser(u:User){
@@ -54,7 +55,7 @@ updateUserByAdmin(user:User): Observable<User>  {
 
   this.url = this.api_url + "/admin/users/edit/" + user.id;
   return this._service.put<User>(this.url, user);
-  
+
 }
 
 }

@@ -85,6 +85,8 @@ import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin
 import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -174,6 +176,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    QRCodeModule,
     FormsModule
   ],
   providers: [authInterceptorProviders],

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Notification } from '../models/Notification';
+import {TokenStorageService} from "./token";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PrivateNotificationService {
 
   api_url!: string;
   url!: string;
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private _tok:TokenStorageService) {
     this.api_url = environment.apiserver;
   }
   //Admin
@@ -44,7 +45,8 @@ export class PrivateNotificationService {
 
   //client
   getNotifsForClient(): Observable<Notification[]> {
-    this.url = this.api_url + "/client/notifications/";
+    const cid=this._tok.getUser().id;
+    this.url = this.api_url + "/client/notifications/client/"+cid;
     return this._http.get<Notification[]>(this.url);
   }
 

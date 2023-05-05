@@ -29,14 +29,17 @@ export class LoginAdminComponent implements OnInit{
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-  
+
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        
+
         // Vérifier si l'utilisateur actuel a l'ID 5 avant de le rediriger
         const user = this.tokenStorage.getUser();
-        if (user && user.id === 71 || user && user.id === 71) {
-          this.router.navigateByUrl('/admin');
+        if (user && user.id === 5 || user && user.id === 71) {
+          this.router.navigateByUrl('/admin').then(() => {
+            window.location.reload();
+          });
+
         } else {
           // Si l'utilisateur n'a pas l'ID 71, le déconnecter et afficher un message d'erreur
           this.tokenStorage.signOut();
@@ -50,7 +53,7 @@ export class LoginAdminComponent implements OnInit{
       }
     );
   }
-  
+
   reloadPage(): void {
     window.location.reload();
   }

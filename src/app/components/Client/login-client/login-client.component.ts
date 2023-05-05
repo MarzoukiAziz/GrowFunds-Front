@@ -31,8 +31,10 @@ export class LoginClientComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        
-        this.router.navigateByUrl('/client');
+
+        this.router.navigateByUrl('/client').then(() => {
+          window.location.reload();
+        });
         //this.roles = this.tokenStorage.getUser().roles;
         //this.reloadPage();
       },

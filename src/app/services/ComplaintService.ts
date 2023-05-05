@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Complaint } from '../models/Complaint';
 import { ComplaintResponse } from '../models/ComplaintResponse';
+import {TokenStorageService} from "./token";
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { ComplaintResponse } from '../models/ComplaintResponse';
 export class ComplaintService {
     api_url!: string;
     url!: string;
-    constructor(private _http: HttpClient) {
+    constructor(private _http: HttpClient, private _tok:TokenStorageService) {
         this.api_url = environment.apiserver;
     }
     //Admin
@@ -28,7 +29,7 @@ export class ComplaintService {
 
         this.url = this.api_url + "/admin/complaints/edit/" + complaint.idComplaint;
         return this._http.put<Complaint>(this.url, complaint);
-        
+
     }
     askAIforPriority(complaint:Complaint){
         this.url=this.api_url+"/admin/complaints/priority/"+complaint.idComplaint+"/";
@@ -43,7 +44,8 @@ export class ComplaintService {
         return  this._http.get(this.url, { responseType: 'text' });
     }
     addResponse(cr:ComplaintResponse):Observable<Complaint>{
-        this.url=this.api_url+"/admin/complaints/c/"+cr.complaint.idComplaint+"/addResponse";
+      const cid=this._tok.getUser().id;
+        this.url=this.api_url+"/admin/complaints/c/"+cr.complaint.idComplaint+"/addResponse/client/"+cid;
         return  this._http.post<Complaint>(this.url, cr);
     }
     deleteResponse(cr:ComplaintResponse):Observable<Complaint>{
@@ -57,20 +59,24 @@ export class ComplaintService {
 
     //Client
     getComplaints(): Observable<Complaint[]> {
-        this.url = this.api_url + "/client/complaints";
+        const cid=this._tok.getUser().id;
+        this.url = this.api_url + "/client/complaints/client/"+cid;
         return this._http.get<Complaint[]>(this.url);
     }
     getComplaintDetails(id: number): Observable<Complaint> {
         this.url = this.api_url + "/client/complaints/c/" + id;
         return this._http.get<Complaint>(this.url);
     }
-   
+
     addResponseClient(cr:ComplaintResponse):Observable<Complaint>{
-        this.url=this.api_url+"/client/complaints/c/"+cr.complaint.idComplaint+"/addResponse";
+      const cid=this._tok.getUser().id;
+        this.url=this.api_url+"/client/complaints/c/"+cr.complaint.idComplaint+"/addResponse/client/"+cid;
         return  this._http.post<Complaint>(this.url, cr);
     }
     addComplaintClient(c:Complaint):Observable<Complaint>{
-        this.url=this.api_url+"/client/complaints/add";
+      const cid=this._tok.getUser().id;
+        this.url=this.api_url+"/client/complaints/add/client/"+cid;
+        console.log(this.url)
         return  this._http.post<Complaint>(this.url, c);
     }
 }

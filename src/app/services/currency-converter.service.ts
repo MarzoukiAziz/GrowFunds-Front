@@ -19,6 +19,7 @@ export class CurrencyConverterService {
     this.url = this.api_url + "/convert";
     console.log("Amount:", amount, "From Currency:", fromCurrency, "To Currency:", toCurrency);
     const url = `${this.url}/${amount}/${fromCurrency}/to/${toCurrency}`;
+    console.log(url)
     return this._service.get<number>(url);
   }
 }

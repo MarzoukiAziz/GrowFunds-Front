@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Packs } from '../models/Packs';
+import {TokenStorageService} from "./token";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PacksService {
 
   api_url!: string;
   url!: string;
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private _tok:TokenStorageService) {
     this.api_url = environment.apiserver;
   }
   //Admin
@@ -50,7 +51,8 @@ export class PacksService {
     return this._http.get<Packs>(this.url);
   }
   like(p:Packs): Observable<Packs> {
-    this.url = this.api_url + "/client/packs/like";
+    const cid=this._tok.getUser().id;
+    this.url = this.api_url + "/client/packs/like/"+cid;
     return this._http.put<Packs>(this.url,p);
   }
 //Visitor

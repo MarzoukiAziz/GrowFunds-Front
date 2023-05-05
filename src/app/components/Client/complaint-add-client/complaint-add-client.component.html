@@ -26,10 +26,10 @@
                             <textarea placeholder="Description" class="form-control" rows="20" id="comment" name="description"  [(ngModel)]="c.description" ></textarea>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3 row align-right">
                         <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                            <button type="submit" (click)="addComplaint()" class="btn btn-success">Submit</button>
                         </div>
                     </div>
                 </form>
