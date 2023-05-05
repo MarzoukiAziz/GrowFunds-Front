@@ -8,6 +8,7 @@ export class Packs {
     category!: string;
     price!: number;
     imgUrl!: string;
+    drCode!:String;
     product_pack!: Product[];
     likedByUsers!: User[];
 }
