@@ -1,0 +1,222 @@
+<div class="container-fluid">
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Answer Loan Proposal</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">{{user.username}}</a></li>
+        </ol>
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Client Information</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="needs-validation" novalidate >
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Username
+                    
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.username}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">National Security Number 
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.cin}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Age</label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{ credit.age }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom04">Phone Number 
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.phoneNum}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom06">Email
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom07">Profession
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.profession}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom08">Salary
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.salary}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom05">Address
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.address}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Predictions For this Proposal</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="row">
+                            <div class="col" >
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01">Prediction for this client</label>
+                                    <div class="col-lg-6">
+                                      <p class="text-primary">{{ postModel.clientClass}}</p>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01">Proposed Interest</label>
+                                    <div class="col-lg-6">
+                                      <p class="text-primary">{{ credit.interestRate}} %</p>
+                                    </div>
+                                  </div>
+
+                              </div>
+                            
+                            <div class="col" >
+                                <label class="col-lg-4 col-form-label text-danger" for="validationCustom01">Default Porbability</label>
+
+                            <div class="d-inline-block position-relative donut-chart-sale">
+                                <span class="donut3" data-peity='{ "fill": ["rgba(252, 8, 52, 1)", "rgba(255, 255, 255, 0.1"],   "innerRadius": 30, "radius": 8}'>{{postModel.defaultProba}}/100</span>
+                                <small></small>
+                                <p>{{postModel.defaultProba}} %</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                    <button style="margin-left: 1.5em;" type="button" (click)="onApprove()" class="btn btn-outline-success ">Approve</button>
+                    <button type="button" (click)="onDeny()" class="btn btn-outline-danger "><a style="color: white;" >Deny</a></button>
+                    
+                
+                </div>
+            </div>
+        </div>
+        <div *ngIf="test" class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Final Decision</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="needs-validation" novalidate >
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Amount
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="validationCustom01" [(ngModel)]="credit.amount" name="amount"  placeholder="{{credit.amount}}" required>
+                                            <div class="invalid-feedback">
+                                                Please enter the amount.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Interest <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="validationCustom02" [(ngModel)]="credit.interestRate" name="interestRate" placeholder="{{credit.interestRate}}" required>
+                                            <div class="invalid-feedback">
+                                                Please enter a number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Mensuel Payment
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="validationCustom02" [(ngModel)]="credit.paymentMounthly" name="paymentMounthly" placeholder="{{credit.paymentMounthly}}" required>
+                                            <div class="invalid-feedback">
+                                                Please enter a password.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom06"> Start
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="date" class="form-control" id="validationCustom06" [(ngModel)]="credit.dateDebut" name="dateDebut" placeholder="{{credit.dateDebut}}" required>
+                                            <div class="invalid-feedback">
+                                                Please enter a Currency.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom07">Finish
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="date" class="form-control" id="validationCustom07" [(ngModel)]="credit.dateFin" name="dateFin"  placeholder="{{credit.dateFin}}" required>
+                                            <div class="invalid-feedback">
+                                                Please enter a url.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="col-lg-8 ms-auto">
+                                            <button type="submit" (click)="addCredit()" class="btn btn-default">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+        Footer start
+    ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https:// DexignZone.com/" target="_blank"> DexignZone</a> 2022</p>
+            </div>
+        </div>
+    <!--**********************************
+        Footer end
+    ***********************************-->
+</div>

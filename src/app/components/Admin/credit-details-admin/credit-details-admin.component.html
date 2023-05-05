@@ -1,0 +1,286 @@
+<div class="container-fluid">
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Loan Details</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">{{user.username}}</a></li>
+        </ol>
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Client Information</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="needs-validation" novalidate >
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Username
+                    
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.username}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">National Security Number 
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.cin}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Age</label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{ credit.age }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom04">Phone Number 
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.phoneNum}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom06">Email
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.email}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom07">Profession
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.profession}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom08">Salary
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.salary}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom05">Address
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p class="text-primary">{{user.address}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Client History</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-validation">
+                        <form class="needs-validation" novalidate >
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Status of checking account
+                    
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.checkingAccount === 4" class="text-primary">No checking account</p>
+                                            <p *ngIf="credit.checkingAccount === 1" class="text-primary">Less than 0 Dt</p>
+                                            <p *ngIf="credit.checkingAccount === 2" class="text-primary">Between 0 and 200 Dt</p>
+                                            <p *ngIf="credit.checkingAccount === 3" class="text-primary">Greater than or equal to 200 Dt/salary assignments for at least 1 year</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Credit History</label>
+                                        <div class="col-lg-6">
+                                          <p *ngIf="credit.creditHistory === 0" class="text-primary">No credits taken / All credits paid back duly</p>
+                                          <p *ngIf="credit.creditHistory === 1" class="text-primary">All credits at this bank paid back duly</p>
+                                          <p *ngIf="credit.creditHistory === 2" class="text-primary">Existing credits paid back duly till now</p>
+                                          <p *ngIf="credit.creditHistory === 3" class="text-primary">Delay in paying off in the past</p>
+                                          <p *ngIf="credit.creditHistory === 4" class="text-primary">Critical account/other credits existing (not at this bank)</p>
+                                        </div>
+                                      </div>
+                                      <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Savings account/bonds</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.bondsStatus === 5" class="text-primary">Unknown/No savings account</p>
+                                            <p *ngIf="credit.bondsStatus === 1" class="text-primary">Less than 100 Dt</p>
+                                            <p *ngIf="credit.bondsStatus === 2" class="text-primary">Between 100 and 500 Dt</p>
+                                            <p *ngIf="credit.bondsStatus === 3" class="text-primary">Between 500 and 1000 Dt</p>
+                                            <p *ngIf="credit.bondsStatus === 4" class="text-primary">Greater than or equal to 1000 Dt</p>
+                                        </div>
+                                    </div>
+                                      <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Purpose</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.purpose === 0" class="text-primary" >Car (new)</p>
+                                            <p *ngIf="credit.purpose === 1" class="text-primary" >Car (used)</p>
+                                            <p *ngIf="credit.purpose === 2" class="text-primary" >Furniture/equipment</p>
+                                            <p *ngIf="credit.purpose === 3" class="text-primary" >Radio/television</p>
+                                            <p *ngIf="credit.purpose === 4" class="text-primary" >Domestic appliances</p>
+                                            <p *ngIf="credit.purpose === 5" class="text-primary" >Repairs</p>
+                                            <p *ngIf="credit.purpose === 6" class="text-primary" >Education</p>
+                                            <p *ngIf="credit.purpose === 7" class="text-primary" >Vacation</p>
+                                            <p *ngIf="credit.purpose === 8" class="text-primary" >Retraining</p>
+                                            <p *ngIf="credit.purpose === 9" class="text-primary">Business</p>
+                                            <p *ngIf="credit.purpose === 10" class="text-primary" >Others</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom07">Present employment since</label>
+                                        <div class="col-lg-6">
+                                          <p *ngIf="credit.employmentYears === 1" class="text-primary">Unemployed</p>
+                                          <p *ngIf="credit.employmentYears === 2" class="text-primary">Less than 1 year</p>
+                                          <p *ngIf="credit.employmentYears === 3" class="text-primary">Between 1 and 4 years</p>
+                                          <p *ngIf="credit.employmentYears === 4" class="text-primary">Between 4 and 7 years</p>
+                                          <p *ngIf="credit.employmentYears === 5" class="text-primary">Greater than or equal to 7 years</p>
+                                        </div>
+                                      </div>
+                                      <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Installment rate in percentage of disposable income</label>
+                                        <div class="col-lg-6">
+                                          <p class="text-primary">{{credit.installmentRate}}%</p>
+                                        </div>
+                                      </div>
+                                      <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Job</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.job === 1" class="text-primary">Unemployed/Unskilled - Non-Resident</p>
+                                            <p *ngIf="credit.job === 2" class="text-primary">Unskilled - Resident</p>
+                                            <p *ngIf="credit.job === 3" class="text-primary">Skilled Employee/Official</p>
+                                            <p *ngIf="credit.job === 4" class="text-primary">Management/Self-Employed/Highly Qualified Employee/Officer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Personal status and sex</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.statusAndSex === 1" class="text-primary">Male : Divorced/Separated</p>
+                                            <p *ngIf="credit.statusAndSex === 2" class="text-primary">Female : Divorced/Separated/Married</p>
+                                            <p *ngIf="credit.statusAndSex === 3" class="text-primary">Male : Single</p>
+                                            <p *ngIf="credit.statusAndSex === 4" class="text-primary">Male : Married/Widowed</p>
+                                            <p *ngIf="credit.statusAndSex === 5" class="text-primary">Female : Single</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Other debtors/guarantors</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.gurantOrCoapplicant === 1" class="text-primary">None</p>
+                                            <p *ngIf="credit.gurantOrCoapplicant === 2" class="text-primary">Co-applicant</p>
+                                            <p *ngIf="credit.gurantOrCoapplicant === 3" class="text-primary">Guarantor</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Present residence since</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.residenceSince === 1" class="text-primary">Less than 1 year</p>
+                                            <p *ngIf="credit.residenceSince === 2" class="text-primary">Between 1 and 4 years</p>
+                                            <p *ngIf="credit.residenceSince === 3" class="text-primary">Between 4 and 7 years</p>
+                                            <p *ngIf="credit.residenceSince === 4" class="text-primary">More than 7 years</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Property</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.property === 1" class="text-primary">Real estate</p>
+                                            <p *ngIf="credit.property === 2" class="text-primary">Building society savings agreement/life insurance</p>
+                                            <p *ngIf="credit.property === 3" class="text-primary">Car or other, not in attribute 6</p>
+                                            <p *ngIf="credit.property === 4" class="text-primary">Unknown / no property</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Other installment plans</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.otherPlans === 1" class="text-primary">Bank</p>
+                                            <p *ngIf="credit.otherPlans === 2" class="text-primary">Stores</p>
+                                            <p *ngIf="credit.otherPlans === 3" class="text-primary">None</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Housing</label>
+                                        <div class="col-lg-6">
+                                            <p *ngIf="credit.housing === 1" class="text-primary">Rent</p>
+                                            <p *ngIf="credit.housing === 2" class="text-primary">Own</p>
+                                            <p *ngIf="credit.housing === 3" class="text-primary">For free</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label" for="validationCustom01">Number of existing credits at this bank</label>
+                                        <div class="col-lg-6">
+                                          <p class="text-primary">{{ credit.numOfExistingCredits }}</p>
+                                        </div>
+                                      </div>
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Predictions For this Proposal</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <div class="row">
+                            <div class="col" >
+                                <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01">Prediction for this client</label>
+                                    <div class="col-lg-6">
+                                      <p class="text-primary">{{ postModel.clientClass}}</p>
+                                    </div>
+                                  </div>
+                                  <div class="mb-3 row">
+                                    <label class="col-lg-4 col-form-label" for="validationCustom01">Proposed Interest</label>
+                                    <div class="col-lg-6">
+                                      <p class="text-primary">{{ credit.interestRate}} %</p>
+                                    </div>
+                                  </div>
+
+                              </div>
+                            
+                            <div class="col" >
+                                <label class="col-lg-4 col-form-label text-danger" for="validationCustom01">Default Porbability</label>
+
+                            <div class="d-inline-block position-relative donut-chart-sale">
+                                <span class="donut3" data-peity='{ "fill": ["rgba(252, 8, 52, 1)", "rgba(255, 255, 255, 0.1"],   "innerRadius": 30, "radius": 8}'>{{postModel.defaultProba}}/100</span>
+                                <small></small>
+                                <p>{{postModel.defaultProba}} %</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+        Footer start
+    ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https:// DexignZone.com/" target="_blank"> DexignZone</a> 2022</p>
+            </div>
+        </div>
+    <!--**********************************
+        Footer end
+    ***********************************-->
+</div>

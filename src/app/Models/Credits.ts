@@ -10,11 +10,11 @@ export class Credits {
   amount!: number;
   dateDebut!: Date;
   dateFin!: Date;
-  paymentMounthly!: number;
+  paymentMounthly!: Number;
   interestRate!: number;
-  status!: string;
+  status!: String;
   typeCredit!: TypeCredit;
-  Judgment!: string;
+  judgment!: string;
   checkingAccount!: number;
   Duration!: number;
   creditHistory!: number;

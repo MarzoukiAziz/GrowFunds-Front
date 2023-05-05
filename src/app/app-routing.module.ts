@@ -83,6 +83,13 @@ import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin
 import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
 import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
 import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
+import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
+import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
+import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
+import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
+import { CreditClientComponent } from './components/Client/credit-client/credit-client.component';
+import { PaymentHistoryClientComponent } from './components/Client/payment-history-client/payment-history-client.component';
+import { CreditAddClientComponent } from './components/Client/credit-add-client/credit-add-client.component';
 
 const routes: Routes = [
   {
@@ -98,7 +105,21 @@ const routes: Routes = [
         component:DashboardAdminComponent
       },
       {
-        path:"projects",
+        path:"credits",
+        component:CreditAdminComponent
+      },
+      {
+        path:"paymentHistory/:id",
+        component:PaymentHistoryAdminComponent
+      },
+      {
+        path:"answerProposal/:id",
+        component:AnswerProposalAdminComponent
+      },
+      {
+        path:"creditDetails/:id",
+        component:CreditDetailsAdminComponent},
+        {path:"projects",
         component:ProjectsAdminComponent
       },
       {
@@ -223,6 +244,18 @@ const routes: Routes = [
       {
         path:"dashboard",
         component:DashboardClientComponent
+      },
+      {
+        path:"creditsClient",
+        component:CreditClientComponent
+      },
+      {
+        path:"creditsAddClient",
+        component:CreditAddClientComponent
+      },
+      {
+        path:"paymentHistoryClient/:id",
+        component:PaymentHistoryClientComponent
       },
       {
         path:"investments",

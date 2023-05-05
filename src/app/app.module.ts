@@ -59,6 +59,12 @@ import { TransactionApproveComponent } from './components/Client/transaction-app
 import { TransactionDetailsAdminComponent } from './components/Admin/transaction-details-admin/transaction-details-admin.component';
 import { StatClientComponent } from './components/Client/stat-client/stat-client.component';
 import { StatAdminComponent } from './components/Admin/stat-admin/stat-admin.component';
+import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
+import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
+import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
+import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
+import { CreditClientComponent } from './components/Client/credit-client/credit-client.component';
+import { PaymentHistoryClientComponent } from './components/Client/payment-history-client/payment-history-client.component';
 import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { RouterModule } from '@angular/router';
@@ -88,16 +94,6 @@ import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs
 import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
 import { LivechatComponent } from './components/Client/livechat/livechat.component';
 import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
-import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
-import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
-import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
-import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
-import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
-import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
-import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
-import { authInterceptorProviders } from './helpers/auth.interceptor';
-
-import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -160,6 +156,13 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 
     ComplaintAddClientComponent,
+    CreditAdminComponent,
+    CreditDetailsAdminComponent,
+    AnswerProposalAdminComponent,
+    PaymentHistoryAdminComponent,
+    CreditClientComponent,
+    PaymentHistoryClientComponent,
+    
     PublicNotificationAdminComponent,
     PublicNotificationsClientComponent,
     NotificationAdminComponent,
@@ -187,16 +190,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     PacksAddAdminComponent,
     PacksEditAdminComponent,
     LivechatComponent,
-    PacksVisitorComponent,
-
-
-    UserDetailsAdminComponent,
-    UpdateUserAdminComponent,
-    UsersClientsAdminComponent,
-    UsersAgentsAdminComponent,
-    UsersAdminsAdminComponent,
-    UserAdminComponent,
-    CurrencyConverterClientComponent
+    PacksVisitorComponent
     ],
   imports: [
     RouterModule,

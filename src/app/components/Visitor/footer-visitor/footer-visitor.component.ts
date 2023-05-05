@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer-visitor.component.css']
 })
 export class FooterVisitorComponent {
+  test!:boolean;
+  ngOnInit(): void {
+    this.test = false;}
+  showMap(){
+    this.test=true;
+  }
 
 }
