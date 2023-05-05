@@ -116,7 +116,7 @@
                                 <td>{{c.idComplaint}}</td>
                                 <td>{{c.user.username}}</td>
                                 <td>{{c.objet}}</td>
-                                <td>{{c.dateComplaint}}</td>
+                                <td>{{c.dateComplaint | date: 'EEE d MMMM y - HH:mm'}}</td>
                                 <td>
                                     <span *ngIf="c.priorityLevel.toString()=='LOW'" class="badge badge-info">LOW</span>
                                     <span *ngIf="c.priorityLevel.toString()=='MEDIUM'" class="badge badge-warning">MEDUIM</span>

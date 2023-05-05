@@ -53,6 +53,20 @@ import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal
 import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
 import { CreditClientComponent } from './components/Client/credit-client/credit-client.component';
 import { PaymentHistoryClientComponent } from './components/Client/payment-history-client/payment-history-client.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
+import { RouterModule } from '@angular/router';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
+import { ProjectsClientComponent } from './components/Client/projects-client/projects-client.component';
+import { ProjectDetailsClientComponent } from './components/Client/project-details-client/project-details-client.component';
+import { ProjectAddClientComponent } from './components/Client/project-add-client/project-add-client.component';
+import { ProjectsAdminComponent } from './components/Admin/projects-admin/projects-admin.component';
+import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
+import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
+import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
 
 @NgModule({
   declarations: [
@@ -107,8 +121,22 @@ import { PaymentHistoryClientComponent } from './components/Client/payment-histo
     CreditClientComponent,
     PaymentHistoryClientComponent,
     
+    PublicNotificationAdminComponent,
+    PublicNotificationsClientComponent,
+    NotificationAdminComponent,
+    NotificationPickUserComponent,
+    NotificationsClientComponent,
+    RetairementPlanVisitorComponent,
+    ProjectsClientComponent,
+    ProjectDetailsClientComponent,
+    ProjectAddClientComponent,
+    ProjectsAdminComponent,
+    ProjectDetailsAdminComponent,
+    InvestmenetsClientsComponent,
+    InvestementDetailsClientComponent
     ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

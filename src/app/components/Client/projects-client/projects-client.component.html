@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Projects</h4>
+                <div class="float-right">
+                    <a href="/client/projects/add"><button type="button" class="btn btn-rounded btn-success"><span
+                                class="btn-icon-start text-success"><i class="fa fa-plus color-success"></i>
+                            </span>Add</button></a>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example5" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Budget</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of projects">
+
+                                <td>{{c.name}}</td>
+                                <td>{{c.category}}</td>
+                                <td>{{c.budget| number:'1.0-3'}}</td>
+                                <td>
+
+                                    <span *ngIf="c.status.toString()=='NOT_STARTED'"
+                                        class="badge light badge-primary">NOT_STARTED</span>
+                                    <span *ngIf="c.status.toString()=='APPROVED'"
+                                        class="badge light badge-success">APPROVED</span>
+                                    <span *ngIf="c.status.toString()=='REJECTED'"
+                                        class="badge light badge-danger">REJECTED</span>
+
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-square btn-outline-success"><a
+                                            style="color: white;"
+                                            href="/client/projects/p/{{c.idProject}}">Check</a></button>
+
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

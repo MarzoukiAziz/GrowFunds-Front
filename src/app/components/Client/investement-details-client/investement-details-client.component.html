@@ -1,0 +1,204 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/investments">Investements</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)"> Project : {{project.name}}</a></li>
+    </ol>
+</div>
+
+
+<div class="row">
+
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-primary text-primary">
+                        <img src="/assets/client/icons/flaticon/budget.png" height="50px" width="50px"
+                            style="color :white">
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">Budget</p>
+                        <h4 class="mb-0">{{project.budget | number:'1.0-3'}} Dt</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body  p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-danger text-danger">
+                        <svg id="icon-revenue" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">My Investement</p>
+                        <h4 class="mb-0">{{myInves | number:'1.0-3'}} Dt</h4>
+                        <span class="badge badge-success">about  {{myInves/project.budget*100}} %</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-warning text-warning">
+                        <img src="/assets/client/icons/flaticon/revenue.png" height="50px" width="50px"
+                        style="color :white">
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">Total Investment Amount</p>
+                        <h4 class="mb-0">{{investementsAmount | number:'1.0-3'}} Dt</h4>
+                        <span class="badge badge-danger">with total of {{project.investisments.length}} investments </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+        <div class="widget-stat card">
+            <div class="card-body  p-4">
+                <div class="media ai-icon">
+                    <span class="me-3 bgl-danger text-danger">
+                        <img src="/assets/client/icons/flaticon/earning.png" height="50px" width="50px"
+                            style="color :white">
+                    </span>
+                    <div class="media-body">
+                        <p class="mb-1">Revenue</p>
+                        <h4 class="mb-0">{{revenuesTotal | number:'1.0-3'}} Dt</h4>
+                        <span class="badge badge-success">with {{project.revenues.length}} declarations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="row">
+    <div class="col-xl-4">
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Category : <span class="text-success">{{project.category}}</span>
+                            </h4>
+<br><br>
+<h4 class="d-inline">Founder : <span class="text-success">{{project.founder.username}}</span>
+</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="profile-interest">
+                            <h4 class="d-inline">Add Investement : </h4><br><br>
+
+
+                            <div class="col-lg-12">
+                                <form method="post">
+                                    
+                                    <label>Amount</label>
+
+                                    <div class="mb-3">
+                                        <textarea type="text" rows="8" class="form-control" name="message"
+                                            placeholder="ex: 4000 dt" id="comment" [(ngModel)]="r.amount"></textarea>
+
+                                    </div>
+                                    <div style="display: grid;margin-top: 25px;">
+
+                                        <button (click)="createInvestement();" type="button" class=" btn btn-outline-success">  Add
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        
+    </div>
+    <div class="col-xl-8">
+       
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Revenues</h4>
+               
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example6" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+
+                                <th>Date</th>
+                                <th>Revenue</th>
+                                <th>My Revenue Before Bank Fees</th>
+                                <th>Fees</th>
+                                <th>My Net Revenue</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of project.revenues ;let index=index">
+                                <td>{{c.dateDeclaration | date: 'y/M/d'}}</td>
+                                <td>{{c.revenue| number:'1.0-3'}}</td>
+                                <td>{{myRevenue[index]| number:'1.0-3'}}</td>
+                                <td class="text-danger">- {{myRevenue[index]*0.05| number:'1.0-3'}}</td>
+                                <td class="text-success">{{myRevenue[index]*0.95| number:'1.0-3'}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">My Investments</h4>
+               
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example7" class="display" style="min-width: 845px">
+                        <thead>
+                            <tr>
+
+                                <th>Date</th>
+                                <th>amount</th>
+                                
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of myInvestements">
+
+                                <td>{{c.dateInvest | date: 'EEE d MMMM y '}}</td>
+                                <td>{{c.amount| number:'1.0-3'}}</td>
+                                
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

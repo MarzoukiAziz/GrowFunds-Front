@@ -1,0 +1,45 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/projects">Projects</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+</div>
+
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">New Project</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input   type="text" class="form-control" placeholder="Name" [(ngModel)]="c.name" name="name">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Category</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Category" [(ngModel)]="c.category" name="category">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Budget</label>
+                        <div class="col-sm-9">
+                            <input  type="text" class="form-control" placeholder="Budget" [(ngModel)]="c.budget" name="budget">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 row align-right">
+                        <div class="col-sm-10">
+                            <button (click)="addProject();" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

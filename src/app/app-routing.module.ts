@@ -5,13 +5,25 @@ import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/co
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
+import { NotificationAdminComponent } from './components/Admin/notification-admin/notification-admin.component';
+import { NotificationPickUserComponent } from './components/Admin/notification-pick-user/notification-pick-user.component';
+import { ProjectDetailsAdminComponent } from './components/Admin/project-details-admin/project-details-admin.component';
+import { ProjectsAdminComponent } from './components/Admin/projects-admin/projects-admin.component';
+import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { TemplateAdminComponent } from './components/Admin/template-admin/template-admin.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { DashboardClientComponent } from './components/Client/dashboard-client/dashboard-client.component';
 import { ForgetPasswordClientComponent } from './components/Client/forget-password-client/forget-password-client.component';
+import { InvestementDetailsClientComponent } from './components/Client/investement-details-client/investement-details-client.component';
+import { InvestmenetsClientsComponent } from './components/Client/investmenets-clients/investmenets-clients.component';
 import { LoginClientComponent } from './components/Client/login-client/login-client.component';
+import { NotificationsClientComponent } from './components/Client/notifications-client/notifications-client.component';
+import { ProjectAddClientComponent } from './components/Client/project-add-client/project-add-client.component';
+import { ProjectDetailsClientComponent } from './components/Client/project-details-client/project-details-client.component';
+import { ProjectsClientComponent } from './components/Client/projects-client/projects-client.component';
+import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { SignupClientComponent } from './components/Client/signup-client/signup-client.component';
 import { TemplateClientComponent } from './components/Client/template-client/template-client.component';
 import { AboutVisitorComponent } from './components/Visitor/about-visitor/about-visitor.component';
@@ -32,6 +44,7 @@ import { LoanPersonalVisitorComponent } from './components/Visitor/loan-personal
 import { LoanProductVisitorComponent } from './components/Visitor/loan-product-visitor/loan-product-visitor.component';
 import { LoanVehiculeVisitorComponent } from './components/Visitor/loan-vehicule-visitor/loan-vehicule-visitor.component';
 import { NotfoundComponent } from './components/Visitor/notfound/notfound.component';
+import { RetairementPlanVisitorComponent } from './components/Visitor/retairement-plan-visitor/retairement-plan-visitor.component';
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
@@ -47,6 +60,10 @@ const routes: Routes = [
     path: 'admin',
     component: TemplateAdminComponent,
     children:[
+      {
+        path:"",
+        component:DashboardAdminComponent
+      },
       {
         path:"dashboard",
         component:DashboardAdminComponent
@@ -65,7 +82,13 @@ const routes: Routes = [
       },
       {
         path:"creditDetails/:id",
-        component:CreditDetailsAdminComponent
+        component:CreditDetailsAdminComponent},
+        {path:"projects",
+        component:ProjectsAdminComponent
+      },
+      {
+        path:"projects/p/:id",
+        component:ProjectDetailsAdminComponent
       },
       {
         path:"complaints",
@@ -76,7 +99,18 @@ const routes: Routes = [
         component:ComplaintDetailsAdminComponent
       },
   
-  
+      {
+        path:"public-notifications",
+        component:PublicNotificationAdminComponent
+      },
+      {
+        path:"notifications-pick-user",
+        component:NotificationPickUserComponent
+      },
+      {
+        path:"private-notification/:id",
+        component:NotificationAdminComponent
+      },
       {
         path:"**",
         component:NotfoundAdminComponent
@@ -87,6 +121,10 @@ const routes: Routes = [
     path: 'client',
     component: TemplateClientComponent,
     children:[
+      {
+        path:"",
+        component:DashboardClientComponent
+      },
       {
         path:"dashboard",
         component:DashboardClientComponent
@@ -100,6 +138,27 @@ const routes: Routes = [
         component:PaymentHistoryClientComponent
       },
       {
+        path:"investments",
+        component:InvestmenetsClientsComponent
+      },
+      {
+        path:"investments/p/:id",
+        component:InvestementDetailsClientComponent
+      },
+      {
+        path:"projects",
+        component:ProjectsClientComponent
+      },
+      {
+        path:"projects/p/:id",
+        component:ProjectDetailsClientComponent
+      },
+      {
+        path:"projects/add",
+        component:ProjectAddClientComponent
+      },
+    
+      {
         path:"complaints",
         component:ComplaintsClientComponent
       },
@@ -110,6 +169,14 @@ const routes: Routes = [
       {
         path:"complaints/c/:id",
         component:ComplaintDetailsClientComponent
+      },
+      {
+        path:"public-notif",
+        component:PublicNotificationsClientComponent
+      },
+      {
+        path:"notifications",
+        component:NotificationsClientComponent
       },
       {
         path:"**",
@@ -209,6 +276,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactVisitorComponent
+      },
+      {
+        path: 'retirement-plan',
+        component: RetairementPlanVisitorComponent
       },
 
       {
