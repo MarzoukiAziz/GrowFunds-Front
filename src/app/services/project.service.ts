@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Projects } from '../models/Projects';
 import { Revenue } from '../models/Revenue';
+import {TokenStorageService} from "./token";
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,15 @@ export class ProjectService {
 
   api_url!: string;
   url!: string;
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private _tok:TokenStorageService) {
     this.api_url = environment.apiserver;
   }
 
   //client
   getProjectsForClient(): Observable<Projects[]> {
-    this.url = this.api_url + "/client/projects";
+    const cid=this._tok.getUser().id;
+
+    this.url = this.api_url + "/client/projects/client/"+cid;
     return this._http.get<Projects[]>(this.url);
   }
   getAllForClient(): Observable<Projects[]> {
@@ -35,7 +38,8 @@ export class ProjectService {
   }
 
   addProject(p:Projects){
-    this.url = this.api_url + "/client/project/add";
+    const cid=this._tok.getUser().id;
+    this.url = this.api_url + "/client/project/add/client/"+cid;
     return this._http.post<Projects>(this.url,p);
   }
   //admin

@@ -5,6 +5,7 @@ import { Investisment } from 'src/app/models/Investisment';
 import { Projects } from 'src/app/models/Projects';
 import { InvestmentService } from 'src/app/services/investment.service';
 import { ProjectService } from 'src/app/services/project.service';
+import {TokenStorageService} from "../../../services/token";
 
 @Component({
   selector: 'app-investement-details-client',
@@ -22,15 +23,15 @@ export class InvestementDetailsClientComponent {
   myRevenue:number[]=[]
   r:Investisment=new  Investisment();
 
-  constructor(private _service: ProjectService,private _iservice : InvestmentService, private route: ActivatedRoute) {}
+  constructor(private _service: ProjectService,private _iservice : InvestmentService, private route: ActivatedRoute,private _tok:TokenStorageService) {}
   ngOnInit(): void {
     this.projctid = this.route.snapshot.params['id'];
     this._service.getProjectForClient(this.projctid).subscribe(res => {
       this.project = res;
-      //to be changed later
-      this.myInvestements=this.project.investisments.filter(x=>x.investor.id==2)
+      const cid=this._tok.getUser().id;
+      this.myInvestements=this.project.investisments.filter(x=>x.investor.id==cid)
       this.investementsAmount=  this.project.investisments.reduce((acc, investment) => acc + investment.amount, 0);
-      this.myInves= this.project.investisments.filter(x=>x.investor.id==2).reduce((acc, investment) => acc + investment.amount, 0);
+      this.myInves= this.project.investisments.filter(x=>x.investor.id==cid).reduce((acc, investment) => acc + investment.amount, 0);
       this.revenuesTotal =this.project.revenues.reduce((acc, revenue) => acc + revenue.revenue, 0);
       this.calculateMyRevenue()
 
@@ -40,11 +41,12 @@ export class InvestementDetailsClientComponent {
     console.log(this.r)
     this._iservice.addInvest(this.r,this.projctid).subscribe(res=>{
       this.project = res;
-      //to be changed later
-      this.myInvestements=this.project.investisments.filter(x=>x.investor.id==2)
+      const cid=this._tok.getUser().id;
+
+      this.myInvestements=this.project.investisments.filter(x=>x.investor.id==cid)
       this.investementsAmount=  this.project.investisments.reduce((acc, investment) => acc + investment.amount, 0);
       this.myInves= this.project.investisments
-                .filter(x=>x.investor.id==2)
+                .filter(x=>x.investor.id==cid)
                 .reduce((acc, investment) => acc + investment.amount, 0);
       this.revenuesTotal =this.project.revenues
           .reduce((acc, revenue) => acc + revenue.revenue, 0);
