@@ -76,6 +76,14 @@ import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs
 import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
 import { LivechatComponent } from './components/Client/livechat/livechat.component';
 import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
+import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
+import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
+import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
+import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
+import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
+import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
+import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -87,7 +95,7 @@ import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-
     TestComponent,
     NotfoundComponent,
     AboutVisitorComponent,
-    AccountCurrentVisitorComponent,    
+    AccountCurrentVisitorComponent,
     AccountSavingsVisitorComponent,
     AccountsVisitorComponent,
     CardsVisitorComponent,
@@ -150,7 +158,16 @@ import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-
     PacksAddAdminComponent,
     PacksEditAdminComponent,
     LivechatComponent,
-    PacksVisitorComponent
+    PacksVisitorComponent,
+
+
+    UserDetailsAdminComponent,
+    UpdateUserAdminComponent,
+    UsersClientsAdminComponent,
+    UsersAgentsAdminComponent,
+    UsersAdminsAdminComponent,
+    UserAdminComponent,
+    CurrencyConverterClientComponent
     ],
   imports: [
     RouterModule,
@@ -159,7 +176,7 @@ import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Complaint } from 'src/app/models/Complaint';
-import { ComplaintResponse } from 'src/app/models/ComplaintResponse';
-import { TypeComplaintStatus } from 'src/app/models/TypeComplaintStatus';
-import { TypePriorityLevel } from 'src/app/models/TypePriorityLevel';
-import { ComplaintService } from 'src/app/services/ComplaintService';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Complaint } from "src/app/models/Complaint";
+import { ComplaintResponse } from "src/app/models/ComplaintResponse";
+import { TypeComplaintStatus } from "src/app/models/TypeComplaintStatus";
+import { TypePriorityLevel } from "src/app/models/TypePriorityLevel";
+import { ComplaintService } from "src/app/services/ComplaintService";
 
 
 @Component({

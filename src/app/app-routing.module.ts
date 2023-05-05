@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { DashboardAdminComponent } from './components/Admin/dashboard-admin/dashboard-admin.component';
@@ -63,6 +64,13 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
+import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
+import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
+import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
+import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
+import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
+import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 
 const routes: Routes = [
   {
@@ -114,7 +122,7 @@ const routes: Routes = [
         component:PacksDetailsAdminComponent
       },
 
-      
+
       {
         path:"packs/:id/edit",
         component:PacksEditAdminComponent
@@ -124,10 +132,26 @@ const routes: Routes = [
         component:ComplaintsAdminComponent
       },
       {
+        path:"users",
+        component:UserAdminComponent
+      },
+      {
+        path:"users/clients",
+        component:UsersClientsAdminComponent
+      },
+      {
+        path:"users/agents",
+        component:UsersAgentsAdminComponent
+      },
+      {
+        path:"users/admins",
+        component:UsersAdminsAdminComponent
+      },
+      {
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
-  
+
       {
         path:"public-notifications",
         component:PublicNotificationAdminComponent
@@ -186,7 +210,7 @@ const routes: Routes = [
         path:"products",
         component:ProductsClientComponent
       },
-     
+
       {
         path:"product/:id",
         component:ProductDetailsClientComponent
@@ -196,8 +220,8 @@ const routes: Routes = [
         path:"packs",
         component:PacksClientComponent
       },
-    
-     
+
+
       {
         path:"packs/:id",
         component:PacksDetailsClientComponent
@@ -221,6 +245,22 @@ const routes: Routes = [
       {
         path:"notifications",
         component:NotificationsClientComponent
+      },
+      {
+        path:"currency-converter",
+        component:CurrencyConverterClientComponent
+      },
+      {
+        path:"complaints",
+        component:ComplaintsClientComponent
+      },
+      {
+        path:"complaints/add",
+        component:ComplaintAddClientComponent
+      },
+      {
+        path:"complaints/c/:id",
+        component:ComplaintDetailsClientComponent
       },
       {
         path:"**",

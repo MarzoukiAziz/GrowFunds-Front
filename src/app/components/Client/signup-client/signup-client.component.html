@@ -83,23 +83,101 @@
                                         </a>
                                     </div>
                                     <h4 class="text-center mb-4">Sign up your account</h4>
-                                    <form action="index.html">
+                                    <form action="index.html"  *ngIf="!isSuccessful"
+                                    name="form"
+                                    (ngSubmit)="f.form.valid && onSubmit()"
+                                    #f="ngForm"
+                                    novalidate>
+                                       
                                         <div class="mb-3">
-                                            <label class="mb-1"><strong>Username</strong></label>
-                                            <input type="text" class="form-control" placeholder="username">
+                                              
+                                            <label class="mb-1"><strong>Username</strong><span class="text-danger">  *</span></label>
+                                            <input type="text" class="form-control" placeholder="username"type="text"
+                                            class="form-control"
+                                            name="username"
+                                            [(ngModel)]="form.username"
+                                            required
+                                            minlength="3"
+                                            maxlength="20"
+                                            #username="ngModel">
+                                            <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+                                                <div *ngIf="username.errors && username.errors['required']">Username is required</div>
+                                                <div *ngIf="username.errors  && username.errors['minlength']">
+                                                  Username must be at least 3 characters
+                                                </div>
+                                                <div *ngIf="username.errors && username.errors['maxlength']">
+                                                  Username must be at most 20 characters
+                                                </div>
+                                              </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" placeholder="hello@example.com">
+                                            <label class="mb-1"><strong>Email</strong><span class="text-danger">  *</span></label>
+                                            <input type="email" class="form-control" placeholder="hello@example.com"
+                                            type="email"
+                                            class="form-control"
+                                            name="email"
+                                            [(ngModel)]="form.email"
+                                            required
+                                            email
+                                            #email="ngModel">
+                                            <div class="alert-danger" *ngIf="f.submitted && email.invalid">
+                                                <div *ngIf="email.errors && email.errors['required']">Email is required</div>
+                                                <div *ngIf="email.errors && email.errors['email']">
+                                                  Email must be a valid email address
+                                                </div>
+                                              </div>
+                                            
+                                            
                                         </div>
                                         <div class="mb-3">
-                                            <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" value="Password">
+                                            <label class="mb-1"><strong>Cin</strong><span class="text-danger">  *</span></label>
+                                            <input type="cin" class="form-control" placeholder="12345678"
+                                            name="cin"
+                                            [(ngModel)]="form.cin"
+                                            required
+                                            #cin="ngModel">
+                                            <div class="alert-danger" *ngIf="f.submitted && cin.invalid">
+                                                <div *ngIf="cin.errors && cin.errors['required']">Cin is required</div>
+                                                </div>
                                         </div>
+                                        
+                                        
+                                        <div class="mb-3">
+                                            <label class="mb-1"><strong>Birthday Date</strong></label>
+                                            <input type="text" class="form-control" placeholder="2017-06-04" id="mdate" data-dtp="dtp_3pggY">
+                                            
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="mb-1"><strong>Password</strong><span class="text-danger">  *</span></label>
+                                            <input type="password" class="form-control" value="Password"
+                                            type="password"
+                                            class="form-control"
+                                            name="password"
+                                            [(ngModel)]="form.password"
+                                            required
+                                            minlength="6"
+                                            #password="ngModel"
+                                            >
+                                            <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+                                                <div *ngIf="password.errors && password.errors['required']">Password is required</div>
+                                                <div *ngIf="password.errors && password.errors['minlength']">
+                                                  Password must be at least 6 characters
+                                                </div>
+                                              </div>
+                                        </div>
+                                        
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-primary btn-block">Sign me up</button>
                                         </div>
+                                        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                                            Signup failed!<br />{{ errorMessage }}
+                                          </div>
+                                          <div class="alert alert-success" *ngIf="isSuccessful">
+                                            Your registration is successful!
+                                          </div>
                                     </form>
+                                    
                                     <div class="new-account mt-3">
                                         <p class="text-white">Already have an account? <a class="text-primary"
                                                 href="/login">Sign in</a></p>
@@ -112,4 +190,6 @@
             </div>
         </div>
     </div>
+    
 </div>
+
