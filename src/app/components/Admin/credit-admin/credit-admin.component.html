@@ -22,10 +22,10 @@
                                             <tr *ngFor="let c of credit">
                                                 <td>{{c.idCredit}}</td>
                                                 <td>{{c.account.accountNum}}</td>
-                                                <td>{{c.amount}}</td>
-                                                <td>{{c.interestRate}}%</td>
-                                                <td>{{c.paymentMounthly}}</td>
-                                                <td>{{c.typeCredit}}</td>
+                                                <td>{{ c.amount ? c.amount : '--' }}</td>
+                                                <td>{{ c.interestRate ? c.interestRate + '%' : '--' }}</td>
+                                                <td>{{ c.paymentMounthly ? c.paymentMounthly : '--' }}</td>
+                                                <td>{{ c.typeCredit ? c.typeCredit : '--' }}</td>
                                                 <td><span class="badge" [ngClass]="{'badge-primary light': c.status=='PENDING','badge-success':c.status=='ACTIVE','badge-danger':c.status=='DENIED'}">{{c.status}}</span>
                                                 </td>
                                                 <td>

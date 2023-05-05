@@ -11,6 +11,7 @@ import { CreditService } from 'src/app/services/credit.service';
 export class PaymentHistoryAdminComponent {
   idCredit!: number;
   monthlyPayments!: MonthlyPayment[];
+  lateDays!: Number;
   constructor(private router: Router, private _service: CreditService, private route: ActivatedRoute) {
   }
 
@@ -21,4 +22,9 @@ export class PaymentHistoryAdminComponent {
       this.monthlyPayments = res;
 
     });
-}}
+    this._service.getLateDays(this.idCredit).subscribe(res => {
+      this.lateDays = res;
+
+    });
+}
+}

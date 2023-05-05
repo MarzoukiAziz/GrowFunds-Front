@@ -47,6 +47,10 @@ getMensuelPayment(id: Number):Observable<Number>{
   this.url = this.api_url + "/admin/mensuelPayment/"+id;
   return this._service.get<Number>(this.url);
 }
+getLateDays(id: Number):Observable<Number>{
+  this.url = this.api_url + "/getLateDays/"+id;
+  return this._service.get<Number>(this.url);
+}
 assignCreditToAccount(id: Number,num: Number):Observable<Account>{
   this.url = this.api_url + "/assignCreditToAccount/"+id+"/"+num;
   return this._service.get<Account>(this.url);
