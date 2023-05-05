@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import * as moment from 'src/assets/client/vendor/bootstrap-datetimepicker/js/moment';
 import { environment } from 'src/environments/environment';
 import { PublicNotification } from '../models/PublicNotification';
+import {TokenStorageService} from "./token";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PublicNotificationService {
 
   api_url!: string;
   url!: string;
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private _tok:TokenStorageService) {
     this.api_url = environment.apiserver;
   }
   //Admin
@@ -37,7 +38,8 @@ export class PublicNotificationService {
 
   //client
   getPublicNotifForClient(): Observable<PublicNotification[]> {
-    this.url = this.api_url + "/client/publicnotif";
+    const cid=this._tok.getUser().id;
+    this.url = this.api_url + "/client/publicnotif/client/"+cid;
     return this._http.get<PublicNotification[]>(this.url);
   }
 }

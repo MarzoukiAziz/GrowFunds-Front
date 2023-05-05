@@ -1,3 +1,16 @@
+import { StatAdminComponent } from './components/Admin/stat-admin/stat-admin.component';
+import { StatClientComponent } from './components/Client/stat-client/stat-client.component';
+import { TransactionDetailsAdminComponent } from './components/Admin/transaction-details-admin/transaction-details-admin.component';
+
+import { TransactionApproveComponent } from './components/Client/transaction-approve/transaction-approve.component';
+import { TransactionAddClientComponent } from './components/Client/transaction-add-client/transaction-add-client.component';
+import { TransactionClientComponent } from './components/Client/transaction-client/transaction-client.component';
+import { AccountAddAdminComponent } from './components/Admin/account-add-admin/account-add-admin.component';
+import { AccountDetailsClientComponent } from './components/Client/account-details-client/account-details-client.component';
+import { AccountDetailsAdminComponent } from './components/Admin/account-details-admin/account-details-admin.component';
+import { AccountClientComponent } from './components/Client/account-client/account-client.component';
+import { TransactionsAdminComponent } from './components/Admin/transactions-admin/transactions-admin.component';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
@@ -63,6 +76,13 @@ import { RetairementPlanVisitorComponent } from './components/Visitor/retairemen
 import { TeamVisitorComponent } from './components/Visitor/team-visitor/team-visitor.component';
 import { TemplateVisitorComponent } from './components/Visitor/template-visitor/template-visitor.component';
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
+import { UserDetailsAdminComponent } from './components/Admin/user-details-admin/user-details-admin.component';
+import { UpdateUserAdminComponent } from './components/Admin/update-user-admin/update-user-admin.component';
+import { UsersClientsAdminComponent } from './components/Admin/users-clients-admin/users-clients-admin.component';
+import { UsersAgentsAdminComponent } from './components/Admin/users-agents-admin/users-agents-admin.component';
+import { UsersAdminsAdminComponent } from './components/Admin/users-admins-admin/users-admins-admin.component';
+import { UserAdminComponent } from './components/Admin/user-admin/user-admin.component';
+import { CurrencyConverterClientComponent } from './components/Client/currency-converter-client/currency-converter-client.component';
 import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
 import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
 import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
@@ -135,7 +155,7 @@ const routes: Routes = [
         component:PacksDetailsAdminComponent
       },
 
-      
+
       {
         path:"packs/:id/edit",
         component:PacksEditAdminComponent
@@ -145,10 +165,26 @@ const routes: Routes = [
         component:ComplaintsAdminComponent
       },
       {
+        path:"users",
+        component:UserAdminComponent
+      },
+      {
+        path:"users/clients",
+        component:UsersClientsAdminComponent
+      },
+      {
+        path:"users/agents",
+        component:UsersAgentsAdminComponent
+      },
+      {
+        path:"users/admins",
+        component:UsersAdminsAdminComponent
+      },
+      {
         path:"complaints/c/:id",
         component:ComplaintDetailsAdminComponent
       },
-  
+
       {
         path:"public-notifications",
         component:PublicNotificationAdminComponent
@@ -161,6 +197,32 @@ const routes: Routes = [
         path:"private-notification/:id",
         component:NotificationAdminComponent
       },
+      {
+        path:"accounts",
+        component:AccountsAdminComponent
+      },
+      {
+        path:"transactions",
+        component:TransactionsAdminComponent
+      },
+      {
+        path:"transactions/c/:id",
+        component:TransactionDetailsAdminComponent
+      },
+      {
+        path:"accounts/c/:id",
+        component:AccountDetailsAdminComponent
+      },
+      {
+        path:"accounts/add",
+        component:AccountAddAdminComponent
+      },
+      {
+        path:"month",
+        component:StatAdminComponent
+      },
+
+
       {
         path:"**",
         component:NotfoundAdminComponent
@@ -219,7 +281,7 @@ const routes: Routes = [
         path:"products",
         component:ProductsClientComponent
       },
-     
+
       {
         path:"product/:id",
         component:ProductDetailsClientComponent
@@ -229,8 +291,8 @@ const routes: Routes = [
         path:"packs",
         component:PacksClientComponent
       },
-    
-     
+
+
       {
         path:"packs/:id",
         component:PacksDetailsClientComponent
@@ -255,6 +317,44 @@ const routes: Routes = [
         path:"notifications",
         component:NotificationsClientComponent
       },
+      {
+        path:"currency-converter",
+        component:CurrencyConverterClientComponent
+      },
+      {
+        path:"complaints",
+        component:ComplaintsClientComponent
+      },
+      {
+        path:"complaints/add",
+        component:ComplaintAddClientComponent
+      },
+      {
+        path:"complaints/c/:id",
+        component:ComplaintDetailsClientComponent
+      },
+      {
+        path:"account",
+        component:AccountClientComponent
+      },
+      {
+        path:"accounts/c/:id",
+        component:AccountDetailsClientComponent
+      },
+      {
+        path:"transaction",
+        component:TransactionClientComponent
+      },
+      {
+        path:"transactions/add",
+        component:TransactionAddClientComponent
+      },
+
+      {
+        path:"transactions/approve",
+        component:TransactionApproveComponent
+      },
+
       {
         path:"**",
         component:NotfoundAdminComponent

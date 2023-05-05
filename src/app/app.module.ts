@@ -43,10 +43,22 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
+import { AccountDetailsAdminComponent } from './components/Admin/account-details-admin/account-details-admin.component';
 import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
+import { TransactionsAdminComponent } from './components/Admin/transactions-admin/transactions-admin.component';
+import { AccountClientComponent } from './components/Client/account-client/account-client.component';
+import { AccountDetailsClientComponent } from './components/Client/account-details-client/account-details-client.component';
+import { AccountAddAdminComponent } from './components/Admin/account-add-admin/account-add-admin.component';
+import { TransactionClientComponent } from './components/Client/transaction-client/transaction-client.component';
+import { TransactionAddClientComponent } from './components/Client/transaction-add-client/transaction-add-client.component';
+import { TransactionApproveComponent } from './components/Client/transaction-approve/transaction-approve.component';
+import { TransactionDetailsAdminComponent } from './components/Admin/transaction-details-admin/transaction-details-admin.component';
+import { StatClientComponent } from './components/Client/stat-client/stat-client.component';
+import { StatAdminComponent } from './components/Admin/stat-admin/stat-admin.component';
 import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
 import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
 import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
@@ -82,7 +94,6 @@ import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs
 import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
 import { LivechatComponent } from './components/Client/livechat/livechat.component';
 import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
-import { CreditAddClientComponent } from './components/Client/credit-add-client/credit-add-client.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +105,7 @@ import { CreditAddClientComponent } from './components/Client/credit-add-client/
     TestComponent,
     NotfoundComponent,
     AboutVisitorComponent,
-    AccountCurrentVisitorComponent,    
+    AccountCurrentVisitorComponent,
     AccountSavingsVisitorComponent,
     AccountsVisitorComponent,
     CardsVisitorComponent,
@@ -130,6 +141,21 @@ import { CreditAddClientComponent } from './components/Client/credit-add-client/
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
     ComplaintAddClientComponent,
+    TransactionsAdminComponent,
+    AccountsAdminComponent,
+    AccountClientComponent,
+    AccountDetailsAdminComponent,
+    AccountDetailsClientComponent,
+    AccountAddAdminComponent,
+    TransactionClientComponent,
+    TransactionAddClientComponent,
+    TransactionApproveComponent,
+    TransactionDetailsAdminComponent,
+    StatClientComponent,
+    StatAdminComponent,
+
+
+    ComplaintAddClientComponent,
     CreditAdminComponent,
     CreditDetailsAdminComponent,
     AnswerProposalAdminComponent,
@@ -164,17 +190,17 @@ import { CreditAddClientComponent } from './components/Client/credit-add-client/
     PacksAddAdminComponent,
     PacksEditAdminComponent,
     LivechatComponent,
-    PacksVisitorComponent,
-    CreditAddClientComponent
+    PacksVisitorComponent
     ],
   imports: [
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    QRCodeModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

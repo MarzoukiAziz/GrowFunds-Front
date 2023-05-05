@@ -1,0 +1,114 @@
+<style>
+    .account-details {
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        padding: 20px;
+    }
+
+    .account-details h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .account-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .info-item {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: white;
+        font-size: 18px;
+
+    }
+
+    .info-label {
+        font-weight: bold;
+        margin-right: 50px;
+        font-size: 18px;
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .status-badge.open {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+    .status-badge.closed {
+        background-color: #FF9800;
+        color: #fff;
+    }
+</style>
+
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/client/accounts"> Account n° {{account.accountNum}} Details :</a>
+        </li>
+    </ol>
+</div>
+
+<div class="row">
+
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="post-details">
+
+                    <div class="account-details">
+                        <div class="account-info">
+
+                            <div class="info-item">
+                                <span class="info-label">RIB:</span>
+                                <span class="info-value">{{account.rib}}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">CIN:</span>
+                                <span class="info-value">{{account.cin}}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Sold:</span>
+                                <span class="info-value">{{account.solde}}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Account Type:</span>
+                                <span class="info-value">{{account.typeAcc}}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Opening Date:</span>
+                                <span class="info-value">{{account.date}}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status:</span>
+                                <span class="status-badge {{account.state ? 'open' : 'closed'}}">
+                                    {{account.state ? 'OPEN' : 'CLOSED'}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+<br>
+                <div class="row" style="display: flex;justify-content: space-around;">
+                    <button class="badge badge-warning" style="width:130px">UPDATE</button>
+                    <br>
+                    <button (click)="deleteAccount()"  class="badge badge-danger"
+                    style="width:130px">DELETE</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>

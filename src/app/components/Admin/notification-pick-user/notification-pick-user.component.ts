@@ -19,7 +19,7 @@ export class NotificationPickUserComponent {
   constructor(private _service: PrivateNotificationService, private _http: HttpClient) { }
 
   ngOnInit(): void {
-    const url = "http://localhost:1004/admins/user/showall";
+    const url = "http://localhost:1004/admin/clients";
     this._http.get<User[]>(url).subscribe(
       res => {
         this.users = res;
@@ -48,7 +48,7 @@ export class NotificationPickUserComponent {
     );
 
 
-    
+
 
 
   }

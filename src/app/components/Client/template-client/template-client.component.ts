@@ -63,6 +63,11 @@ export class TemplateClientComponent {
         "/assets/client/js/plugins-init/toastr-init.js",
         '/assets/client/js/plugins-init/datatables.init.js',
         '/assets/client/js/custom.min.js',
+        '/assets/client/vendor/datatables/js/jquery.dataTables.min.js',
+        '/assets/client/js/plugins-init/datatables.init.js',
+        '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
+        "/assets/client/vendor/toastr/js/toastr.min.js",
+        "/assets/client/js/plugins-init/toastr-init.js",
         '/assets/client/js/dlabnav-init.js'
 
 

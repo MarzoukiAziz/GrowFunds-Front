@@ -94,23 +94,55 @@
 							<div class="col-xl-6 col-md-6">
 								<div class="sign-in-your">
 									<h3>Sign in your account</h3>
-									<span class="text-white">Welcome back! Login with your data that you entered<br>
-										during registration</span>
-									<div class="login-social">
+									<span class="text-white" style="font-size: 20px;">Welcome back! Login with your data that you entered<br> during registration</span>
+
+									<!-- <div class="login-social">
 										<a href="javascript:void(0);" class="btn btn-primary font-w800 d-block my-4"><i
 												class="fab fa-google me-2"></i>Login with Google</a>
 										<a href="javascript:void(0);" class="btn btn-primary font-w800 d-block my-4"><i
 												class="fab fa-facebook-f me-2 facebook-log"></i>Login with Facebook</a>
-									</div>
+									</div> -->
 									<form action="index.html">
 										<div class="mb-3">
-											<label class="mb-1"><strong>Email</strong></label>
-											<input type="email" class="form-control" value="hello@example.com">
-										</div>
+                                              
+                                            <label class="mb-1"><strong>Username</strong><span class="text-danger">  *</span></label>
+                                            <input type="text" class="form-control" placeholder="username"type="text"
+                                            class="form-control"
+                                            name="username"
+                                            [(ngModel)]="form.username"
+                                            required
+                                            minlength="3"
+                                            maxlength="20"
+                                            #username="ngModel">
+                                            <div class="alert-danger" *ngIf=" username.invalid">
+                                                <div *ngIf="username.errors && username.errors['required']">Username is required</div>
+                                                <div *ngIf="username.errors  && username.errors['minlength']">
+                                                  Username must be at least 3 characters
+                                                </div>
+                                                <div *ngIf="username.errors && username.errors['maxlength']">
+                                                  Username must be at most 20 characters
+                                                </div>
+                                              </div>
+                                        </div>
 										<div class="mb-3">
-											<label class="mb-1"><strong>Password</strong></label>
-											<input type="password" class="form-control" value="Password">
-										</div>
+                                            <label class="mb-1"><strong>Password</strong><span class="text-danger">  *</span></label>
+                                            <input type="password" class="form-control" value="Password"
+                                            type="password"
+                                            class="form-control"
+                                            name="password"
+                                            [(ngModel)]="form.password"
+                                            required
+                                            minlength="6"
+                                            #password="ngModel"
+                                            >
+                                            <div class="alert-danger" *ngIf=" password.invalid">
+                                                <div *ngIf="password.errors && password.errors['required']">Password is required</div>
+                                                <div *ngIf="password.errors && password.errors['minlength']">
+                                                  Password must be at least 6 characters
+                                                </div>
+                                              </div>
+                                        </div>
+                                        
 										<div class="row d-flex justify-content-between mt-4 mb-2">
 											<div class="mb-3">
 												<div class="form-check custom-checkbox ms-1">
@@ -124,10 +156,22 @@
 												<a href="/forget-password">Forgot Password?</a>
 											</div>
 										</div>
-										<div class="text-center">
-											<button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+										<div class="text-center" class="form-group">
+											<button type="submit" class="btn btn-primary btn-block"(click)="onSubmit()">Sign Me In</button>
 										</div>
+										<div class="form-group">
+											<div
+											  class="alert alert-danger"
+											  role="alert"
+											  *ngIf=" isLoginFailed"
+											>
+											  Login failed: {{ errorMessage }}
+											</div>
+										  </div>
+										 
 									</form>
+									
+									
 								</div>
 							</div>
 						</div>
@@ -136,5 +180,8 @@
 			</div>
 		</div>
 	</div>
-
+	
 </div>
+
+
+  

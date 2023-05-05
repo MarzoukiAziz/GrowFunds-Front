@@ -1,54 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-login-admin',
   templateUrl: './login-admin.component.html',
   styleUrls: ['./login-admin.component.css']
 })
-export class LoginAdminComponent {
+export class LoginAdminComponent implements OnInit{
 
-  loadAPI: Promise<any>;
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  //roles!: string[];
 
-  constructor() {
-    this.loadAPI = new Promise((resolve) => {
-      this.loadScript();
-      
-      resolve(true);
-    });
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService , private router :Router) { }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      //this.roles = this.tokenStorage.getUser().roles;
+    }
+  }
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+
+        // Vérifier si l'utilisateur actuel a l'ID 5 avant de le rediriger
+        const user = this.tokenStorage.getUser();
+        if (user && user.id === 5 || user && user.id === 71) {
+          this.router.navigateByUrl('/admin').then(() => {
+            window.location.reload();
+          });
+
+        } else {
+          // Si l'utilisateur n'a pas l'ID 71, le déconnecter et afficher un message d'erreur
+          this.tokenStorage.signOut();
+          this.errorMessage = 'Vous n\'êtes pas autorisé à vous connecter.';
+          this.isLoginFailed = true;
+        }
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
 
-  public loadScript() {
-    var isFound = false;
-    var scripts = document.getElementsByTagName("script")
-  
-    for (var i = 0; i < scripts.length; ++i) {
-      if (scripts[i].getAttribute('src') != null && scripts[i].getAttribute('src')!.includes("loader")) {
-        isFound = true;
-      }
-    }
-
-    if (!isFound) {
-      var dynamicScripts = [
-        '/assets/client/vendor/global/global.min.js',
-        '/assets/client/vendor/jquery-autocomplete/jquery-ui.js',
-        '/assets/client/js/custom.min.js',
-        '/assets/client/js/dlabnav-admin.js'
-
-
-      ];
-
-      for (var i = 0; i < dynamicScripts.length; i++) {
-        let node = document.createElement('script');
-        node.src = dynamicScripts[i];
-        node.type = 'text/javascript';
-        node.async = false;
-        node.charset = 'utf-8';
-        document.getElementsByTagName('head')[0].appendChild(node);
-      }
-      
-
-    }
-
-    
+  reloadPage(): void {
+    window.location.reload();
   }
+
 }

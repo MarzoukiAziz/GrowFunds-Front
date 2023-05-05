@@ -1,0 +1,81 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Accounts</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Add</a></li>
+    </ol>
+</div>
+
+
+<div class="col-xl-12 col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">New Account</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form method="post">
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Account Number</label>
+                        <div class="col-sm-4">
+                            <input  type="text" class="form-control" placeholder="Account Number"  [(ngModel)]="c.accountNum" name="accountNum">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">CIN</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="CIN" class="form-control"  id="comment" name="cin"  [(ngModel)]="c.cin" ></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">RIB</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Account RIB" class="form-control" id="comment" name="rib"  [(ngModel)]="c.rib" ></textarea>
+                        </div>
+                    </div>
+                    <!--<div class="mb-9 row">
+                        <label class="col-sm-3 col-form-label">Account Type</label>
+                        <div class="col-sm-9">
+
+
+                                    <select class="dropdown-groups" [(ngModel)]="c.typeAcc">
+                                        <optgroup label="Account-Types">
+                                            <option>NORMALACCOUNT</option>
+                                            <option>SAVINGACCOUNT</option>
+
+                                        </optgroup>
+
+                                    </select>
+
+
+                        </div>
+                    </div>-->
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Account type</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Account Type" class="form-control"  id="comment" name="typeAcc"  [(ngModel)]="c.typeAcc" ></textarea>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Solde</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.solde" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Status</label>
+                        <div class="col-sm-9">
+                            <textarea placeholder="Description" class="form-control"  id="comment" name="description"  [(ngModel)]="c.state" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row align-right">
+                        <div class="col-sm-10">
+                            <button (click)="addAccount();" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
