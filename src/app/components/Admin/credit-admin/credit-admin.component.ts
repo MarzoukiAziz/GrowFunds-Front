@@ -9,7 +9,6 @@ import { CreditService } from 'src/app/services/credit.service';
 })
 export class CreditAdminComponent {
   credit!: Credits[];
-   
 
   constructor(private _service: CreditService) { }
 
@@ -17,6 +16,7 @@ export class CreditAdminComponent {
   ngOnInit(): void {
     this._service.getCreditsForAdmin().subscribe(res => {
       this.credit = res;
+      console.log(this.credit);
 
     });
 

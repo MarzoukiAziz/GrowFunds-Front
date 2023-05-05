@@ -37,6 +37,8 @@ import { TemplateVisitorComponent } from './components/Visitor/template-visitor/
 import { TestimonialsVisitorComponent } from './components/Visitor/testimonials-visitor/testimonials-visitor.component';
 import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
 import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
+import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
+import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,14 @@ const routes: Routes = [
       {
         path:"credits",
         component:CreditAdminComponent
+      },
+      {
+        path:"paymentHistory/:id",
+        component:PaymentHistoryAdminComponent
+      },
+      {
+        path:"answerProposal/:id",
+        component:AnswerProposalAdminComponent
       },
       {
         path:"creditDetails/:id",

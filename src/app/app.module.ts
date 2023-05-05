@@ -49,6 +49,8 @@ import { ComplaintDetailsClientComponent } from './components/Client/complaint-d
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
 import { CreditAdminComponent } from './components/Admin/credit-admin/credit-admin.component';
 import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
+import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
+import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,9 @@ import { CreditDetailsAdminComponent } from './components/Admin/credit-details-a
     ComplaintAddClientComponent,
     CreditAdminComponent,
     CreditDetailsAdminComponent,
+    AnswerProposalAdminComponent,
+    PaymentHistoryAdminComponent,
+    
     ],
   imports: [
     BrowserModule,
