@@ -43,10 +43,22 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 import { NotfoundAdminComponent } from './components/Admin/notfound-admin/notfound-admin.component';
 import { ComplaintsAdminComponent } from './components/Admin/complaints-admin/complaints-admin.component';
 import { ComplaintDetailsAdminComponent } from './components/Admin/complaint-details-admin/complaint-details-admin.component';
+import { AccountDetailsAdminComponent } from './components/Admin/account-details-admin/account-details-admin.component';
 import { FormsModule } from '@angular/forms';
 import { ComplaintsClientComponent } from './components/Client/complaints-client/complaints-client.component';
 import { ComplaintDetailsClientComponent } from './components/Client/complaint-details-client/complaint-details-client.component';
 import { ComplaintAddClientComponent } from './components/Client/complaint-add-client/complaint-add-client.component';
+import { AccountsAdminComponent } from './components/Admin/accounts-admin/accounts-admin.component';
+import { TransactionsAdminComponent } from './components/Admin/transactions-admin/transactions-admin.component';
+import { AccountClientComponent } from './components/Client/account-client/account-client.component';
+import { AccountDetailsClientComponent } from './components/Client/account-details-client/account-details-client.component';
+import { AccountAddAdminComponent } from './components/Admin/account-add-admin/account-add-admin.component';
+import { TransactionClientComponent } from './components/Client/transaction-client/transaction-client.component';
+import { TransactionAddClientComponent } from './components/Client/transaction-add-client/transaction-add-client.component';
+import { TransactionApproveComponent } from './components/Client/transaction-approve/transaction-approve.component';
+import { TransactionDetailsAdminComponent } from './components/Admin/transaction-details-admin/transaction-details-admin.component';
+import { StatClientComponent } from './components/Client/stat-client/stat-client.component';
+import { StatAdminComponent } from './components/Admin/stat-admin/stat-admin.component';
 import { PublicNotificationAdminComponent } from './components/Admin/public-notification-admin/public-notification-admin.component';
 import { PublicNotificationsClientComponent } from './components/Client/public-notifications-client/public-notifications-client.component';
 import { RouterModule } from '@angular/router';
@@ -132,6 +144,21 @@ import { QRCodeModule } from 'angularx-qrcode';
     ComplaintDetailsAdminComponent,
     ComplaintsClientComponent,
     ComplaintDetailsClientComponent,
+    ComplaintAddClientComponent,
+    TransactionsAdminComponent,
+    AccountsAdminComponent,
+    AccountClientComponent,
+    AccountDetailsAdminComponent,
+    AccountDetailsClientComponent,
+    AccountAddAdminComponent,
+    TransactionClientComponent,
+    TransactionAddClientComponent,
+    TransactionApproveComponent,
+    TransactionDetailsAdminComponent,
+    StatClientComponent,
+    StatAdminComponent,
+
+
     ComplaintAddClientComponent,
     PublicNotificationAdminComponent,
     PublicNotificationsClientComponent,
