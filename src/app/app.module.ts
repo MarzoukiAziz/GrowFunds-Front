@@ -82,6 +82,7 @@ import { PacksAddAdminComponent } from './components/Admin/packs-add-admin/packs
 import { PacksEditAdminComponent } from './components/Admin/packs-edit-admin/packs-edit-admin.component';
 import { LivechatComponent } from './components/Client/livechat/livechat.component';
 import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-visitor.component';
+import { CreditAddClientComponent } from './components/Client/credit-add-client/credit-add-client.component';
 
 @NgModule({
   declarations: [
@@ -163,7 +164,8 @@ import { PacksVisitorComponent } from './components/Visitor/packs-visitor/packs-
     PacksAddAdminComponent,
     PacksEditAdminComponent,
     LivechatComponent,
-    PacksVisitorComponent
+    PacksVisitorComponent,
+    CreditAddClientComponent
     ],
   imports: [
     RouterModule,

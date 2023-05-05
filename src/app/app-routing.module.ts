@@ -69,6 +69,7 @@ import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal
 import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
 import { CreditClientComponent } from './components/Client/credit-client/credit-client.component';
 import { PaymentHistoryClientComponent } from './components/Client/payment-history-client/payment-history-client.component';
+import { CreditAddClientComponent } from './components/Client/credit-add-client/credit-add-client.component';
 
 const routes: Routes = [
   {
@@ -185,6 +186,10 @@ const routes: Routes = [
       {
         path:"creditsClient",
         component:CreditClientComponent
+      },
+      {
+        path:"creditsAddClient",
+        component:CreditAddClientComponent
       },
       {
         path:"paymentHistoryClient/:id",

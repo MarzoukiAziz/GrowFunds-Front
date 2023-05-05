@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./map-visitor.component.css']
 })
 export class MapVisitorComponent {
+  latitude!: Number;
+  longitude!: Number;
 
 }
