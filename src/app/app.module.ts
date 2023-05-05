@@ -51,6 +51,8 @@ import { CreditAdminComponent } from './components/Admin/credit-admin/credit-adm
 import { CreditDetailsAdminComponent } from './components/Admin/credit-details-admin/credit-details-admin.component';
 import { AnswerProposalAdminComponent } from './components/Admin/answer-proposal-admin/answer-proposal-admin.component';
 import { PaymentHistoryAdminComponent } from './components/Admin/payment-history-admin/payment-history-admin.component';
+import { CreditClientComponent } from './components/Client/credit-client/credit-client.component';
+import { PaymentHistoryClientComponent } from './components/Client/payment-history-client/payment-history-client.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +104,8 @@ import { PaymentHistoryAdminComponent } from './components/Admin/payment-history
     CreditDetailsAdminComponent,
     AnswerProposalAdminComponent,
     PaymentHistoryAdminComponent,
+    CreditClientComponent,
+    PaymentHistoryClientComponent,
     
     ],
   imports: [

@@ -59,6 +59,14 @@ assignAccountToUser(id: Number,num: Number):Observable<User>{
   this.url = this.api_url + "/assignAccountToUser/"+id+"/"+num;
   return this._service.get<User>(this.url);
 }
+getClientCredits(num: Number):Observable<Credits[]>{
+  this.url = this.api_url + "/getClientCredits/"+ num;
+  return this._service.get<Credits[]>(this.url);
+}
+exportPDF(id: number): Observable<Blob> {
+  return this._service.get(this.api_url+"/pdf/generateAmortissement/"+id,{ responseType: 'blob' });
+
+}
 
 
 }
