@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,6 +11,9 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductAddAdminComponent {
   p: Product = new Product();
+  
+  suggestedInterestRate: number=0;
+
   constructor(private router: Router, private _service: ProductService) {
   }
 
@@ -21,5 +25,12 @@ export class ProductAddAdminComponent {
        // window.location.reload();
       }));
   }
+  
 
+
+calculateSuggestedInterestRate(price: number) {
+
+    this.suggestedInterestRate = 8.02+price*0.002;
+
+  }
 }
