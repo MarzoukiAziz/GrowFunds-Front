@@ -1,0 +1,33 @@
+<div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+    <div class="card">
+        <div class="row">
+        <div class="card-header col">
+            <h4 class="card-title">Client Payment History </h4>
+            
+        </div>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive recentOrderTable">
+                <table class="table verticle-middle table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th>ID payment</th>
+                            <th>Supposed Payment Date</th>
+                            <th>Actual Payment Date </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mp of monthlyPayments">
+                            <td>{{mp.idPayment}}</td>
+                            <td>{{mp.paymentSupposedDate ? mp.paymentSupposedDate : '--' }}</td>
+                            <td>{{ mp.paymentDate ? mp.paymentDate : '--' }}</td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
