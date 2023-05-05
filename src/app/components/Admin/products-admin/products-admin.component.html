@@ -1,0 +1,34 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a routerLink="/admin/products">Products</a></li>
+    </ol>
+        
+</div>
+<div style="margin: 30px;display: flex;justify-content: right;">
+    <a routerLink="/admin/products/add"><button type="button" class="btn btn-rounded btn-success"><span
+                class="btn-icon-start text-success"><i class="fa fa-plus color-success"></i>
+            </span>Add</button></a>
+</div>  
+<div class="row">
+    <div *ngFor="let p of products" class="col-xl-3 col-lg-6 col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="new-arrival-product">
+                    <div class="new-arrivals-img-contnent">
+                        <img style="
+                        height: 300px;
+                        object-fit: cover;
+                    " class="img-fluid" src="{{p.imgUrl}}" alt="">
+                    </div>
+                    <div class="new-arrival-content text-center mt-3">
+                        <h4><a routerLink="/admin/product/{{p.idProduct}}">{{p.name}}</a></h4>
+                        <h6 class="badge badge-success">{{p.category}}</h6>
+                    </div>
+                    <div>
+                        <h5 class="badge-danger badge" style="font-size: large;float: right;" >{{p.price| number:'1.0-0'}} Dt</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

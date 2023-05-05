@@ -1,0 +1,101 @@
+<title>Our Products</title>
+
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+</div><!-- /.stricky-header -->
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area">
+    <div class="breadcrumb-area-bg"
+        style="background-image: url(/assets/visitor/images/backgrounds/breadcrumb-area-bg-5.jpg);"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content">
+                    <div class="title" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500">
+                        <h2>Our Products</h2>
+                    </div>
+                    <div class="breadcrumb-menu" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li class="active">Our Products</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start Card Banner Area-->
+<section class="card-banner-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card-banner-content">
+                    <div class="card-banner-content-bg"
+                        style="background-image: url(/assets/visitor/images/shapes/card-banner-area-bg.png);">
+                    </div>
+                    <div class="card-banner-content-img-box">
+                        <img src="/assets/visitor/images/resources/card-banner-img-1.png" alt="">
+                    </div>
+                    <div class="inner-title">
+                        <h4>Ready to take your business to </h4>
+                        <h2>The Next Level ?</h2>
+                    </div>
+                    <div class="text">
+                        <p>Rationally encounter consequences that are <br> who loves or pursues desire.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Card Banner Area-->
+
+<!--Start Cards Area-->
+<section class="cards-area">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xl-12">
+                <div  class="cards-content-box">
+
+                    <div class="cards-content-box-top">
+                        <div class="left-box">
+                            <h2>Best Products for Your Needs</h2>
+                        </div>
+                       
+                    </div>
+
+                    <div *ngFor="let p of products" class="single-card-box">
+                        <div class="category-box">{{p.price| number:'1.0-0'}} Dt</div>
+                        <div class="cards-img-box">
+                            <div class="inner-title">
+                                <h3>{{p.name}}</h3>
+                            </div>
+                            <div class="inner">
+                                <img src="{{p.imgUrl}}" alt="">
+                            </div>
+                        
+                        </div>
+                        <div class="cards-text-box">
+                            <h3>Category : </h3>
+                            <p style="color: green;font-weight: 800;">{{p.category}}</p>
+                            <h3>Description :</h3>
+                            <p>{{p.description}}</p>
+                            
+                        </div>
+                    </div>
+               
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Cards Area-->

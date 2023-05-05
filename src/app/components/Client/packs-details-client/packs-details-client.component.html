@@ -1,0 +1,119 @@
+<div class="row page-titles">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a routerLink="/client/packs">Packs</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">{{pack.name}}</a></li>
+    </ol>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="first">
+                                <img style="
+                                height: 400px;
+                                object-fit: cover;
+                            " class="img-fluid rounded" src="{{pack.imgUrl}}" alt="">
+                            </div>
+
+                        </div>
+                        <div style="margin: 30px;">
+
+                            <button *ngIf="!liked" (click)="like();"  type="button" class="btn light btn-success">Add To Favorite</button>
+                            <button *ngIf="liked" (click)="like();" type="button" class="btn light btn-danger">Remove from Favorite</button>
+
+                        </div>
+                    </div>
+                    <!--Tab slider End-->
+                    <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
+                        <div class="product-detail-content">
+                            <!--Product details-->
+                            <div class="new-arrival-content pr">
+                                <h1>{{pack.name}}</h1>
+                                <i class="fa fa-star"></i>&nbsp;
+                                <span class="review-text">{{pack.likedByUsers.length}} </span>
+
+
+                                <br>
+                                <p>Pack Category: <span class="badge badge-success">{{pack.category}}</span></p>
+                                <br>
+
+
+                                <h4 class="text-content" style="    color: darkgrey;                                ">
+                                    {{pack.description}}</h4>
+                                <br><br>
+
+                                <div class="d-table mb-2 " style="display: flex;justify-content: right;">
+                                    <p class="price float-start d-block">{{pack.price| number:'1.0-0'}} Dt</p>
+                                </div>
+
+                                <br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-3">
+
+    </div>
+    <div class="col-lg-9">
+        <div class="bootstrap-badge">
+            <a href="javascript:void(0)" style="font-size: 25px;" class="badge badge-rounded badge-info">Products :</a>
+
+        </div>
+        <br>
+        <div *ngFor="let product of pack.product_pack" class="card" style="height: 350px!important;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="first">
+                                <img style="
+                                height: 220px;
+                                object-fit: cover;
+                            " class="img-fluid rounded" src="{{product.imgUrl}}" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--Tab slider End-->
+                    <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
+                        <div class="product-detail-content">
+                            <!--Product details-->
+                            <div class="new-arrival-content pr">
+                                <h2>{{product.name}}</h2>
+
+
+                                <p>Product Category: <span class="badge badge-success">{{product.category}}</span></p>
+                             
+                                <div class="d-table mb-2 " style="display: flex;justify-content: right;">
+                                    <p class=" float-end d-block">Price outside Pack: {{product.price| number:'1.0-0'}} Dt</p>
+                                </div>
+                                <br>
+                                <br>
+
+                                <h6 class="text-content" style="    color: darkgrey;                                ">
+                                    {{product.description}}</h6>
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -43,8 +43,11 @@ export class InvestementDetailsClientComponent {
       //to be changed later
       this.myInvestements=this.project.investisments.filter(x=>x.investor.id==2)
       this.investementsAmount=  this.project.investisments.reduce((acc, investment) => acc + investment.amount, 0);
-      this.myInves= this.project.investisments.filter(x=>x.investor.id==2).reduce((acc, investment) => acc + investment.amount, 0);
-      this.revenuesTotal =this.project.revenues.reduce((acc, revenue) => acc + revenue.revenue, 0);
+      this.myInves= this.project.investisments
+                .filter(x=>x.investor.id==2)
+                .reduce((acc, investment) => acc + investment.amount, 0);
+      this.revenuesTotal =this.project.revenues
+          .reduce((acc, revenue) => acc + revenue.revenue, 0);
       this.calculateMyRevenue()
 
     })
@@ -53,7 +56,9 @@ export class InvestementDetailsClientComponent {
 
   calculateMyRevenue(){
     this.project.revenues.forEach(r=>{
-      var inv =this.myInvestements.filter(i =>i.dateInvest<r.dateDeclaration).reduce((acc, investment) => acc + investment.amount, 0);
+      var inv =this.myInvestements
+            .filter(i =>i.dateInvest<r.dateDeclaration)
+            .reduce((acc, investment) => acc + investment.amount, 0);
       this.myRevenue.push(inv/this.project.budget*r.revenue)
       console.log(r.dateDeclaration,  inv)
     })
