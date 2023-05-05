@@ -141,7 +141,7 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="validationCustom01"  placeholder="{{credit.amount}}" required>
+                                            <input type="text" class="form-control" id="validationCustom01" [(ngModel)]="credit.amount" name="amount"  placeholder="{{credit.amount}}" required>
                                             <div class="invalid-feedback">
                                                 Please enter a username.
                                             </div>
@@ -152,18 +152,18 @@
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="validationCustom02"  placeholder="{{credit.interestRate}}" required>
+                                            <input type="text" class="form-control" id="validationCustom02" [(ngModel)]="credit.interestRate" name="interestRate" placeholder="{{credit.interestRate}}" required>
                                             <div class="invalid-feedback">
-                                                Please enter a Email.
+                                                Please enter a number.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
-                                        <label class="col-lg-4 col-form-label" for="validationCustom03">Mensuel Payment
+                                        <label class="col-lg-4 col-form-label" for="validationCustom02">Mensuel Payment
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="password" class="form-control" id="validationCustom03" placeholder="{{credit.paymentMounthly}}" required>
+                                            <input type="text" class="form-control" id="validationCustom02" [(ngModel)]="credit.paymentMounthly" name="paymentMounthly" placeholder="{{credit.paymentMounthly}}" required>
                                             <div class="invalid-feedback">
                                                 Please enter a password.
                                             </div>
@@ -177,7 +177,7 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="validationCustom06" placeholder="{{credit.dateDebut}}" required>
+                                            <input type="date" class="form-control" id="validationCustom06" [(ngModel)]="credit.dateDebut" name="dateDebut" placeholder="{{credit.dateDebut}}" required>
                                             <div class="invalid-feedback">
                                                 Please enter a Currency.
                                             </div>
@@ -188,7 +188,7 @@
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="validationCustom07"  placeholder="{{credit.dateFin}}" required>
+                                            <input type="date" class="form-control" id="validationCustom07" [(ngModel)]="credit.dateFin" name="dateFin"  placeholder="{{credit.dateFin}}" required>
                                             <div class="invalid-feedback">
                                                 Please enter a url.
                                             </div>
@@ -197,7 +197,7 @@
                                     
                                     <div class="mb-3 row">
                                         <div class="col-lg-8 ms-auto">
-                                            <button type="submit" class="btn btn-default">Submit</button>
+                                            <button type="submit" (click)="addCredit()" class="btn btn-default">Submit</button>
                                         </div>
                                     </div>
                                 </div>

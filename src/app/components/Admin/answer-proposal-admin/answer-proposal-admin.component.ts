@@ -44,6 +44,7 @@ export class AnswerProposalAdminComponent {
   }
   onApprove() {
     this.test = true;
+    
   }
   onDeny() {
     this.credit.status = "DENIED";
@@ -57,6 +58,16 @@ export class AnswerProposalAdminComponent {
       })
     });
 
+  }
+  addCredit(){
+    this.credit.status= "ACTIVE";
+    this._service.updateCredit(this.credit).subscribe(res => {
+
+      this.credit = res;
+      this.router.navigate(['/admin/credits']).then(() => {
+       // window.location.reload();
+      })
+    });
   }
 }
 
